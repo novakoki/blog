@@ -5,7 +5,7 @@
   <link href="/blog/atom.xml" rel="self"/>
   
   <link href="http://shaoziqi.tk/blog/"/>
-  <updated>2016-03-27T13:33:11.000Z</updated>
+  <updated>2016-03-27T14:31:01.244Z</updated>
   <id>http://shaoziqi.tk/blog/</id>
   
   <author>
@@ -14,6 +14,232 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>A Note 0f Computer Network</title>
+    <link href="http://shaoziqi.tk/blog/A-Note-0f-Computer-Network/"/>
+    <id>http://shaoziqi.tk/blog/A-Note-0f-Computer-Network/</id>
+    <published>2015-08-20T14:25:17.000Z</published>
+    <updated>2016-03-27T14:31:01.244Z</updated>
+    
+    <content type="html">&lt;h2 id=&quot;I-Introduction&quot;&gt;&lt;a href=&quot;#I-Introduction&quot; class=&quot;headerlink&quot; title=&quot;I. Introduction&quot;&gt;&lt;/a&gt;I. Introduction&lt;/h2&gt;&lt;h3 id=&quot;1-Computer-Network-and-Distributed-System&quot;&gt;&lt;a href=&quot;#1-Computer-Network-and-Distributed-System&quot; class=&quot;headerlink&quot; title=&quot;1. Computer Network and Distributed System&quot;&gt;&lt;/a&gt;1. Computer Network and Distributed System&lt;/h3&gt;&lt;p&gt; Example: World Wide Web, Hadoop&lt;/p&gt;
+&lt;p&gt;&lt;hr&gt;&lt;/p&gt;
+&lt;h3 id=&quot;2-Uses&quot;&gt;&lt;a href=&quot;#2-Uses&quot; class=&quot;headerlink&quot; title=&quot;2. Uses&quot;&gt;&lt;/a&gt;2. Uses&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Business Application&lt;/strong&gt;&lt;ul&gt;
+&lt;li&gt;Resource Sharing &lt;em&gt;(Client-Server Model)&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;Communication Medium&lt;/li&gt;
+&lt;li&gt;Electric Commerce&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Home Application&lt;/strong&gt;&lt;ul&gt;
+&lt;li&gt;Connectivity &lt;em&gt;(Peer-to-Peer)&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;Person-to-Person communication&lt;ul&gt;
+&lt;li&gt;Instant Messaging (Twitter)&lt;/li&gt;
+&lt;li&gt;Social Network (Facebook)&lt;/li&gt;
+&lt;li&gt;Wiki (Wikipedia)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Electric Commerce (B2C, B2B, G2C, C2C, P2P)&lt;/li&gt;
+&lt;li&gt;Entertainment&lt;/li&gt;
+&lt;li&gt;Ubiquitous Computing (普适计算) (RFID, IOT)&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Mobile Users&lt;/strong&gt;&lt;ul&gt;
+&lt;li&gt;Wireless Network&lt;/li&gt;
+&lt;li&gt;Text Messaging (SMS)&lt;/li&gt;
+&lt;li&gt;Mobile Commerce&lt;/li&gt;
+&lt;li&gt;Sensor Network&lt;/li&gt;
+&lt;li&gt;Wearable Computers&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Social Issues&lt;/strong&gt; (网络引起的各种社会问题)&lt;ul&gt;
+&lt;li&gt;言论 (Network Neutrality)&lt;/li&gt;
+&lt;li&gt;知识产权 (DMCA)&lt;/li&gt;
+&lt;li&gt;隐私 (政府监控，Cookie中的信息，Gmail中的邮件，位置信息，匿名言论)&lt;/li&gt;
+&lt;li&gt;垃圾信息 (Spam)&lt;/li&gt;
+&lt;li&gt;网络安全 &lt;/li&gt;
+&lt;li&gt;法律 (Electric Gambling)&lt;hr&gt;
+
+
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;3-Hardware&quot;&gt;&lt;a href=&quot;#3-Hardware&quot; class=&quot;headerlink&quot; title=&quot;3. Hardware&quot;&gt;&lt;/a&gt;3. Hardware&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;Sorted by &lt;strong&gt;Type&lt;/strong&gt;&lt;ul&gt;
+&lt;li&gt;Broadcast&lt;/li&gt;
+&lt;li&gt;Point-to-Point&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Sorted by &lt;strong&gt;Scale&lt;/strong&gt;&lt;br&gt;|Sorted by Scale|&lt;br&gt;|:—:|&lt;br&gt;|Internetworks|&lt;br&gt;|Wide Area Network|&lt;br&gt;|Metropolitan Area Network (城域网)|&lt;br&gt;|Local Area Network|&lt;br&gt;|Personal Area Network|&lt;hr&gt;
+
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;4-Software&quot;&gt;&lt;a href=&quot;#4-Software&quot; class=&quot;headerlink&quot; title=&quot;4. Software&quot;&gt;&lt;/a&gt;4. Software&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;Layer, Protocol, Interface, Service&lt;/strong&gt;&lt;br&gt;Most networks are organized as a stack of &lt;strong&gt;layers&lt;/strong&gt;.&lt;br&gt;A &lt;strong&gt;protocol&lt;/strong&gt; is an agreement between the communicating parties on how communication is to proceed.&lt;br&gt;The &lt;strong&gt;interface&lt;/strong&gt; defines which primitive operations and services the lower layer makes available to the upper one.&lt;br&gt;A &lt;strong&gt;service&lt;/strong&gt; is a set of primitives(operations) that a layer provides to the layer above it.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;Design Issues&lt;/strong&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol&gt;
+&lt;li&gt;Reliability&lt;ul&gt;
+&lt;li&gt;Error Detection&lt;/li&gt;
+&lt;li&gt;Error Correction&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Routing&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Evolution&lt;ul&gt;
+&lt;li&gt;Addressing or Naming&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Internetworking&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Resource Allocation&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Multiplexing&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Flow Control&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Congestion&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;Quality of Service&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Secure&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;Connection Oriented&lt;/strong&gt; VS &lt;strong&gt;Connectionless&lt;/strong&gt;&lt;br&gt;&lt;strong&gt;Realiable communication may not be availble in a given layer;&lt;br&gt;The delays inherent in providing a reliable service may be unacceptable.&lt;/strong&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Connection Oriented &lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Byte Stream&lt;/strong&gt; VS &lt;strong&gt;Message Stream&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;Voice over IP&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Connectionless&lt;ul&gt;
+&lt;li&gt;Datagram&lt;/li&gt;
+&lt;li&gt;Request-Reply&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;Service Primitive&lt;hr&gt;
+
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;5-Reference-Model&quot;&gt;&lt;a href=&quot;#5-Reference-Model&quot; class=&quot;headerlink&quot; title=&quot;5. Reference Model&quot;&gt;&lt;/a&gt;5. Reference Model&lt;/h3&gt;&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th style=&quot;text-align:center&quot;&gt;OSI&lt;/th&gt;
+&lt;th style=&quot;text-align:center&quot;&gt;TCP/IP&lt;/th&gt;
+&lt;th style=&quot;text-align:center&quot;&gt;Used in the book&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;Application&lt;/td&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;Application&lt;/td&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;Application&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;Presentation&lt;/td&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;-&lt;/td&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;-&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;Session&lt;/td&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;-&lt;/td&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;-&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;Transport&lt;/td&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;Transport&lt;/td&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;Transport&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;Network&lt;/td&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;Network&lt;/td&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;Network&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;Data Link&lt;/td&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;Link&lt;/td&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;Data Link&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;Physical&lt;/td&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;-&lt;/td&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;Physical&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h3 id=&quot;6-Network-Standardization&quot;&gt;&lt;a href=&quot;#6-Network-Standardization&quot; class=&quot;headerlink&quot; title=&quot;6. Network Standardization&quot;&gt;&lt;/a&gt;6. Network Standardization&lt;/h3&gt;&lt;hr&gt;
+
+&lt;h2 id=&quot;II-The-Physical-Layer&quot;&gt;&lt;a href=&quot;#II-The-Physical-Layer&quot; class=&quot;headerlink&quot; title=&quot;II. The Physical Layer&quot;&gt;&lt;/a&gt;II. The Physical Layer&lt;/h2&gt;&lt;blockquote&gt;
+&lt;p&gt;It defines the electrical, timing and other interfaces by which&lt;br&gt; &lt;strong&gt;bits&lt;/strong&gt; are sent as &lt;strong&gt;signals&lt;/strong&gt; over &lt;strong&gt;channels&lt;/strong&gt;.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&quot;1-The-Theoretical-Basis-for-Data-Communication&quot;&gt;&lt;a href=&quot;#1-The-Theoretical-Basis-for-Data-Communication&quot; class=&quot;headerlink&quot; title=&quot;1. The Theoretical Basis for Data Communication&quot;&gt;&lt;/a&gt;1. The Theoretical Basis for Data Communication&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;Fourier Analysis&lt;/li&gt;
+&lt;li&gt;Bandwidth-Limited Signals&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Bandwidth&lt;/strong&gt;&lt;br&gt;  The width of the frequency range transmitted without being strongly attenuated(衰减) is called the bandwidth.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Baseband&lt;/strong&gt;&lt;br&gt;  Signals that run from 0 up to the maximum frequency are called baseband signals.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Passband&lt;/strong&gt;&lt;br&gt;  Signals that are shifted to occupy a higher range of frequencies, as is the case of all wireless transmissions, are called passband signals.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;The Maximum Data Rate of a Channel&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Nyquist’s theorem&lt;br&gt;$$maximum\ data\ rate=2B\log_2V\ bits/sec$$&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Shannon’s theorem&lt;br&gt;$$maximum\ data\ rate=B\log_2(1+S/N)\ bits/sec$$&lt;/p&gt;
+&lt;p&gt;$$10\log_{10}S/N=1\ dB$$&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;2-Digital-Modulation&quot;&gt;&lt;a href=&quot;#2-Digital-Modulation&quot; class=&quot;headerlink&quot; title=&quot;2. Digital Modulation&quot;&gt;&lt;/a&gt;2. Digital Modulation&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;Baseband&lt;ul&gt;
+&lt;li&gt;NRZ&lt;/li&gt;
+&lt;li&gt;NRZI&lt;/li&gt;
+&lt;li&gt;Manchester&lt;/li&gt;
+&lt;li&gt;Bipolar&lt;/li&gt;
+&lt;li&gt;4B/5B&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Passband&lt;ul&gt;
+&lt;li&gt;ASK&lt;/li&gt;
+&lt;li&gt;FSK&lt;/li&gt;
+&lt;li&gt;PSK&lt;/li&gt;
+&lt;li&gt;Constellation Diagram&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;3-Multiplexing&quot;&gt;&lt;a href=&quot;#3-Multiplexing&quot; class=&quot;headerlink&quot; title=&quot;3. Multiplexing&quot;&gt;&lt;/a&gt;3. Multiplexing&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;FDM&lt;/li&gt;
+&lt;li&gt;TDM&lt;/li&gt;
+&lt;li&gt;CDMA&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;4-Switching&quot;&gt;&lt;a href=&quot;#4-Switching&quot; class=&quot;headerlink&quot; title=&quot;4. Switching&quot;&gt;&lt;/a&gt;4. Switching&lt;/h3&gt;&lt;h2 id=&quot;III-The-Data-Link-Layer&quot;&gt;&lt;a href=&quot;#III-The-Data-Link-Layer&quot; class=&quot;headerlink&quot; title=&quot;III. The Data Link Layer&quot;&gt;&lt;/a&gt;III. The Data Link Layer&lt;/h2&gt;&lt;h3 id=&quot;1-Framing&quot;&gt;&lt;a href=&quot;#1-Framing&quot; class=&quot;headerlink&quot; title=&quot;1. Framing&quot;&gt;&lt;/a&gt;1. Framing&lt;/h3&gt;&lt;h2 id=&quot;IV-The-Medium-Access-Control-Sublayer&quot;&gt;&lt;a href=&quot;#IV-The-Medium-Access-Control-Sublayer&quot; class=&quot;headerlink&quot; title=&quot;IV. The Medium Access Control Sublayer&quot;&gt;&lt;/a&gt;IV. The Medium Access Control Sublayer&lt;/h2&gt;&lt;h2 id=&quot;V-The-Network-Layer&quot;&gt;&lt;a href=&quot;#V-The-Network-Layer&quot; class=&quot;headerlink&quot; title=&quot;V. The Network Layer&quot;&gt;&lt;/a&gt;V. The Network Layer&lt;/h2&gt;&lt;h2 id=&quot;VI-The-Transport-Layer&quot;&gt;&lt;a href=&quot;#VI-The-Transport-Layer&quot; class=&quot;headerlink&quot; title=&quot;VI. The Transport Layer&quot;&gt;&lt;/a&gt;VI. The Transport Layer&lt;/h2&gt;&lt;h2 id=&quot;VII-The-Application-Layer&quot;&gt;&lt;a href=&quot;#VII-The-Application-Layer&quot; class=&quot;headerlink&quot; title=&quot;VII. The Application Layer&quot;&gt;&lt;/a&gt;VII. The Application Layer&lt;/h2&gt;&lt;h2 id=&quot;VIII-Network-Security&quot;&gt;&lt;a href=&quot;#VIII-Network-Security&quot; class=&quot;headerlink&quot; title=&quot;VIII. Network Security&quot;&gt;&lt;/a&gt;VIII. Network Security&lt;/h2&gt;</content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;I-Introduction&quot;&gt;&lt;a href=&quot;#I-Introduction&quot; class=&quot;headerlink&quot; title=&quot;I. Introduction&quot;&gt;&lt;/a&gt;I. Introduction&lt;/h2&gt;&lt;h3 id=&quot;1-Computer-Network-and-Distributed-System&quot;&gt;&lt;a href=&quot;#1-Computer-Network-and-Distributed-System&quot; class=&quot;headerlink&quot; title=&quot;1. Computer Network and Distributed System&quot;&gt;&lt;/a&gt;1. Computer Network and Distributed System&lt;/h3&gt;&lt;p&gt; Example: World Wide Web, Hadoop&lt;/p&gt;
+&lt;p&gt;&lt;hr&gt;&lt;/p&gt;
+&lt;h3 id=&quot;2-Uses&quot;&gt;&lt;a href=&quot;#2-Uses&quot; class=&quot;headerlink&quot; title=&quot;2. Uses&quot;&gt;&lt;/a&gt;2. Uses&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Business Application&lt;/strong&gt;&lt;ul&gt;
+&lt;li&gt;Resource Sharing &lt;em&gt;(Client-Server Model)&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;Communication Medium&lt;/li&gt;
+&lt;li&gt;Electric Commerce&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Home Application&lt;/strong&gt;&lt;ul&gt;
+&lt;li&gt;Connectivity &lt;em&gt;(Peer-to-Peer)&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;Person-to-Person communication&lt;ul&gt;
+&lt;li&gt;Instant Messaging (Twitter)&lt;/li&gt;
+&lt;li&gt;Social Network (Facebook)&lt;/li&gt;
+&lt;li&gt;Wiki (Wikipedia)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Electric Commerce (B2C, B2B, G2C, C2C, P2P)&lt;/li&gt;
+&lt;li&gt;Entertainment&lt;/li&gt;
+&lt;li&gt;Ubiquitous Computing (普适计算) (RFID, IOT)
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>换壳</title>
@@ -42,16 +268,91 @@
   </entry>
   
   <entry>
+    <title>在快速排序中选择好的枢纽点</title>
+    <link href="http://shaoziqi.tk/blog/Choose-Good-Pivot-In-Quciksort/"/>
+    <id>http://shaoziqi.tk/blog/Choose-Good-Pivot-In-Quciksort/</id>
+    <published>2015-02-12T16:00:00.000Z</published>
+    <updated>2016-03-27T14:21:27.806Z</updated>
+    
+    <content type="html">&lt;p&gt;快速排序是一个典型的分治(DIVIDE-AND-CONQUER)算法.&lt;br&gt;&lt;figure class=&quot;highlight python&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;QuickSort(array A,length n)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; n == &lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;  &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    pivot = ChoosePivot(A,n)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    Partition A around pivot&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    Recursively sort &lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;st part&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    Recursively sort &lt;span class=&quot;number&quot;&gt;2&lt;/span&gt;nd part&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;而决定这个算法效率的关键就在于枢纽点(pivot)的选取，因为这直接影响到分割(partition)的好坏。最坏情况下，即每次选取的枢纽点都为最大或最小的数，则时间复杂度为 $\theta(n^2)$ .而如果能够奇迹般地每次都选择了中位数，时间复杂度就为 $\theta(n \log n)$ .以上都为理想情况的分析，而对于排序来说，效率的衡量在于比较次数。以下对各种枢纽点的选取方法做一个比较次数的测量，数据为10000个0~9999之间的整数。&lt;br&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;选取首尾元素&lt;br&gt;首：162085次比较&lt;br&gt;尾：164123&lt;/p&gt;
+&lt;p&gt;这种方法的效率取决于输入数据的预排序程度，如果是已经有序的状态，则效率很低&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;三数中值分割法，即选择下标为第一个、最后一个、中间的三个数的中位数作枢纽点&lt;br&gt;138382&lt;/p&gt;
+&lt;p&gt;效率很高&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;随机选取枢纽点&lt;br&gt;测试了五次：&lt;br&gt;148958，149598，163443，161712，161399&lt;/p&gt;
+&lt;p&gt;随机选取枢纽点无疑是安全的，因为不可能每次都选中最坏的情形。但是另一方面，随机数的生成也耗费了时间，对实际排序的时间造成了影响。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;hr&gt;
+&lt;p&gt;所用的数据：&lt;br&gt;&lt;a href=&quot;http://spark-public.s3.amazonaws.com/algo1/programming_prob/QuickSort.txt&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://spark-public.s3.amazonaws.com/algo1/programming_prob/QuickSort.txt&lt;/a&gt;&lt;br&gt;参考资料：&lt;br&gt;&lt;a href=&quot;http://www.nowamagic.net/librarys/veda/detail/2397&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://www.nowamagic.net/librarys/veda/detail/2397&lt;/a&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;参考代码：&lt;br&gt;&lt;figure class=&quot;highlight cpp&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;19&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;20&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;21&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;22&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;23&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;24&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;25&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;26&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;27&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;28&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;29&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;30&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;31&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;32&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;33&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;34&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;35&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;36&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;37&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;38&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;39&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;40&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;41&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;42&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;43&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;44&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;45&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;46&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;47&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;48&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;49&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;50&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;51&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;52&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;53&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;54&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;55&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;56&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;meta&quot;&gt;#&lt;span class=&quot;meta-keyword&quot;&gt;include&lt;/span&gt;&lt;span class=&quot;meta-string&quot;&gt;&amp;lt;iostream&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;meta&quot;&gt;#&lt;span class=&quot;meta-keyword&quot;&gt;include&lt;/span&gt; &lt;span class=&quot;meta-string&quot;&gt;&amp;lt;fstream&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;meta&quot;&gt;#&lt;span class=&quot;meta-keyword&quot;&gt;include&lt;/span&gt; &lt;span class=&quot;meta-string&quot;&gt;&amp;lt;cstdlib&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;meta&quot;&gt;#&lt;span class=&quot;meta-keyword&quot;&gt;include&lt;/span&gt; &lt;span class=&quot;meta-string&quot;&gt;&amp;lt;ctime&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;using&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;namespace&lt;/span&gt; &lt;span class=&quot;built_in&quot;&gt;std&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; sum = &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;pivot&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;(&lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt;* A,&lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; lo,&lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; hi)&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;//	三数中值分割法 &lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;//	int a = A[lo];&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;//	int b = A[hi];&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;//	int c = A[(lo+hi)/2];&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;//	if(( (a&amp;gt;=b) &amp;amp;&amp;amp; (a&amp;lt;=c) ) || ( (a&amp;gt;=c) &amp;amp;&amp;amp; (a&amp;lt;=b) ))&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;//		return lo;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;//	if(((b&amp;gt;=a)&amp;amp;&amp;amp;(b&amp;lt;=c))||((b&amp;gt;=c)&amp;amp;&amp;amp;(b&amp;lt;=a)))&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;//		return hi;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;//	if(((c&amp;gt;=b)&amp;amp;&amp;amp;(c&amp;lt;=a))||((c&amp;gt;=a)&amp;amp;&amp;amp;(c&amp;lt;=b)))&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;//		return (lo+hi)/2;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&lt;span class=&quot;comment&quot;&gt;//首尾 &lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&lt;span class=&quot;comment&quot;&gt;//return lo;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&lt;span class=&quot;comment&quot;&gt;//return hi;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&lt;span class=&quot;comment&quot;&gt;//随机 &lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&lt;span class=&quot;comment&quot;&gt;//srand((int)time(0));&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&lt;span class=&quot;comment&quot;&gt;//return lo + rand()%(hi-lo);&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;swap&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;(&lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt;&amp;amp; a,&lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt;&amp;amp; b)&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; tmp = a;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	a = b;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	b = tmp;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;QuickSort&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;(&lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt;* A,&lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; l,&lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; r)&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt;(l == r+&lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;) &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;//	for(int i = 0;i &amp;lt; 10;i++)&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;//		cout&amp;lt;&amp;lt;A[i]&amp;lt;&amp;lt;&quot; &quot;;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;//	cout&amp;lt;&amp;lt;endl;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; p = pivot(A,l,r);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&lt;span class=&quot;comment&quot;&gt;//cout&amp;lt;&amp;lt;A[p]&amp;lt;&amp;lt;&quot; &quot;;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	swap(A[l],A[p]);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; i = l + &lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&lt;span class=&quot;keyword&quot;&gt;for&lt;/span&gt;(&lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; j = l + &lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;;j &amp;lt;= r;j++)&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;		&lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt;(A[j] &amp;lt; A[l])&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;			swap(A[j],A[i]);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;			i++;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;		&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;		sum++;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	swap(A[l],A[i&lt;span class=&quot;number&quot;&gt;-1&lt;/span&gt;]);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	QuickSort(A,l,i&lt;span class=&quot;number&quot;&gt;-2&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	QuickSort(A,i,r);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;快速排序是一个典型的分治(DIVIDE-AND-CONQUER)算法.&lt;br&gt;&lt;figure class=&quot;highlight python&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;QuickSort(array A,length n)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; n == &lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;  &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    pivot = ChoosePivot(A,n)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    Partition A around pivot&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    Recursively sort &lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;st part&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    Recursively sort &lt;span class=&quot;number&quot;&gt;2&lt;/span&gt;nd part&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;而决定这个算法效率的关键就在于枢纽点(pivot)的选取，因为这直接影响到分割(partition)的好坏。最坏情况下，即每次选取的枢纽点都为最大或最小的数，则时间复杂度为 $\theta(n^2)$ .而如果能够奇迹般地每次都选择了中位数，时间复杂度就为 $\theta(n \log n)$ .以上都为理想情况的分析，而对于排序来说，效率的衡量在于比较次数。以下对各种枢纽点的选取方法做一个比较次数的测量，数据为10000个0~9999之间的整数。&lt;br&gt;
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>分治法</title>
+    <link href="http://shaoziqi.tk/blog/DIVIDE-AND-CONQUER/"/>
+    <id>http://shaoziqi.tk/blog/DIVIDE-AND-CONQUER/</id>
+    <published>2015-02-12T16:00:00.000Z</published>
+    <updated>2016-03-27T14:24:05.359Z</updated>
+    
+    <content type="html">&lt;h4 id=&quot;理论&quot;&gt;&lt;a href=&quot;#理论&quot; class=&quot;headerlink&quot; title=&quot;理论&quot;&gt;&lt;/a&gt;理论&lt;/h4&gt;&lt;h4 id=&quot;流程&quot;&gt;&lt;a href=&quot;#流程&quot; class=&quot;headerlink&quot; title=&quot;流程&quot;&gt;&lt;/a&gt;流程&lt;/h4&gt;&lt;ol&gt;
+&lt;li&gt;分割成很多个同类型的子问题(&lt;strong&gt;Divide&lt;/strong&gt;)&lt;/li&gt;
+&lt;li&gt;递归地解决这些子问题(&lt;strong&gt;Conquer&lt;/strong&gt;)&lt;/li&gt;
+&lt;li&gt;合并子问题的答案(&lt;strong&gt;Combine&lt;/strong&gt;)&lt;/li&gt;
+&lt;/ol&gt;
+&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;h1 id=&quot;主序定理-The-Master-Method&quot;&gt;&lt;a href=&quot;#主序定理-The-Master-Method&quot; class=&quot;headerlink&quot; title=&quot;主序定理(The Master Method)&quot;&gt;&lt;/a&gt;主序定理(The Master Method)&lt;/h1&gt;&lt;p&gt;对于递推式：&lt;br&gt;$$T(n)=aT(n/b)+O(n^d)$$&lt;br&gt;有如下结论：&lt;/p&gt;
+&lt;p&gt;$$T(n)=\begin{cases}&lt;br&gt;&amp;amp;O(n^d)&amp;amp;\text{if}&amp;amp;d\gt\log_ba\[2ex]&lt;br&gt;&amp;amp;O(n^d\log n)&amp;amp;\text{if}&amp;amp;d=\log_ba\[2ex]&lt;br&gt;&amp;amp;O(n^{\log_ba})&amp;amp;\text{if}&amp;amp;d\lt\log_ba&lt;br&gt;\end{cases}$$ &lt;/p&gt;
+&lt;h1 id=&quot;经典算法&quot;&gt;&lt;a href=&quot;#经典算法&quot; class=&quot;headerlink&quot; title=&quot;经典算法&quot;&gt;&lt;/a&gt;经典算法&lt;/h1&gt;&lt;ol&gt;
+&lt;li&gt;整数乘法(Karatsuba Multiplication)&lt;/li&gt;
+&lt;li&gt;归并排序(Mergesort)&lt;/li&gt;
+&lt;li&gt;逆序数(Counting Inversions)&lt;/li&gt;
+&lt;li&gt;最近点对(Closest Pair)&lt;/li&gt;
+&lt;li&gt;矩阵乘法(Strassen’s Subcubic Matrix Multiplication)&lt;/li&gt;
+&lt;li&gt;快速排序(Quicksort)&lt;/li&gt;
+&lt;li&gt;选择问题(Selection)&lt;/li&gt;
+&lt;/ol&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;h4 id=&quot;理论&quot;&gt;&lt;a href=&quot;#理论&quot; class=&quot;headerlink&quot; title=&quot;理论&quot;&gt;&lt;/a&gt;理论&lt;/h4&gt;&lt;h4 id=&quot;流程&quot;&gt;&lt;a href=&quot;#流程&quot; class=&quot;headerlink&quot; title=&quot;流程&quot;&gt;&lt;/a&gt;流程&lt;/h4&gt;&lt;ol&gt;
+&lt;li&gt;分割成很多个同类型的子问题(&lt;strong&gt;Divide&lt;/strong&gt;)&lt;/li&gt;
+&lt;li&gt;递归地解决这些子问题(&lt;strong&gt;Conquer&lt;/strong&gt;)&lt;/li&gt;
+&lt;li&gt;合并子问题的答案(&lt;strong&gt;Combine&lt;/strong&gt;)&lt;/li&gt;
+&lt;/ol&gt;
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
     <title>Machine Learning : Linear Regression</title>
     <link href="http://shaoziqi.tk/blog/Machine-Learning-Linear-Regression/"/>
     <id>http://shaoziqi.tk/blog/Machine-Learning-Linear-Regression/</id>
     <published>2015-02-07T13:10:00.000Z</published>
-    <updated>2016-03-27T14:13:43.494Z</updated>
+    <updated>2016-03-27T14:16:07.411Z</updated>
     
     <content type="html">&lt;p&gt;线性回归即用线性函数对因变量和一个或多个自变量之间的关系进行建模。这个函数是多个称为回归系数的参数的线性组合。&lt;/p&gt;
 &lt;p&gt;给定数据集（n个变量，m组数据） &lt;/p&gt;
-&lt;p&gt;用矩阵来表示数据集&lt;br&gt;$$&lt;br&gt;X=&lt;br&gt;\begin{pmatrix}&lt;br&gt;1&amp;amp;x_{11}&amp;amp;x_{21}&amp;amp;\cdots&amp;amp;x_{n1}\\&lt;br&gt;\vdots&amp;amp;\vdots&amp;amp;\vdots&amp;amp;\ddots&amp;amp;\vdots\\&lt;br&gt;1&amp;amp;x_{1m}&amp;amp;x_{2m}&amp;amp;\cdots&amp;amp;x_{nm}&lt;br&gt;\end{pmatrix}&lt;br&gt;$$&lt;br&gt;$$&lt;br&gt;Y=&lt;br&gt;\begin{pmatrix}&lt;br&gt;y_1\\&lt;br&gt;\vdots\\&lt;br&gt;y_m&lt;br&gt;\end{pmatrix}&lt;br&gt;$$&lt;br&gt;用最小二乘法，即要寻找一个函数&lt;br&gt;$$h_\theta(x)=x\theta$$&lt;br&gt;其中$\theta$ 为参数，$\theta=\begin{pmatrix}&lt;br&gt;\theta_0\\&lt;br&gt;\theta_1\\&lt;br&gt;\vdots\\&lt;br&gt;\theta_m&lt;br&gt;\end{pmatrix}$ ,&lt;br&gt;$h_{\theta}(X)$ 叫做Hypothesis&lt;/p&gt;
-&lt;p&gt;使得$$J(\theta)=\frac1{2m}\sum_{i=1}^{m}{(h_{\theta}(x^{(i)})-y_i)^2}$$最小，此处$x^{(i)}=&lt;br&gt;\begin{pmatrix}&lt;br&gt;x_{i1}&amp;amp;x_{i2}&amp;amp;\cdots&amp;amp;x_{in}&lt;br&gt;\end{pmatrix}&lt;br&gt;$，$J(\theta)$叫做Cost Function&lt;/p&gt;
+&lt;p&gt;用矩阵来表示数据集&lt;br&gt;$$&lt;br&gt;X=&lt;br&gt;\begin{pmatrix}&lt;br&gt;1&amp;amp;x_{11}&amp;amp;x_{21}&amp;amp;\cdots&amp;amp;x_{n1}\\&lt;br&gt;\vdots&amp;amp;\vdots&amp;amp;\vdots&amp;amp;\ddots&amp;amp;\vdots\\&lt;br&gt;1&amp;amp;x_{1m}&amp;amp;x_{2m}&amp;amp;\cdots&amp;amp;x_{nm}&lt;br&gt;\end{pmatrix}&lt;br&gt;$$&lt;br&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;br&gt;$$&lt;br&gt;Y=&lt;br&gt;\begin{pmatrix}&lt;br&gt;y_1\\&lt;br&gt;\vdots\\&lt;br&gt;y_m&lt;br&gt;\end{pmatrix}&lt;br&gt;$$&lt;br&gt;用最小二乘法，即要寻找一个函数&lt;br&gt;$$h_\theta(x)=x\theta$$&lt;br&gt;其中$\theta$ 为参数，$\theta=\begin{pmatrix}&lt;br&gt;\theta_0\\&lt;br&gt;\theta_1\\&lt;br&gt;\vdots\\&lt;br&gt;\theta_m&lt;br&gt;\end{pmatrix}$ ,&lt;br&gt;$h_{\theta}(X)$ 叫做Hypothesis&lt;/p&gt;
+&lt;p&gt;使得$$J(\theta)=\frac1{2m}\sum_{i=1}^{m}{(h_{\theta}(x^{(i)})-y_i)^2}$$最小，此处$$x^{(i)}=&lt;br&gt;\begin{pmatrix}&lt;br&gt;x_{i1}&amp;amp;x_{i2}&amp;amp;\cdots&amp;amp;x_{in}&lt;br&gt;\end{pmatrix}&lt;br&gt;$$，$J(\theta)$叫做Cost Function&lt;/p&gt;
 &lt;hr&gt;
 &lt;p&gt;###非迭代法(Normal Equation)&lt;br&gt;$$\theta=(X^T X)^{-1}X^TY$$&lt;/p&gt;
 &lt;ul&gt;
@@ -75,7 +376,7 @@
     
       &lt;p&gt;线性回归即用线性函数对因变量和一个或多个自变量之间的关系进行建模。这个函数是多个称为回归系数的参数的线性组合。&lt;/p&gt;
 &lt;p&gt;给定数据集（n个变量，m组数据） &lt;/p&gt;
-&lt;p&gt;用矩阵来表示数据集&lt;br&gt;$$&lt;br&gt;X=&lt;br&gt;\begin{pmatrix}&lt;br&gt;1&amp;amp
+&lt;p&gt;用矩阵来表示数据集&lt;br&gt;$$&lt;br&gt;X=&lt;br&gt;\begin{pmatrix}&lt;br&gt;1&amp;amp;x_{11}&amp;amp;x_{21}&amp;amp;\cdots&amp;amp;x_{n1}\\&lt;br&gt;\vdots&amp;amp;\vdots&amp;amp;\vdots&amp;amp;\ddots&amp;amp;\vdots\\&lt;br&gt;1&amp;amp;x_{1m}&amp;amp;x_{2m}&amp;amp;\cdots&amp;amp;x_{nm}&lt;br&gt;\end{pmatrix}&lt;br&gt;$$&lt;br&gt;
     
     </summary>
     
