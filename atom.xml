@@ -1,0 +1,452 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Consolas</title>
+  
+  <link href="/blog/atom.xml" rel="self"/>
+  
+  <link href="http://shaoziqi.tk/blog/"/>
+  <updated>2016-03-27T13:33:11.000Z</updated>
+  <id>http://shaoziqi.tk/blog/</id>
+  
+  <author>
+    <name>Ziqi</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>换壳</title>
+    <link href="http://shaoziqi.tk/blog/Migration/"/>
+    <id>http://shaoziqi.tk/blog/Migration/</id>
+    <published>2015-08-14T08:24:33.000Z</published>
+    <updated>2016-03-27T13:33:11.000Z</updated>
+    
+    <content type="html">&lt;p&gt;以前的博客托管在&lt;a href=&quot;http://www.openshift.com&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;openshift&lt;/a&gt;上，免费能访问但是延时有点高，没有root权限，用的是&lt;a href=&quot;http://wordpress.org&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;wordpress&lt;/a&gt;，也不常去动它，有时也会感觉插件纷繁复杂，显得有些笨重。上个月买了&lt;a href=&quot;https://www.digitalocean.com/?refcode=b0c59420cd4c&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;DigitalOcean&lt;/a&gt;的VPS，服务器的自由度大增，因为还有一些笔记类的文章写在&lt;a href=&quot;http://zybuluo.com&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Cmd Markdown&lt;/a&gt;里了，于是就准备换成比较轻型且支持markdown较好的博客，最终选了基于&lt;a href=&quot;http://nodejs.org&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;node.js&lt;/a&gt;的&lt;a href=&quot;http://www.ghostchina.com/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;ghost&lt;/a&gt;。&lt;/p&gt;
+&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;p&gt;一开始买VPS主要是因为之前在用的某些服务要退出江湖了，然后看了&lt;a href=&quot;http://mp.weixin.qq.com/s?__biz=MzA3NTEzMTUwNA==&amp;amp;mid=210457700&amp;amp;idx=1&amp;amp;sn=322d1e4c13d3f33ade848e3889c410bf&amp;amp;scene=5#rd&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;余弦大大的文章&lt;/a&gt;，自己架了梯子，经过了一些优化之后，访问速度也很不错，能够油管720p无压力。这中间还深切地感受到计网没有学好，传输层那一章没有好好听，结果网络优化有很多都是TCP拥塞控制相关的内容，本来可以first principle的，最后还是沦为analogy了。&lt;/p&gt;
+&lt;p&gt;回到博客，大二以来就在技术的路上原地踏步了，数据结构、计组和计网确实很重要，但是不能够也不足以占据全部的时间，这一年除了写了一些数据结构代码和计组的HDL代码之外几乎没再写过程序，这个现象让人警醒。暑假之后在前端上算是走出了一步，Udacity上的课程值得后续做一些笔记，包括baidu-ife的项目也需要总结（虽然是要烂尾的节奏了）。之后看犀牛书和js高程也是很有启发的，在这之前，每次遇到问题都选择去看看别人的代码，复制粘贴一段之类的，或是自己埋头去想如何解决，潜下心来深入地阅读才猛觉杨绛先生所说的想的太多读的太少是真理。大概前端这个领域，每个人都希望做得很炫，我也希望能够make something awesome，但如今我还是会想起初学编程的时候看到的侯捷老师那句话&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;程序设计领域里，每一个人都想飞。 但是，还没学会走之前，连跑都别想！  ——侯捷&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;这一年我看到很多人能跑了，我还会继续往前走，想着有哪一天我也该起跑了吧。&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;以前的博客托管在&lt;a href=&quot;http://www.openshift.com&quot;&gt;openshift&lt;/a&gt;上，免费能访问但是延时有点高，没有root权限，用的是&lt;a href=&quot;http://wordpress.org&quot;&gt;wordpress&lt;/a&gt;，也不常去动它，有时也会感觉插件纷繁复杂，显得有些笨重。上个月买了&lt;a href=&quot;https://www.digitalocean.com/?refcode=b0c59420cd4c&quot;&gt;DigitalOcean&lt;/a&gt;的VPS，服务器的自由度大增，因为还有一些笔记类的文章写在&lt;a href=&quot;http://zybuluo.com&quot;&gt;Cmd Markdown&lt;/a&gt;里了，于是就准备换成比较轻型且支持markdown较好的博客，最终选了基于&lt;a href=&quot;http://nodejs.org&quot;&gt;node.js&lt;/a&gt;的&lt;a href=&quot;http://www.ghostchina.com/&quot;&gt;ghost&lt;/a&gt;。&lt;/p&gt;
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Machine Learning : Linear Regression</title>
+    <link href="http://shaoziqi.tk/blog/Machine-Learning-Linear-Regression/"/>
+    <id>http://shaoziqi.tk/blog/Machine-Learning-Linear-Regression/</id>
+    <published>2015-02-07T13:10:00.000Z</published>
+    <updated>2016-03-27T14:13:43.494Z</updated>
+    
+    <content type="html">&lt;p&gt;线性回归即用线性函数对因变量和一个或多个自变量之间的关系进行建模。这个函数是多个称为回归系数的参数的线性组合。&lt;/p&gt;
+&lt;p&gt;给定数据集（n个变量，m组数据） &lt;/p&gt;
+&lt;p&gt;用矩阵来表示数据集&lt;br&gt;$$&lt;br&gt;X=&lt;br&gt;\begin{pmatrix}&lt;br&gt;1&amp;amp;x_{11}&amp;amp;x_{21}&amp;amp;\cdots&amp;amp;x_{n1}\\&lt;br&gt;\vdots&amp;amp;\vdots&amp;amp;\vdots&amp;amp;\ddots&amp;amp;\vdots\\&lt;br&gt;1&amp;amp;x_{1m}&amp;amp;x_{2m}&amp;amp;\cdots&amp;amp;x_{nm}&lt;br&gt;\end{pmatrix}&lt;br&gt;$$&lt;br&gt;$$&lt;br&gt;Y=&lt;br&gt;\begin{pmatrix}&lt;br&gt;y_1\\&lt;br&gt;\vdots\\&lt;br&gt;y_m&lt;br&gt;\end{pmatrix}&lt;br&gt;$$&lt;br&gt;用最小二乘法，即要寻找一个函数&lt;br&gt;$$h_\theta(x)=x\theta$$&lt;br&gt;其中$\theta$ 为参数，$\theta=\begin{pmatrix}&lt;br&gt;\theta_0\\&lt;br&gt;\theta_1\\&lt;br&gt;\vdots\\&lt;br&gt;\theta_m&lt;br&gt;\end{pmatrix}$ ,&lt;br&gt;$h_{\theta}(X)$ 叫做Hypothesis&lt;/p&gt;
+&lt;p&gt;使得$$J(\theta)=\frac1{2m}\sum_{i=1}^{m}{(h_{\theta}(x^{(i)})-y_i)^2}$$最小，此处$x^{(i)}=&lt;br&gt;\begin{pmatrix}&lt;br&gt;x_{i1}&amp;amp;x_{i2}&amp;amp;\cdots&amp;amp;x_{in}&lt;br&gt;\end{pmatrix}&lt;br&gt;$，$J(\theta)$叫做Cost Function&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;###非迭代法(Normal Equation)&lt;br&gt;$$\theta=(X^T X)^{-1}X^TY$$&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;可以不用考虑数据的scale，即每个变量取值范围之间的差距 &lt;/li&gt;
+&lt;li&gt;大量矩阵运算，尤其是求逆运算复杂度较高，不适于大量数据，$O(n^3)$&lt;/li&gt;
+&lt;li&gt;$X^TX$可能出现奇异的情况，原因：&lt;ol&gt;
+&lt;li&gt;自变量太多而数据不够，即 $m\lt n$，可以考虑删除一些&lt;/li&gt;
+&lt;li&gt;自变量冗余，即有两个或以上变量线性相关&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;###迭代法(梯度下降，Gradient Descent)&lt;br&gt;$$Repeat:{\&lt;br&gt;\theta_j:=\theta_j-\alpha\frac1m\sum_{i=1}^m{(h_{\theta}(x^{(i)})-y_i)^2}x_j^{(i)}\&lt;br&gt;}$$&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;需要判断算法是否已经正确执行，即如何确定稳定。可以观察$J(\theta)$图像，也可以给定一个值，当迭代后的减少量小于该值就认为迭代结束&lt;/li&gt;
+&lt;li&gt;要考虑数据的scale，否则出现梯度下降困难。可以把每个自变量的取值范围都统一到一定的区间内，如：&lt;br&gt;$$x_i:=\frac{x_i-\mu_i}{S_i}$$&lt;br&gt;使得$-1\lt x_i\lt1$，其中$\mu_i$为均值，$S_i$为取值范围&lt;/li&gt;
+&lt;li&gt;要考虑速率 $\alpha$，太大容易出现迭代后增加而非减少，太小则运行时间延长。可以尝试从小的值逐渐增大并观察$J(\theta)$图像变化&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;线性回归即用线性函数对因变量和一个或多个自变量之间的关系进行建模。这个函数是多个称为回归系数的参数的线性组合。&lt;/p&gt;
+&lt;p&gt;给定数据集（n个变量，m组数据） &lt;/p&gt;
+&lt;p&gt;用矩阵来表示数据集&lt;br&gt;$$&lt;br&gt;X=&lt;br&gt;\begin{pmatrix}&lt;br&gt;1&amp;amp
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Machine Learning : Introduction</title>
+    <link href="http://shaoziqi.tk/blog/Machine-Learning-Introduction/"/>
+    <id>http://shaoziqi.tk/blog/Machine-Learning-Introduction/</id>
+    <published>2015-02-06T16:00:00.000Z</published>
+    <updated>2016-03-27T13:43:42.223Z</updated>
+    
+    <content type="html">&lt;h2 id=&quot;定义&quot;&gt;&lt;a href=&quot;#定义&quot; class=&quot;headerlink&quot; title=&quot;定义&quot;&gt;&lt;/a&gt;定义&lt;/h2&gt;&lt;p&gt;Old&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Field of study that gives computers the ability to learn without being explicitly programmed&lt;br&gt; —— Arthur Samuel (1959)&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Mordern &lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;A computer program is said to learn from experience E with respect to some class of tasks T and performance measure P, if its performance at tasks in T, as measured by P, improves with experience E&lt;br&gt;—— Tom Mitchell (1998)&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;h2 id=&quot;算法分类&quot;&gt;&lt;a href=&quot;#算法分类&quot; class=&quot;headerlink&quot; title=&quot;算法分类&quot;&gt;&lt;/a&gt;算法分类&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;监督学习(Supervised Learning)&lt;br&gt; 特点：”Right answers given”&lt;br&gt; 即有训练集(training set)，包含输入和期望的输出&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;回归 (Regression)&lt;/strong&gt;&lt;br&gt; Predict &lt;strong&gt;continous&lt;/strong&gt; valued output&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;分类 (Classification)&lt;/strong&gt;&lt;br&gt; &lt;strong&gt;Discreted&lt;/strong&gt; valued output（判断是或不是）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;非监督学习(Unsupervised Learning)&lt;br&gt; 即没有训练集，譬如典型的根据相似度进行分类，但并不知道某一类是什么&lt;/li&gt;
+&lt;li&gt;其他还有增强学习(Reinforcement Learning), 推荐系统(Recommender Systems)&lt;/li&gt;
+&lt;/ol&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;定义&quot;&gt;&lt;a href=&quot;#定义&quot; class=&quot;headerlink&quot; title=&quot;定义&quot;&gt;&lt;/a&gt;定义&lt;/h2&gt;&lt;p&gt;Old&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Field of study that gives computers the ability to learn without being explicitly programmed&lt;br&gt; —— Arthur Samuel (1959)&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Mordern &lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;A computer program is said to learn from experience E with respect to some class of tasks T and performance measure P, if its performance at tasks in T, as measured by P, improves with experience E&lt;br&gt;—— Tom Mitchell (1998)&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>内存泄漏</title>
+    <link href="http://shaoziqi.tk/blog/Memory-Leak/"/>
+    <id>http://shaoziqi.tk/blog/Memory-Leak/</id>
+    <published>2015-02-04T13:25:09.000Z</published>
+    <updated>2016-03-27T13:32:55.000Z</updated>
+    
+    <content type="html">&lt;blockquote&gt;
+&lt;p&gt;不能记住过去的人, 被迫重复过去.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;这个标题似乎表示我正准备写一篇技术文章，可惜才疏学浅（操作系统都没学在这儿BB什么！），这只是一篇偷换概念的普通随笔而已。为什么说内存泄漏呢？因为我这个人已经实实在在处于内存泄漏状态了。&lt;/p&gt;
+&lt;p&gt;自从大一暑假以来，以下代码描述了我的真实状态&lt;/p&gt;
+&lt;figure class=&quot;highlight cpp&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;typedef&lt;/span&gt; learning_area T;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt; &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;while&lt;/span&gt; (found_new_interest)&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    T* p = &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; learning_area();&lt;span class=&quot;comment&quot;&gt;//同学你的指针用一次就找不到了！&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    p-&amp;gt;learn_three_days();&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    p-&amp;gt;rest_two_days();&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;comment&quot;&gt;//同学你的delete去哪儿了？&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt; &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;//同学你醒醒你醒醒&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;然后只能睡一觉重启了&lt;br&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;细数一下有多少野指针：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Web开发（包括HTML、CSS、JavaScript、PHP、Bootstrap…balabala）&lt;/li&gt;
+&lt;li&gt;Python（现在也扯上Web了）&lt;/li&gt;
+&lt;li&gt;Git（版本控制什么高大上的都没用过，纯粹在当代码仓库）&lt;/li&gt;
+&lt;li&gt;Tex（为了以后写论文会用到吗？）&lt;/li&gt;
+&lt;li&gt;网络安全（XSS、sql注入、nmap、burp、密码字典暴力破解，好像都没成功过）&lt;/li&gt;
+&lt;li&gt;数据结构和算法分析（说好的大二上认真学算法的呢？）&lt;/li&gt;
+&lt;li&gt;机器人&lt;/li&gt;
+&lt;li&gt;图形图像(OpenCV大法？）&lt;/li&gt;
+&lt;li&gt;机器学习（寒假没事干看一看Andrew Ng的课）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;再算上大一下的安卓，好的，内存已经溢出了。&lt;/p&gt;
+&lt;p&gt;好的，内存整理第一阶段终于算是完成了。&lt;/p&gt;
+&lt;p&gt;总结一下问题所在：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;没有输出，内存不够用还有硬盘啊&lt;/li&gt;
+&lt;li&gt;每次都是三天打渔两天晒网的，没有一个能打的，别人问个问题秒秒钟倒下&lt;/li&gt;
+&lt;li&gt;输入范围太大，资源密集症，这真的是最好的时代，MOOC、文档、博客一堆堆，但对于选择来说也是极其困难的&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;好了，野指针又乱飞了。得重启下了，明天继续内存整理。&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;不能记住过去的人, 被迫重复过去.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;这个标题似乎表示我正准备写一篇技术文章，可惜才疏学浅（操作系统都没学在这儿BB什么！），这只是一篇偷换概念的普通随笔而已。为什么说内存泄漏呢？因为我这个人已经实实在在处于内存泄漏状态了。&lt;/p&gt;
+&lt;p&gt;自从大一暑假以来，以下代码描述了我的真实状态&lt;/p&gt;
+&lt;figure class=&quot;highlight cpp&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;typedef&lt;/span&gt; learning_area T;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt; &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;while&lt;/span&gt; (found_new_interest)&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    T* p = &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; learning_area();&lt;span class=&quot;comment&quot;&gt;//同学你的指针用一次就找不到了！&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    p-&amp;gt;learn_three_days();&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    p-&amp;gt;rest_two_days();&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;comment&quot;&gt;//同学你的delete去哪儿了？&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt; &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;//同学你醒醒你醒醒&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;然后只能睡一觉重启了&lt;br&gt;
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>数据结构讲义中的格言</title>
+    <link href="http://shaoziqi.tk/blog/Motto-In-Data-Structure/"/>
+    <id>http://shaoziqi.tk/blog/Motto-In-Data-Structure/</id>
+    <published>2014-11-22T11:34:00.000Z</published>
+    <updated>2016-03-27T13:44:07.366Z</updated>
+    
+    <content type="html">&lt;p&gt;来自清华大学邓俊辉教授的数据结构讲义&lt;/p&gt;
+&lt;hr&gt;
+&lt;h4 id=&quot;绪论&quot;&gt;&lt;a href=&quot;#绪论&quot; class=&quot;headerlink&quot; title=&quot;绪论&quot;&gt;&lt;/a&gt;绪论&lt;/h4&gt;&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;计算&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Computer science should be called computing science, for the same&lt;br&gt;reason why surgery is not called knife science.&lt;br&gt;—— E. Dijkstra&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;计算模型&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;To measure is to know.&lt;br&gt;If you can not measure it,you can not improve it.&lt;br&gt;—— Lord Kelvin&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;大O记号&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Mathematics is more in need of good notations than of new theorems.&lt;br&gt;—— Alan Turing&lt;/p&gt;
+&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;p&gt;好读书不求甚解&lt;br&gt;每有会意，便欣然忘食&lt;br&gt;—— 陶渊明&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;算法分析&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;He calculated just as men breath, as eagle sustain themselves in the air.&lt;br&gt;—— Francois Arago&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;迭代与递归&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;迭代乃人工，递归方神通&lt;br&gt;To iterate is human, to recurse, divine.&lt;/p&gt;
+&lt;p&gt;凡治众如治寡，分数是也&lt;br&gt;The control of a large force is the same principle as the control of a few men: it is merely a question of dividing up their numbers.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;局限&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;不学诗，何以言&lt;br&gt;不学礼，何以立&lt;br&gt;—— 《论语》&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;排序与下界&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;两个吃罢饭，又走了四五十里，却来到一市镇上，地名唤做瑞龙镇，却是个三岔路口。宋江借问那里人道：“小人们欲投二龙山、清风镇上，不知从那条路去？”&lt;br&gt;—— 《水浒传》&lt;/p&gt;
+&lt;p&gt;不怕不识货，就怕货比货&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h4 id=&quot;向量&quot;&gt;&lt;a href=&quot;#向量&quot; class=&quot;headerlink&quot; title=&quot;向量&quot;&gt;&lt;/a&gt;向量&lt;/h4&gt;&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;有序向量：唯一化&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Everybody is different.&lt;br&gt;Everybody has different styles.&lt;br&gt;Just do the best way you know how.&lt;br&gt;—— Vince Carter&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;有序向量：二分查找&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;群猴道：“自从爷爷去后，这山被二郎菩萨点上火，烧杀了大半。我们蹲在井里，钻在涧内，藏于铁板桥下，得了性命。及至火灭烟消，出来时，又没花果养赡，难以存活，别处又去了一半。我们这一半，捱苦的住在山中，这两年，又被些打猎的抢了一半去也。”&lt;br&gt;—— 《西游记》&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;归并排序&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;I think there is a world market for about five computers.&lt;br&gt;—— T.J.Watson, 1943&lt;/p&gt;
+&lt;p&gt;天下大势，分久必合，合久必分&lt;br&gt;—— 《三国演义》&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h4 id=&quot;列表&quot;&gt;&lt;a href=&quot;#列表&quot; class=&quot;headerlink&quot; title=&quot;列表&quot;&gt;&lt;/a&gt;列表&lt;/h4&gt;&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;接口与实现&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Don’t lose the link.&lt;br&gt;—— Robin Milner&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;选择排序&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;当下又选了几样果菜与凤姐送去，凤姐儿也送了几样来&lt;br&gt;—— 《红楼梦》&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;插入排序&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;一语未了,只见宝玉笑嘻嘻了一枝红梅进来,众丫鬟忙已接过,插入瓶内&lt;br&gt;—— 《红楼梦》&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;归并排序&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;四牡孔阜,六辔在手&lt;br&gt;骐骝是中,騧骊是骖&lt;br&gt;龙盾之合,鋈以觼軜&lt;br&gt;—— 《国风·秦风·小戎》&lt;/p&gt;
+&lt;p&gt;曰两美其必合兮,孰信修而慕之？&lt;br&gt;思九州之博大兮,岂惟是其有女？&lt;br&gt;—— 《离骚》&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h4 id=&quot;栈与队列&quot;&gt;&lt;a href=&quot;#栈与队列&quot; class=&quot;headerlink&quot; title=&quot;栈与队列&quot;&gt;&lt;/a&gt;栈与队列&lt;/h4&gt;&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;栈接口与实现&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;陛下用群臣，如积薪耳，后来者居上&lt;br&gt;—— 《史记·汲郑列传》&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;栈应用：进制转换&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Hickory,Dickory,Dock&lt;br&gt;The mouse ran up the clock&lt;br&gt;—— Nursery Rhyme Medly&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;栈应用：中缀表达式求值&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;知实而不知名，知名而不知实，皆不知也&lt;br&gt;—— 王夫之&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;逆波兰表达式&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;将欲去之，必固举之&lt;br&gt;将欲夺之，必固予之&lt;br&gt;将欲灭之，必先学之&lt;br&gt;—— 《老子》&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;试探回溯法：迷宫寻径&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;When all else fails, try brute-force.&lt;br&gt;—— Anonymous&lt;/p&gt;
+&lt;p&gt;No matter where they take us, we’ll find our way back.&lt;br&gt;—— “No matter what”, Boyzone&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h4 id=&quot;二叉树&quot;&gt;&lt;a href=&quot;#二叉树&quot; class=&quot;headerlink&quot; title=&quot;二叉树&quot;&gt;&lt;/a&gt;二叉树&lt;/h4&gt;&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;树&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Two roads diverged in a yellow wood&lt;br&gt;And sorry I could not travel both&lt;br&gt;—— Robin Frost, 1915&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;先序遍历&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;真君曰：“昔吕洞宾居庐山而成仙，鬼谷子居云梦而得道，今或无此吉地么？”&lt;br&gt;璞曰：“有！但当遍历耳。”&lt;br&gt;—— 《警世通言》&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;后序遍历&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;大宗百世不迁，小宗五世则迁&lt;br&gt;—— 《礼记·大传》&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h4 id=&quot;二叉搜索树&quot;&gt;&lt;a href=&quot;#二叉搜索树&quot; class=&quot;headerlink&quot; title=&quot;二叉搜索树&quot;&gt;&lt;/a&gt;二叉搜索树&lt;/h4&gt;&lt;ol&gt;
+&lt;li&gt;概述&lt;blockquote&gt;
+&lt;p&gt;here’s nothing hidden in your head&lt;br&gt;The Sorting Hat can’t see,&lt;br&gt;So try me on and I will tell you&lt;br&gt;Where you ought to be.&lt;br&gt;—— Harry Potter and The Sorcecer’s Stone&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;待续&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;来自清华大学邓俊辉教授的数据结构讲义&lt;/p&gt;
+&lt;hr&gt;
+&lt;h4 id=&quot;绪论&quot;&gt;&lt;a href=&quot;#绪论&quot; class=&quot;headerlink&quot; title=&quot;绪论&quot;&gt;&lt;/a&gt;绪论&lt;/h4&gt;&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;计算&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Computer science should be called computing science, for the same&lt;br&gt;reason why surgery is not called knife science.&lt;br&gt;—— E. Dijkstra&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;计算模型&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;To measure is to know.&lt;br&gt;If you can not measure it,you can not improve it.&lt;br&gt;—— Lord Kelvin&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;大O记号&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Mathematics is more in need of good notations than of new theorems.&lt;br&gt;—— Alan Turing&lt;/p&gt;
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Getting Started On Android</title>
+    <link href="http://shaoziqi.tk/blog/Getting-Started-On-Android/"/>
+    <id>http://shaoziqi.tk/blog/Getting-Started-On-Android/</id>
+    <published>2014-03-05T13:23:40.000Z</published>
+    <updated>2016-03-27T13:24:15.821Z</updated>
+    
+    <content type="html">&lt;p&gt;This term I ,or should be we,decided to develop an android app.So recently I have been searching for some resources online.For example,the class I mentioned ever on Cousera. However, sometimes I would be fed up with the speed of the teacher and I can’t still watch the videos. Maybe I need a book.Luckily I found a set of documents on the android official website.Then I realize that once you have any problem,your first choice to solve it should be the android official reference.The introduction of all APIs and classes you may use is just there,waiting for you.But sometimes I also feel it would be a little hard to fetch what you need because of the large quantity of information. How lucky!Google has written a tutorial for the beginner like me.You can just follow its steps,introduction,and tips. Well,let me make a summary of my beginning. First,I learn how to create an android application project.And in this process some points as followings:&lt;/p&gt;
+&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;p&gt;The package name of app should be unique and it can’t be changed later.&lt;br&gt;The minimum required SDK determines your app’s compatibility but can be changed later.&lt;br&gt;And you can edit your app’s icon and the kind of the main activity.&lt;br&gt;Second,building a simple UI.&lt;/p&gt;
+&lt;p&gt;Finally,starting another activity,making communication along activities and transferring simple data like text.&lt;/p&gt;
+&lt;p&gt;Well,so I’m getting started and I will work harder!Come on!&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;This term I ,or should be we,decided to develop an android app.So recently I have been searching for some resources online.For example,the class I mentioned ever on Cousera. However, sometimes I would be fed up with the speed of the teacher and I can’t still watch the videos. Maybe I need a book.Luckily I found a set of documents on the android official website.Then I realize that once you have any problem,your first choice to solve it should be the android official reference.The introduction of all APIs and classes you may use is just there,waiting for you.But sometimes I also feel it would be a little hard to fetch what you need because of the large quantity of information. How lucky!Google has written a tutorial for the beginner like me.You can just follow its steps,introduction,and tips. Well,let me make a summary of my beginning. First,I learn how to create an android application project.And in this process some points as followings:&lt;/p&gt;
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Websites Recommendation</title>
+    <link href="http://shaoziqi.tk/blog/Websites-Recommendation/"/>
+    <id>http://shaoziqi.tk/blog/Websites-Recommendation/</id>
+    <published>2014-03-02T13:18:00.000Z</published>
+    <updated>2016-03-27T13:21:20.990Z</updated>
+    
+    <content type="html">&lt;p&gt;Last night, I read a passage on Zhihu Daily.It recommended lots of wonderful websites to learn online.I also noted some websites that was fresh for me.So here I decide to try to sort out some excellent websites I have already known.Definitely that means I will update this list when I find more.And I’m sorry that this list may almost match my own hobbies,such as coding.&lt;/p&gt;
+&lt;p&gt;MOOCs(Massive Open Online Course):&lt;/p&gt;
+&lt;p&gt;Coursera(Maybe the most popular MOOC website)&lt;/p&gt;
+&lt;p&gt;edX(Almost from Harvard and MIT)&lt;/p&gt;
+&lt;p&gt;Udacity(The course archive is always there)&lt;/p&gt;
+&lt;p&gt;XuetangX(Chinese courses offered by Tsinghua University)&lt;/p&gt;
+&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;p&gt;Some others:&lt;/p&gt;
+&lt;p&gt;Khan Academy&lt;/p&gt;
+&lt;p&gt;Free Online Classes(A collection of online courses)&lt;/p&gt;
+&lt;p&gt;Netease Open Course&lt;/p&gt;
+&lt;p&gt;Netease Cloud Course(To learn skills)&lt;/p&gt;
+&lt;p&gt;Howzhi(A community to share knowledge)&lt;/p&gt;
+&lt;p&gt;Ideas and thoughts:&lt;/p&gt;
+&lt;p&gt;TED(Ideas worth spreading)&lt;/p&gt;
+&lt;p&gt;Solve for X(A think tank project launched by Google to incite collaboration to solve global issues)&lt;/p&gt;
+&lt;p&gt;Coding:&lt;/p&gt;
+&lt;p&gt;Codecademy(Strongly recommended,A interactive learning website for Web (HTML, CSS, JavaScript, and PHP), Ruby, Python, and Miscellaneous)&lt;/p&gt;
+&lt;p&gt;Stackoverflow(A Q&amp;amp;A website)&lt;/p&gt;
+&lt;p&gt;Lynda(To learn computer skills)&lt;/p&gt;
+&lt;p&gt;Opensourceforce(There’re lots of IT pioneers)&lt;/p&gt;
+&lt;p&gt;Resource Library:&lt;/p&gt;
+&lt;p&gt;For me,this is my online library to get resource I need.&lt;/p&gt;
+&lt;p&gt;First,some Q&amp;amp;A websites.&lt;/p&gt;
+&lt;p&gt;Zhihu(If I answer a question and can get the most approval,I can even forget the tasty of meat)&lt;/p&gt;
+&lt;p&gt;In fact,it can be difficult to find those wonderful answers. So first you need to notice some core users.They are clever,knowledgeable and most important helpful.They can help you broaden your horizon.And also you can install Zhihu’s app on your smartphone. Zhihu Daily can be wonderful,there’re some excellent answers selected to publish every day.And what’s more,there’s Zhihu Roundtable.&lt;/p&gt;
+&lt;p&gt;There’s a list of users that is worth noticing.Click here.&lt;/p&gt;
+&lt;p&gt;Quora(Maybe better than Zhihu)&lt;/p&gt;
+&lt;p&gt;Also there’s a list of recommended users on Quora.Click here.&lt;/p&gt;
+&lt;p&gt;And as I just mentioned,Stackoverflow.&lt;/p&gt;
+&lt;p&gt;Second,some communities.&lt;/p&gt;
+&lt;p&gt;Douban(Books,movies,music,groups etc.)&lt;/p&gt;
+&lt;p&gt;I like Douban because I can always get some surprise every day and learn to change my life little by little.&lt;/p&gt;
+&lt;p&gt;CSDN(An IT community)&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Last night, I read a passage on Zhihu Daily.It recommended lots of wonderful websites to learn online.I also noted some websites that was fresh for me.So here I decide to try to sort out some excellent websites I have already known.Definitely that means I will update this list when I find more.And I’m sorry that this list may almost match my own hobbies,such as coding.&lt;/p&gt;
+&lt;p&gt;MOOCs(Massive Open Online Course):&lt;/p&gt;
+&lt;p&gt;Coursera(Maybe the most popular MOOC website)&lt;/p&gt;
+&lt;p&gt;edX(Almost from Harvard and MIT)&lt;/p&gt;
+&lt;p&gt;Udacity(The course archive is always there)&lt;/p&gt;
+&lt;p&gt;XuetangX(Chinese courses offered by Tsinghua University)&lt;/p&gt;
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>世界，你好！</title>
+    <link href="http://shaoziqi.tk/blog/Hello-World/"/>
+    <id>http://shaoziqi.tk/blog/Hello-World/</id>
+    <published>2014-02-28T13:13:41.000Z</published>
+    <updated>2016-03-27T13:33:19.000Z</updated>
+    
+    <content type="html">&lt;p&gt;大多数语言的第一课大概都会是“Hello World!”吧，所以，我也从此开始记录生活，记录我的独白。或许这是为了能在纷繁复杂、兵荒马乱的岁月里，停下来，给自己一面镜子，映出那些终将遗失的美好，那些轻易忘记的丑陋。&lt;/p&gt;
+&lt;p&gt;世界，你好！&lt;/p&gt;
+&lt;p&gt;晚安，世界！&lt;br&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;大多数语言的第一课大概都会是“Hello World!”吧，所以，我也从此开始记录生活，记录我的独白。或许这是为了能在纷繁复杂、兵荒马乱的岁月里，停下来，给自己一面镜子，映出那些终将遗失的美好，那些轻易忘记的丑陋。&lt;/p&gt;
+&lt;p&gt;世界，你好！&lt;/p&gt;
+&lt;p&gt;晚安，世界！&lt;br&gt;
+    
+    </summary>
+    
+    
+  </entry>
+  
+</feed>
