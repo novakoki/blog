@@ -2,65 +2,79 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://shaoziqi.tk/blog/tags/index.html</loc>
+    
+    <lastmod>2016-03-28T01:47:38.993Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://shaoziqi.tk/blog/blog/A-Note-0f-Computer-Network/</loc>
     
-    <lastmod>2016-03-27T14:31:01.244Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://shaoziqi.tk/blog/blog/DIVIDE-AND-CONQUER/</loc>
-    
-    <lastmod>2016-03-27T14:24:05.359Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://shaoziqi.tk/blog/blog/Choose-Good-Pivot-In-Quciksort/</loc>
-    
-    <lastmod>2016-03-27T14:21:27.806Z</lastmod>
+    <lastmod>2016-03-28T01:47:05.221Z</lastmod>
     
   </url>
   
   <url>
     <loc>http://shaoziqi.tk/blog/blog/Machine-Learning-Linear-Regression/</loc>
     
-    <lastmod>2016-03-27T14:16:07.411Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://shaoziqi.tk/blog/blog/Motto-In-Data-Structure/</loc>
-    
-    <lastmod>2016-03-27T13:44:07.366Z</lastmod>
+    <lastmod>2016-03-28T01:46:57.035Z</lastmod>
     
   </url>
   
   <url>
     <loc>http://shaoziqi.tk/blog/blog/Machine-Learning-Introduction/</loc>
     
-    <lastmod>2016-03-27T13:43:42.223Z</lastmod>
+    <lastmod>2016-03-28T01:46:52.259Z</lastmod>
     
   </url>
   
   <url>
     <loc>http://shaoziqi.tk/blog/blog/Hello-World/</loc>
     
-    <lastmod>2016-03-27T13:33:19.000Z</lastmod>
+    <lastmod>2016-03-28T01:46:36.611Z</lastmod>
     
   </url>
   
   <url>
     <loc>http://shaoziqi.tk/blog/blog/Migration/</loc>
     
-    <lastmod>2016-03-27T13:33:11.000Z</lastmod>
+    <lastmod>2016-03-28T01:46:28.277Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://shaoziqi.tk/blog/blog/Websites-Recommendation/</loc>
+    
+    <lastmod>2016-03-28T01:46:17.845Z</lastmod>
     
   </url>
   
   <url>
     <loc>http://shaoziqi.tk/blog/blog/Memory-Leak/</loc>
     
-    <lastmod>2016-03-27T13:32:55.000Z</lastmod>
+    <lastmod>2016-03-28T01:46:12.833Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://shaoziqi.tk/blog/blog/Motto-In-Data-Structure/</loc>
+    
+    <lastmod>2016-03-28T01:43:41.281Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://shaoziqi.tk/blog/blog/DIVIDE-AND-CONQUER/</loc>
+    
+    <lastmod>2016-03-28T01:43:37.759Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://shaoziqi.tk/blog/blog/Choose-Good-Pivot-In-Quciksort/</loc>
+    
+    <lastmod>2016-03-28T01:43:30.979Z</lastmod>
     
   </url>
   
@@ -68,13 +82,6 @@
     <loc>http://shaoziqi.tk/blog/blog/Getting-Started-On-Android/</loc>
     
     <lastmod>2016-03-27T13:24:15.821Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://shaoziqi.tk/blog/blog/Websites-Recommendation/</loc>
-    
-    <lastmod>2016-03-27T13:21:20.990Z</lastmod>
     
   </url>
   
