@@ -1,0 +1,27 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><title> CSS中外边距层叠的问题 · Consolas</title><meta name="description" content="CSS中外边距层叠的问题 - Ziqi"><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="short icon" href="/blog/favicon.png"><link rel="stylesheet" href="/blog/css/apollo.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600" type="text/css"></head><body><header><a href="/blog/" class="logo-link"><img src="/blog/logo.jpg"></a><ul class="nav nav-list"><li class="nav-list-item"><a href="/blog/" target="_self" class="nav-list-link">BLOG</a></li><li class="nav-list-item"><a href="/blog/archives/" target="_self" class="nav-list-link">ARCHIVE</a></li><li class="nav-list-item"><a href="/blog/tags/" target="_self" class="nav-list-link">TAGS</a></li></ul></header><section class="container"><div class="post"><article class="post-block"><h1 class="post-title">CSS中外边距层叠的问题</h1><div class="post-time">Mar 31, 2016</div><div class="post-content"><h2 id="what"><a href="#what" class="headerlink" title="what:"></a>what:</h2><p>Q:<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<pre><code class="css"><span class="selector-tag">div</span> {
+  <span class="attribute">position</span>: fixed;
+  <span class="attribute">height</span>: <span class="number">35px</span>;
+}
+
+<span class="selector-tag">p</span> {
+  <span class="attribute">margin-top</span>: <span class="number">15px</span>;
+}
+</code></pre>
+<p>问div距离窗口上边的距离是多少？</p>
+<p>A: 15px</p>
+<h2 id="why"><a href="#why" class="headerlink" title="why:"></a>why:</h2><ol>
+<li>在没有指定left，top等的情况下，它们的默认值为auto，意味着div的位置应该放在其静态位置，<br>即在其正常文档流中的位置。</li>
+<li>那么问题转变为，div的静态位置应该在哪？这里涉及到一个外边距层叠的问题，p元素和body有15px的margin，<br>在没有清除样式的情况下，浏览器默认body与html之间有不定大小的margin，这两个垂直距离上的margin会发生层叠，<br>即最终body与html之间有了15px的margin，所以div就和窗口上边有了15px的margin</li>
+</ol>
+<h2 id="how"><a href="#how" class="headerlink" title="how:"></a>how:</h2><p>BFC: <a href="http://www.w3cplus.com/css/understanding-bfc-and-margin-collapse.html" target="_blank" rel="external">深入理解BFC和Margin Collapse</a></p>
+<p><a href="https://www.zhihu.com/question/19823139" target="_blank" rel="external">如何解决外边距叠加的问题？</a></p>
+</div></article></div></section><footer><div class="paginator"><a href="/blog/A-Note-0f-Computer-Network/" class="next">NEXT</a></div><div id="disqus_thread"></div><script>var disqus_shortname = 'shaoziqi';
+var disqus_identifier = 'Margin-Collapsing/';
+var disqus_title = 'CSS中外边距层叠的问题';
+var disqus_url = 'http://shaoziqi.tk/blog/Margin-Collapsing/';
+(function() {
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();</script><script id="dsq-count-scr" src="//shaoziqi.disqus.com/count.js" async></script><div class="copyright"><p>© 2014 - 2016 <a href="http://shaoziqi.tk/blog">Ziqi</a>, unless otherwise noted.</p></div></footer><script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML"></script></body></html>
