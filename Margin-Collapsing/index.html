@@ -10,6 +10,7 @@
 </code></pre>
 <p>问div距离窗口上边的距离是多少？</p>
 <p>A: 15px</p>
+<a id="more"></a>
 <h2 id="why"><a href="#why" class="headerlink" title="why:"></a>why:</h2><ol>
 <li>在没有指定left，top等的情况下，它们的默认值为auto，意味着div的位置应该放在其静态位置，<br>即在其正常文档流中的位置。</li>
 <li>那么问题转变为，div的静态位置应该在哪？这里涉及到一个外边距层叠的问题，p元素和body有15px的margin，<br>在没有清除样式的情况下，浏览器默认body与html之间有不定大小的margin，这两个垂直距离上的margin会发生层叠，<br>即最终body与html之间有了15px的margin，所以div就和窗口上边有了15px的margin</li>
