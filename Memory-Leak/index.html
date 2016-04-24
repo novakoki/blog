@@ -1,4 +1,4 @@
-<!DOCTYPE html><html><head><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><title> 内存泄漏 · Consolas</title><meta name="description" content="内存泄漏 - Ziqi"><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="short icon" href="/blog/favicon.png"><link rel="stylesheet" href="/blog/css/apollo.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600" type="text/css"></head><body><header><a href="/blog/" class="logo-link"><img src="/blog/logo.jpg"></a><ul class="nav nav-list"><li class="nav-list-item"><a href="/blog/" target="_self" class="nav-list-link">BLOG</a></li><li class="nav-list-item"><a href="/blog/archives/" target="_self" class="nav-list-link">ARCHIVE</a></li><li class="nav-list-item"><a href="/blog/tags/" target="_self" class="nav-list-link">TAGS</a></li></ul></header><section class="container"><div class="post"><article class="post-block"><h1 class="post-title">内存泄漏</h1><div class="post-time">Feb 4, 2015</div><div class="post-content"><blockquote>
+<!DOCTYPE html><html><head><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><title> 内存泄漏 · Consolas</title><meta name="description" content="内存泄漏 - Ziqi"><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="short icon" href="/blog/favicon.png"><link rel="stylesheet" href="/blog/css/apollo.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600" type="text/css"></head><body><header><a href="/blog/" class="logo-link"><img src="/blog/logo.jpg"></a><ul class="nav nav-list"><li class="nav-list-item"><a href="/blog/" target="_self" class="nav-list-link">BLOG</a></li><li class="nav-list-item"><a href="/blog/diary/" target="_self" class="nav-list-link">DIARY</a></li><li class="nav-list-item"><a href="/blog/archives/" target="_self" class="nav-list-link">ARCHIVE</a></li><li class="nav-list-item"><a href="/blog/tags/" target="_self" class="nav-list-link">TAGS</a></li></ul></header><section class="container"><div class="post"><article class="post-block"><h1 class="post-title">内存泄漏</h1><div class="post-time">Feb 4, 2015</div><div class="post-content"><blockquote>
 <p>不能记住过去的人, 被迫重复过去.</p>
 </blockquote>
 <p>这个标题似乎表示我正准备写一篇技术文章，可惜才疏学浅（操作系统都没学在这儿BB什么！），这只是一篇偷换概念的普通随笔而已。为什么说内存泄漏呢？因为我这个人已经实实在在处于内存泄漏状态了。</p>
@@ -26,7 +26,17 @@
 <li>输入范围太大，资源密集症，这真的是最好的时代，MOOC、文档、博客一堆堆，但对于选择来说也是极其困难的</li>
 </ul>
 <p>好了，野指针又乱飞了。得重启下了，明天继续内存整理。</p>
-</div></article></div></section><footer><div class="paginator"><a href="/blog/Machine-Learning-Introduction/" class="prev">上一篇</a><a href="/blog/Motto-In-Data-Structure/" class="next">下一篇</a></div><div id="disqus_thread"></div><script>var disqus_shortname = 'novakoki';
+</div></article></div></section><footer><div class="paginator"><a href="/blog/Machine-Learning-Introduction/" class="prev">上一篇</a><a href="/blog/Motto-In-Data-Structure/" class="next">下一篇</a></div><div data-thread-key="Memory-Leak/" data-title="内存泄漏" data-url="http://shaoziqi.tk/blog/blog/Memory-Leak/" data-author-key="1" class="ds-thread"></div><script>var duoshuoQuery = {short_name:"ziqiblog"};
+(function() {
+    var ds = document.createElement('script');
+    ds.type = 'text/javascript';ds.async = true;
+    ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+    ds.charset = 'UTF-8';
+    (document.getElementsByTagName('head')[0] 
+     || document.getElementsByTagName('body')[0]).appendChild(ds);
+})();
+
+</script><div id="disqus_thread"></div><script>var disqus_shortname = 'novakoki';
 var disqus_identifier = 'Memory-Leak/';
 var disqus_title = '内存泄漏';
 var disqus_url = 'http://shaoziqi.tk/blog/Memory-Leak/';

@@ -1,0 +1,68 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><title> Diary · Consolas</title><meta name="description" content="Diary - Ziqi"><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="short icon" href="/blog/favicon.png"><link rel="stylesheet" href="/blog/css/apollo.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600" type="text/css"></head><body><header><a href="/blog/" class="logo-link"><img src="/blog/logo.jpg"></a><ul class="nav nav-list"><li class="nav-list-item"><a href="/blog/" target="_self" class="nav-list-link">BLOG</a></li><li class="nav-list-item"><a href="/blog/diary/" target="_self" class="nav-list-link">DIARY</a></li><li class="nav-list-item"><a href="/blog/archives/" target="_self" class="nav-list-link">ARCHIVE</a></li><li class="nav-list-item"><a href="/blog/tags/" target="_self" class="nav-list-link">TAGS</a></li></ul></header><section class="container"><div class="post"><article class="post-block"><h1 class="post-title">Diary</h1><div class="post-time">Apr 24, 2016</div><div class="post-content"><h1 id="2016-04-24"><a href="#2016-04-24" class="headerlink" title="2016-04-24"></a>2016-04-24</h1><ul>
+<li>ss双向连接搭建隧道，国内国外分流</li>
+<li>wireshark</li>
+</ul>
+<h1 id="2016-04-23"><a href="#2016-04-23" class="headerlink" title="2016-04-23"></a>2016-04-23</h1><ul>
+<li><p>重构MyNote(2)</p>
+<ul>
+<li><p>滚动条效果 <a href="http://www.cnblogs.com/rubylouvre/archive/2011/03/01/1968057.html" target="_blank" rel="external">参考</a></p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-pseudo">::webkit-scrollbar</span> &#123;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">5px</span>; <span class="comment">/* 水平 */</span></span><br><span class="line">  <span class="attribute">height</span>: <span class="number">5px</span>; <span class="comment">/* 垂直 */</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-pseudo">::webkit-scrollbar-thumb</span> &#123;</span><br><span class="line">  <span class="comment">/* 滚动块 */</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-pseudo">::webkit-scrollbar-track</span> &#123;</span><br><span class="line">  <span class="comment">/* 轨道 */</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>calc实现定宽（高）与自适应 <a href="http://www.w3cplus.com/css3/how-to-use-css3-calc-function.html" target="_blank" rel="external">参考</a></p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">width</span>: <span class="selector-tag">calc</span>(100% <span class="selector-tag">-</span> 200<span class="selector-tag">px</span>);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>单行与多行文字溢出显示为省略号 <a href="http://www.zhangxinxu.com/wordpress/2009/09/%E5%85%B3%E4%BA%8E%E6%96%87%E5%AD%97%E5%86%85%E5%AE%B9%E6%BA%A2%E5%87%BA%E7%94%A8%E7%82%B9%E7%82%B9%E7%82%B9-%E7%9C%81%E7%95%A5%E5%8F%B7%E8%A1%A8%E7%A4%BA/" target="_blank" rel="external">参考</a></p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* 单行 */</span></span><br><span class="line"><span class="selector-tag">white-space</span>: <span class="selector-tag">no-wrap</span>;</span><br><span class="line"><span class="selector-tag">text-overflow</span>: <span class="selector-tag">ellipsis</span>;</span><br><span class="line"><span class="selector-tag">overflow</span>: <span class="selector-tag">hidden</span>;</span><br><span class="line"><span class="comment">/* 多行 */</span></span><br><span class="line"><span class="selector-tag">text-overflow</span>: <span class="selector-tag">ellipsis</span>;</span><br><span class="line"><span class="selector-tag">overflow</span>: <span class="selector-tag">hidden</span>;</span><br><span class="line"><span class="selector-tag">display</span>: <span class="selector-tag">-webkit-box</span>;</span><br><span class="line"><span class="selector-tag">-webkit-line-clamp</span>: 3; <span class="comment">/* 控制显示行数 */</span></span><br><span class="line"><span class="selector-tag">-webkit-box-orient</span>: <span class="selector-tag">vertical</span>;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+<h1 id="2016-04-22"><a href="#2016-04-22" class="headerlink" title="2016-04-22"></a>2016-04-22</h1><ul>
+<li>动态IP更新DNS解析</li>
+<li>portsentry</li>
+<li>PAC</li>
+<li>全站换成HTTPS</li>
+</ul>
+<h1 id="2016-04-21"><a href="#2016-04-21" class="headerlink" title="2016-04-21"></a>2016-04-21</h1><ul>
+<li>重构MyNote(1)<ul>
+<li>JS<ul>
+<li>把事件处理相关程序移到C层</li>
+<li>各个View之间解耦</li>
+<li>V不直接调用C的函数，改完C中从M取得数据后传参给V</li>
+<li>M内部优化</li>
+</ul>
+</li>
+<li>HTML/CSS<ul>
+<li>标签语义化</li>
+<li>id改class</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h1 id="2016-04-20"><a href="#2016-04-20" class="headerlink" title="2016-04-20"></a>2016-04-20</h1><ul>
+<li><a href="http://home.arcor.de/pangj/squid/" target="_blank" rel="external">Squid</a></li>
+<li>物联网协议MQTT<br><a href="http://blog.csdn.net/xukai871105/article/details/23366187" target="_blank" rel="external">物联网笔记</a></li>
+</ul>
+<h1 id="2016-04-19"><a href="#2016-04-19" class="headerlink" title="2016-04-19"></a>2016-04-19</h1><ul>
+<li>树莓派搭建热点</li>
+</ul>
+</div></article></div></section><footer><div class="paginator"></div><div data-thread-key="diary/index.html" data-title="Diary" data-url="http://shaoziqi.tk/blog/diary/index.html" data-author-key="1" class="ds-thread"></div><script>var duoshuoQuery = {short_name:"ziqiblog"};
+(function() {
+    var ds = document.createElement('script');
+    ds.type = 'text/javascript';ds.async = true;
+    ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+    ds.charset = 'UTF-8';
+    (document.getElementsByTagName('head')[0] 
+     || document.getElementsByTagName('body')[0]).appendChild(ds);
+})();
+
+</script><div id="disqus_thread"></div><script>var disqus_shortname = 'novakoki';
+var disqus_identifier = 'diary/index.html';
+var disqus_title = 'Diary';
+var disqus_url = 'http://shaoziqi.tk/blog/diary/index.html';
+(function() {
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();</script><script id="dsq-count-scr" src="//novakoki.disqus.com/count.js" async></script><div class="copyright"><p>© 2014 - 2016 <a href="http://shaoziqi.tk/blog">Ziqi</a>, unless otherwise noted.</p></div></footer><script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML"></script></body></html>

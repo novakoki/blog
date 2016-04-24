@@ -1,4 +1,4 @@
-<!DOCTYPE html><html><head><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><title> Machine Learning : Linear Regression · Consolas</title><meta name="description" content="Machine Learning : Linear Regression - Ziqi"><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="short icon" href="/blog/favicon.png"><link rel="stylesheet" href="/blog/css/apollo.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600" type="text/css"></head><body><header><a href="/blog/" class="logo-link"><img src="/blog/logo.jpg"></a><ul class="nav nav-list"><li class="nav-list-item"><a href="/blog/" target="_self" class="nav-list-link">BLOG</a></li><li class="nav-list-item"><a href="/blog/archives/" target="_self" class="nav-list-link">ARCHIVE</a></li><li class="nav-list-item"><a href="/blog/tags/" target="_self" class="nav-list-link">TAGS</a></li></ul></header><section class="container"><div class="post"><article class="post-block"><h1 class="post-title">Machine Learning : Linear Regression</h1><div class="post-time">Feb 7, 2015</div><div class="post-content"><p>线性回归即用线性函数对因变量和一个或多个自变量之间的关系进行建模。这个函数是多个称为回归系数的参数的线性组合。</p>
+<!DOCTYPE html><html><head><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><title> Machine Learning : Linear Regression · Consolas</title><meta name="description" content="Machine Learning : Linear Regression - Ziqi"><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="short icon" href="/blog/favicon.png"><link rel="stylesheet" href="/blog/css/apollo.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600" type="text/css"></head><body><header><a href="/blog/" class="logo-link"><img src="/blog/logo.jpg"></a><ul class="nav nav-list"><li class="nav-list-item"><a href="/blog/" target="_self" class="nav-list-link">BLOG</a></li><li class="nav-list-item"><a href="/blog/diary/" target="_self" class="nav-list-link">DIARY</a></li><li class="nav-list-item"><a href="/blog/archives/" target="_self" class="nav-list-link">ARCHIVE</a></li><li class="nav-list-item"><a href="/blog/tags/" target="_self" class="nav-list-link">TAGS</a></li></ul></header><section class="container"><div class="post"><article class="post-block"><h1 class="post-title">Machine Learning : Linear Regression</h1><div class="post-time">Feb 7, 2015</div><div class="post-content"><p>线性回归即用线性函数对因变量和一个或多个自变量之间的关系进行建模。这个函数是多个称为回归系数的参数的线性组合。</p>
 <p>给定数据集（n个变量，m组数据） </p>
 <p>用矩阵来表示数据集<br>$$<br>X=<br>\begin{pmatrix}<br>1&amp;x_{11}&amp;x_{21}&amp;\cdots&amp;x_{n1}\\<br>\vdots&amp;\vdots&amp;\vdots&amp;\ddots&amp;\vdots\\<br>1&amp;x_{1m}&amp;x_{2m}&amp;\cdots&amp;x_{nm}<br>\end{pmatrix}<br>$$<br><a id="more"></a><br>$$<br>Y=<br>\begin{pmatrix}<br>y_1\\<br>\vdots\\<br>y_m<br>\end{pmatrix}<br>$$<br>用最小二乘法，即要寻找一个函数<br>$$h_\theta(x)=x\theta$$<br>其中$\theta$ 为参数，$\theta=\begin{pmatrix}<br>\theta_0\\<br>\theta_1\\<br>\vdots\\<br>\theta_m<br>\end{pmatrix}$ ,<br>$h_{\theta}(X)$ 叫做Hypothesis</p>
 <p>使得$$J(\theta)=\frac1{2m}\sum_{i=1}^{m}{(h_{\theta}(x^{(i)})-y_i)^2}$$最小，此处$$x^{(i)}=<br>\begin{pmatrix}<br>x_{i1}&amp;x_{i2}&amp;\cdots&amp;x_{in}<br>\end{pmatrix}<br>$$，$J(\theta)$叫做Cost Function</p>
@@ -19,7 +19,17 @@
 <li>要考虑数据的scale，否则出现梯度下降困难。可以把每个自变量的取值范围都统一到一定的区间内，如：<br>$$x_i:=\frac{x_i-\mu_i}{S_i}$$<br>使得$-1\lt x_i\lt1$，其中$\mu_i$为均值，$S_i$为取值范围</li>
 <li>要考虑速率 $\alpha$，太大容易出现迭代后增加而非减少，太小则运行时间延长。可以尝试从小的值逐渐增大并观察$J(\theta)$图像变化</li>
 </ul>
-</div></article></div></section><footer><div class="paginator"><a href="/blog/DIVIDE-AND-CONQUER/" class="prev">上一篇</a><a href="/blog/Machine-Learning-Introduction/" class="next">下一篇</a></div><div id="disqus_thread"></div><script>var disqus_shortname = 'novakoki';
+</div></article></div></section><footer><div class="paginator"><a href="/blog/DIVIDE-AND-CONQUER/" class="prev">上一篇</a><a href="/blog/Machine-Learning-Introduction/" class="next">下一篇</a></div><div data-thread-key="Machine-Learning-Linear-Regression/" data-title="Machine Learning : Linear Regression" data-url="http://shaoziqi.tk/blog/blog/Machine-Learning-Linear-Regression/" data-author-key="1" class="ds-thread"></div><script>var duoshuoQuery = {short_name:"ziqiblog"};
+(function() {
+    var ds = document.createElement('script');
+    ds.type = 'text/javascript';ds.async = true;
+    ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+    ds.charset = 'UTF-8';
+    (document.getElementsByTagName('head')[0] 
+     || document.getElementsByTagName('body')[0]).appendChild(ds);
+})();
+
+</script><div id="disqus_thread"></div><script>var disqus_shortname = 'novakoki';
 var disqus_identifier = 'Machine-Learning-Linear-Regression/';
 var disqus_title = 'Machine Learning : Linear Regression';
 var disqus_url = 'http://shaoziqi.tk/blog/Machine-Learning-Linear-Regression/';
