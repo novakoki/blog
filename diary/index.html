@@ -1,4 +1,26 @@
-<!DOCTYPE html><html><head><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><title> Diary · Consolas</title><meta name="description" content="Diary - Ziqi"><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="short icon" href="/blog/favicon.png"><link rel="stylesheet" href="/blog/css/apollo.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600" type="text/css"></head><body><header><a href="/blog/" class="logo-link"><img src="/blog/logo.jpg"></a><ul class="nav nav-list"><li class="nav-list-item"><a href="/blog/" target="_self" class="nav-list-link">BLOG</a></li><li class="nav-list-item"><a href="/blog/diary/" target="_self" class="nav-list-link">DIARY</a></li><li class="nav-list-item"><a href="/blog/archives/" target="_self" class="nav-list-link">ARCHIVE</a></li><li class="nav-list-item"><a href="/blog/tags/" target="_self" class="nav-list-link">TAGS</a></li></ul></header><section class="container"><div class="post"><article class="post-block"><h1 class="post-title">Diary</h1><div class="post-time">Apr 24, 2016</div><div class="post-content"><h1 id="2016-04-27"><a href="#2016-04-27" class="headerlink" title="2016-04-27"></a>2016-04-27</h1><ul>
+<!DOCTYPE html><html><head><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><title> Diary · Consolas</title><meta name="description" content="Diary - Ziqi"><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="short icon" href="/blog/favicon.png"><link rel="stylesheet" href="/blog/css/apollo.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600" type="text/css"></head><body><header><a href="/blog/" class="logo-link"><img src="/blog/logo.jpg"></a><ul class="nav nav-list"><li class="nav-list-item"><a href="/blog/" target="_self" class="nav-list-link">BLOG</a></li><li class="nav-list-item"><a href="/blog/diary/" target="_self" class="nav-list-link">DIARY</a></li><li class="nav-list-item"><a href="/blog/archives/" target="_self" class="nav-list-link">ARCHIVE</a></li><li class="nav-list-item"><a href="/blog/tags/" target="_self" class="nav-list-link">TAGS</a></li></ul></header><section class="container"><div class="post"><article class="post-block"><h1 class="post-title">Diary</h1><div class="post-time">Apr 24, 2016</div><div class="post-content"><h1 id="2016-04-28"><a href="#2016-04-28" class="headerlink" title="2016-04-28"></a>2016-04-28</h1><ul>
+<li><p>Udacity: <em>JavaScript Promise</em> 完成（待总结）</p>
+<ul>
+<li>Promise的四个状态和基本创建</li>
+<li>fetch API</li>
+<li>Promise的链式调用中的异常捕获</li>
+<li>串行和并行请求</li>
+<li><p>按序完成调用</p>
+<ul>
+<li><p>循环中迭代Promise对象（串行，效率低）</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sequence = sequence.then();</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>利用数组的map函数</p>
+</li>
+<li>利用Promise.all()</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>CSS Secrets(3): background position<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">background-position: right 20px bottom 10px; /* IE9以下及Anroid4.4以下不支持 */</span><br><span class="line">background-image: url('bg.jpg') no-repeat bottom right; /* Fallback */</span><br><span class="line">/* 让背景遵从padding */</span><br><span class="line">padding: 10px;</span><br><span class="line">background-position: right 10px bottom 10px; /* 这样每次都要改三个数值 */</span><br><span class="line">/* 上述做法不够DRY(Don't Repeat Yourself)， 可改用指定盒子模型 */</span><br><span class="line">background-position: content-box; /* 默认为padding-box */</span><br><span class="line">/* 用calc函数也可实现 */</span><br><span class="line">background-position: calc(100% - 10px) calc(100% - 10px); /* 注意空格，连字符为了以后的CSS变量预留 */</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h1 id="2016-04-27"><a href="#2016-04-27" class="headerlink" title="2016-04-27"></a>2016-04-27</h1><ul>
 <li><p>CSS Secrets(2): 多个border</p>
 <ol>
 <li><p>box-shadow实现</p>
@@ -18,7 +40,6 @@
 <li><a href="http://www.guokr.com/post/718305/" target="_blank" rel="external">面包板原理</a></li>
 </ul>
 <h1 id="2016-04-25"><a href="#2016-04-25" class="headerlink" title="2016-04-25"></a>2016-04-25</h1><ul>
-<li>flex</li>
 <li>弹出层效果</li>
 </ul>
 <h1 id="2016-04-24"><a href="#2016-04-24" class="headerlink" title="2016-04-24"></a>2016-04-24</h1><ul>
