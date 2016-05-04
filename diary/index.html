@@ -1,4 +1,30 @@
-<!DOCTYPE html><html><head><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><title> 技术日记 · Consolas</title><meta name="description" content="技术日记 - Ziqi"><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="short icon" href="/blog/favicon.png"><link rel="stylesheet" href="/blog/css/apollo.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600" type="text/css"></head><body><header><a href="/blog/" class="logo-link"><img src="/blog/logo.jpg"></a><ul class="nav nav-list"><li class="nav-list-item"><a href="/blog/" target="_self" class="nav-list-link">BLOG</a></li><li class="nav-list-item"><a href="/blog/diary/" target="_self" class="nav-list-link">DIARY</a></li><li class="nav-list-item"><a href="/blog/archives/" target="_self" class="nav-list-link">ARCHIVE</a></li><li class="nav-list-item"><a href="/blog/tags/" target="_self" class="nav-list-link">TAGS</a></li></ul></header><section class="container"><div class="post"><article class="post-block"><h1 class="post-title">技术日记</h1><div class="post-time">Apr 24, 2016</div><div class="post-content"><h1 id="2016-05-03"><a href="#2016-05-03" class="headerlink" title="2016-05-03"></a>2016-05-03</h1><ul>
+<!DOCTYPE html><html><head><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><title> 技术日记 · Consolas</title><meta name="description" content="技术日记 - Ziqi"><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="short icon" href="/blog/favicon.png"><link rel="stylesheet" href="/blog/css/apollo.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600" type="text/css"></head><body><header><a href="/blog/" class="logo-link"><img src="/blog/logo.jpg"></a><ul class="nav nav-list"><li class="nav-list-item"><a href="/blog/" target="_self" class="nav-list-link">BLOG</a></li><li class="nav-list-item"><a href="/blog/diary/" target="_self" class="nav-list-link">DIARY</a></li><li class="nav-list-item"><a href="/blog/archives/" target="_self" class="nav-list-link">ARCHIVE</a></li><li class="nav-list-item"><a href="/blog/tags/" target="_self" class="nav-list-link">TAGS</a></li></ul></header><section class="container"><div class="post"><article class="post-block"><h1 class="post-title">技术日记</h1><div class="post-time">Apr 24, 2016</div><div class="post-content"><h1 id="2016-05-04"><a href="#2016-05-04" class="headerlink" title="2016-05-04"></a>2016-05-04</h1><ul>
+<li><em>You don’t know JS</em> (2)<ul>
+<li>闭包<ul>
+<li><blockquote>
+<p>Closure is when a function can remember and access its lexical scope even when it’s invoked outside its lexical scope.<br>(本质上闭包其实就是函数，因为函数应当包含两部分，函数体的代码和其词法作用域)</p>
+</blockquote>
+</li>
+<li>模块模式 (TODO: 可以尝试写一个模块加载器)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><em>JavaScript Patterns</em><ul>
+<li>粗略翻阅后有三点感觉<ul>
+<li>翻译质量不好，甚至有些勘误</li>
+<li>有点旧，书中提到写作时还没有浏览器实现ES5</li>
+<li>大部分所谓的模式是一些比较常见的最佳实践，而我本意希望学习的设计模式篇幅不多</li>
+</ul>
+</li>
+<li>发布/订阅模式<ul>
+<li>相当于自定义事件。<br>大致看了下简单实现，就是每次有新的发布，都会遍历一遍订阅者列表，并调用订阅时给定的回调函数<br>(TODO: 可以之后结合Udacity: <em>Front End Frameworks</em> (LESSON 2) 学习)</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h1 id="2016-05-03"><a href="#2016-05-03" class="headerlink" title="2016-05-03"></a>2016-05-03</h1><ul>
 <li><em>You don’t know JS</em> (1)<ul>
 <li>作用域<ul>
 <li>词法作用域 (与之相对的是动态作用域，大多数语言都采用词法作用域）</li>
@@ -21,18 +47,18 @@
 </li>
 </ul>
 <h1 id="2016-04-30"><a href="#2016-04-30" class="headerlink" title="2016-04-30"></a>2016-04-30</h1><ul>
-<li><p>Udacity: <em>Front End Frameworks</em>(LESSON 1)</p>
+<li><p>Udacity: <em>Front End Frameworks</em> (LESSON 1)</p>
 <ul>
 <li>SPA的缘起(Ajax)</li>
-<li>适合SPA的网页：需要频繁的交互、更新页面内容(邮件、地图、股票等应用）</li>
+<li>适合SPA的网页：需要频繁的交互、更新页面内容 (邮件、地图、股票等应用）</li>
 <li>为什么使用框架：容易上手，开发快速成型，不容易出错</li>
-<li>框架的共性：模板(V)、路由(C)、事件系统(C)</li>
-<li>框架的特性：自定义HTML标签(Angular, Ember)、更新DOM的方式(Virtual DOM)、全栈(Meteor)</li>
+<li>框架的共性：模板 (V)、路由 (C)、事件系统 (C)</li>
+<li>框架的特性：自定义HTML标签 (Angular, Ember)、更新DOM的方式 (Virtual DOM)、全栈 (Meteor)</li>
 <li><p>专注 OR 广泛涉猎？</p>
 <blockquote>
 <p>If you are learning frameworks, you shouldn’t just find your first one and stick with that for life.<br>You should experience the other ones, build something with them, see what are the needs of your application, and then pick the best framework for that.</p>
 </blockquote>
-<p>有些框架很相似(比如Angular和Ember)，有些框架则与众不同(React)，了解Angular可能让你更清楚为什么React有用。<br>甚至于学习一些一些很小众的，比如函数式的EML,ClojureScript，也能有所帮助。</p>
+<p>有些框架很相似 (比如Angular和Ember)，有些框架则与众不同 (React)，了解Angular可能让你更清楚为什么React有用。<br>甚至于学习一些一些很小众的，比如函数式的EML,ClojureScript，也能有所帮助。</p>
 </li>
 </ul>
 </li>
@@ -43,16 +69,16 @@
 </ul>
 </li>
 <li>然后想起遥遥无期的编程语言和编译原理坑</li>
-<li>CSS Secrets(5): 条纹背景<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* 水平条纹 */</span></span><br><span class="line"><span class="selector-tag">div</span> &#123;</span><br><span class="line">  <span class="attribute">background</span>: <span class="built_in">linear-gradient</span>(#fb3 50%, #58a 50%); <span class="comment">/* 如果两种颜色渐变起始位置相同，就会在这个位置发生突变 */</span></span><br><span class="line">  <span class="attribute">background-size</span>: <span class="number">30px</span> <span class="number">100%</span>; <span class="comment">/* 继而可以通过background-size控制条纹的高度 */</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/* 垂直条纹 */</span></span><br><span class="line"><span class="selector-tag">div</span> &#123;</span><br><span class="line">  <span class="attribute">background</span>: <span class="built_in">linear-gradient</span>(to right, #fb3 50%, #58a 50%); <span class="comment">/* 指定渐变的角度 */</span></span><br><span class="line">  <span class="attribute">background-size</span>: <span class="number">100%</span> <span class="number">30px</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/* 为了DRY，可以指定后面颜色起始位置为0。如果后一种颜色的起始位置小于前面任何一种，那么默认会取它之前最大的起始位置 */</span></span><br><span class="line"><span class="comment">/* 对角条纹 */</span></span><br><span class="line"><span class="selector-tag">div</span> &#123;</span><br><span class="line">  <span class="attribute">background</span>: <span class="built_in">linear-gradient</span>(45deg, #fb3 25%, #58a 0, #58a 50%, #fb3 0, #fb3 75%, #58a 0);</span><br><span class="line">  <span class="attribute">background-size</span>: <span class="number">42.426406871px</span> <span class="number">42.426406871px</span>; </span><br><span class="line">  <span class="comment">/* 要让条纹宽度为30，则需要设置为30√2， 适应性不好*/</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/* 更好的对角条纹 */</span></span><br><span class="line"><span class="selector-tag">div</span> &#123;</span><br><span class="line">  <span class="attribute">background</span>: <span class="built_in">repeating-linear-gradient</span>(60deg, #fb3, #fb3 15px, #58a 0, #58a 30px);</span><br><span class="line">  <span class="comment">/* 用重复渐变代替背景的重复 */</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/* 细微变化的条纹 */</span></span><br><span class="line"><span class="selector-tag">div</span> &#123;</span><br><span class="line">  <span class="attribute">background</span>: <span class="number">#58a</span>;</span><br><span class="line">  <span class="attribute">background-image</span>: <span class="built_in">repeating-linear-gradient</span>(30deg,</span><br><span class="line">                      hsla(0,0%,100%,.1),</span><br><span class="line">                      <span class="built_in">hsla</span>(0,0%,100%,.1) <span class="number">15px</span>,</span><br><span class="line">                      transparent <span class="number">0</span>, transparent <span class="number">30px</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<li>CSS Secrets (5): 条纹背景<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* 水平条纹 */</span></span><br><span class="line"><span class="selector-tag">div</span> &#123;</span><br><span class="line">  <span class="attribute">background</span>: <span class="built_in">linear-gradient</span>(#fb3 50%, #58a 50%); <span class="comment">/* 如果两种颜色渐变起始位置相同，就会在这个位置发生突变 */</span></span><br><span class="line">  <span class="attribute">background-size</span>: <span class="number">30px</span> <span class="number">100%</span>; <span class="comment">/* 继而可以通过background-size控制条纹的高度 */</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/* 垂直条纹 */</span></span><br><span class="line"><span class="selector-tag">div</span> &#123;</span><br><span class="line">  <span class="attribute">background</span>: <span class="built_in">linear-gradient</span>(to right, #fb3 50%, #58a 50%); <span class="comment">/* 指定渐变的角度 */</span></span><br><span class="line">  <span class="attribute">background-size</span>: <span class="number">100%</span> <span class="number">30px</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/* 为了DRY，可以指定后面颜色起始位置为0。如果后一种颜色的起始位置小于前面任何一种，那么默认会取它之前最大的起始位置 */</span></span><br><span class="line"><span class="comment">/* 对角条纹 */</span></span><br><span class="line"><span class="selector-tag">div</span> &#123;</span><br><span class="line">  <span class="attribute">background</span>: <span class="built_in">linear-gradient</span>(45deg, #fb3 25%, #58a 0, #58a 50%, #fb3 0, #fb3 75%, #58a 0);</span><br><span class="line">  <span class="attribute">background-size</span>: <span class="number">42.426406871px</span> <span class="number">42.426406871px</span>; </span><br><span class="line">  <span class="comment">/* 要让条纹宽度为30，则需要设置为30√2， 适应性不好*/</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/* 更好的对角条纹 */</span></span><br><span class="line"><span class="selector-tag">div</span> &#123;</span><br><span class="line">  <span class="attribute">background</span>: <span class="built_in">repeating-linear-gradient</span>(60deg, #fb3, #fb3 15px, #58a 0, #58a 30px);</span><br><span class="line">  <span class="comment">/* 用重复渐变代替背景的重复 */</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/* 细微变化的条纹 */</span></span><br><span class="line"><span class="selector-tag">div</span> &#123;</span><br><span class="line">  <span class="attribute">background</span>: <span class="number">#58a</span>;</span><br><span class="line">  <span class="attribute">background-image</span>: <span class="built_in">repeating-linear-gradient</span>(30deg,</span><br><span class="line">                      hsla(0,0%,100%,.1),</span><br><span class="line">                      <span class="built_in">hsla</span>(0,0%,100%,.1) <span class="number">15px</span>,</span><br><span class="line">                      transparent <span class="number">0</span>, transparent <span class="number">30px</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 <h1 id="2016-04-29"><a href="#2016-04-29" class="headerlink" title="2016-04-29"></a>2016-04-29</h1><ul>
-<li>git 分支管理、版本回退(TODO: 暂存区等原理的理解)</li>
-<li>CSS Secrets(4): 内层圆角外层正常，中间自然连接<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">div</span> &#123;</span><br><span class="line">  <span class="attribute">background</span>: tan;</span><br><span class="line">  <span class="attribute">border-radius</span>: .<span class="number">8em</span>; <span class="comment">/* 内层圆角 */</span></span><br><span class="line">  <span class="attribute">padding</span>: <span class="number">1em</span>;</span><br><span class="line">  <span class="attribute">box-shadow</span>: <span class="number">0</span> <span class="number">0</span> <span class="number">0</span> .<span class="number">6em</span> <span class="number">#655</span>; <span class="comment">/* box-shadow会遵循border的样式，作连接 */</span></span><br><span class="line">  <span class="attribute">outline</span>: .<span class="number">6em</span> solid <span class="number">#655</span>; <span class="comment">/* outline不会遵循圆角样式 */</span></span><br><span class="line">  <span class="comment">/* 数学问题： box-shadow至少需要(√2 - 1)*border-radius */</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<li>git 分支管理、版本回退 (TODO: 暂存区等原理的理解)</li>
+<li>CSS Secrets (4): 内层圆角外层正常，中间自然连接<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">div</span> &#123;</span><br><span class="line">  <span class="attribute">background</span>: tan;</span><br><span class="line">  <span class="attribute">border-radius</span>: .<span class="number">8em</span>; <span class="comment">/* 内层圆角 */</span></span><br><span class="line">  <span class="attribute">padding</span>: <span class="number">1em</span>;</span><br><span class="line">  <span class="attribute">box-shadow</span>: <span class="number">0</span> <span class="number">0</span> <span class="number">0</span> .<span class="number">6em</span> <span class="number">#655</span>; <span class="comment">/* box-shadow会遵循border的样式，作连接 */</span></span><br><span class="line">  <span class="attribute">outline</span>: .<span class="number">6em</span> solid <span class="number">#655</span>; <span class="comment">/* outline不会遵循圆角样式 */</span></span><br><span class="line">  <span class="comment">/* 数学问题： box-shadow至少需要(√2 - 1)*border-radius */</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 <h1 id="2016-04-28"><a href="#2016-04-28" class="headerlink" title="2016-04-28"></a>2016-04-28</h1><ul>
-<li><p>Udacity: <em>JavaScript Promise</em> 完成（待总结，）</p>
+<li><p>Udacity: <em>JavaScript Promise</em> 完成 (待总结)</p>
 <ul>
 <li>Promise的四个状态和基本创建</li>
 <li>fetch API</li>
@@ -60,7 +86,7 @@
 <li>串行和并行请求</li>
 <li><p>按序完成调用</p>
 <ul>
-<li><p>循环中迭代Promise对象（串行，效率低）</p>
+<li><p>循环中迭代Promise对象 (串行，效率低)</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sequence = sequence.then();</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>利用数组的map函数</p>
@@ -70,22 +96,22 @@
 </li>
 </ul>
 </li>
-<li>CSS Secrets(3): background position<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">div</span> &#123;</span><br><span class="line">  <span class="attribute">background-position</span>: right <span class="number">20px</span> bottom <span class="number">10px</span>; <span class="comment">/* IE9以下及Anroid4.4以下不支持 */</span></span><br><span class="line">  <span class="attribute">background-image</span>: <span class="built_in">url</span>(<span class="string">'bg.jpg'</span>) no-repeat bottom right; <span class="comment">/* Fallback */</span></span><br><span class="line">  <span class="comment">/* 让背景遵从padding */</span></span><br><span class="line">  <span class="attribute">padding</span>: <span class="number">10px</span>;</span><br><span class="line">  <span class="attribute">background-position</span>: right <span class="number">10px</span> bottom <span class="number">10px</span>; <span class="comment">/* 这样每次都要改三个数值 */</span></span><br><span class="line">  <span class="comment">/* 上述做法不够DRY(Don't Repeat Yourself)， 可改用指定盒子模型 */</span></span><br><span class="line">  <span class="attribute">background-position</span>: content-box; <span class="comment">/* 默认为padding-box */</span></span><br><span class="line">  <span class="comment">/* 用calc函数也可实现 */</span></span><br><span class="line">  <span class="attribute">background-position</span>: <span class="built_in">calc</span>(100% - 10px) <span class="built_in">calc</span>(100% - 10px); <span class="comment">/* 注意空格，连字符为了以后的CSS变量预留 */</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<li>CSS Secrets (3): background position<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">div</span> &#123;</span><br><span class="line">  <span class="attribute">background-position</span>: right <span class="number">20px</span> bottom <span class="number">10px</span>; <span class="comment">/* IE9以下及Anroid4.4以下不支持 */</span></span><br><span class="line">  <span class="attribute">background-image</span>: <span class="built_in">url</span>(<span class="string">'bg.jpg'</span>) no-repeat bottom right; <span class="comment">/* Fallback */</span></span><br><span class="line">  <span class="comment">/* 让背景遵从padding */</span></span><br><span class="line">  <span class="attribute">padding</span>: <span class="number">10px</span>;</span><br><span class="line">  <span class="attribute">background-position</span>: right <span class="number">10px</span> bottom <span class="number">10px</span>; <span class="comment">/* 这样每次都要改三个数值 */</span></span><br><span class="line">  <span class="comment">/* 上述做法不够DRY(Don't Repeat Yourself)， 可改用指定盒子模型 */</span></span><br><span class="line">  <span class="attribute">background-position</span>: content-box; <span class="comment">/* 默认为padding-box */</span></span><br><span class="line">  <span class="comment">/* 用calc函数也可实现 */</span></span><br><span class="line">  <span class="attribute">background-position</span>: <span class="built_in">calc</span>(100% - 10px) <span class="built_in">calc</span>(100% - 10px); <span class="comment">/* 注意空格，连字符为了以后的CSS变量预留 */</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 <h1 id="2016-04-27"><a href="#2016-04-27" class="headerlink" title="2016-04-27"></a>2016-04-27</h1><ul>
-<li><p>CSS Secrets(2): 多个border</p>
+<li><p>CSS Secrets (2): 多个border</p>
 <ol>
 <li><p>box-shadow实现</p>
 <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">div</span> &#123;</span><br><span class="line">  <span class="attribute">border</span>: <span class="number">10px</span> solid red;</span><br><span class="line">  <span class="attribute">box-shadow</span>: <span class="number">0</span> <span class="number">0</span> <span class="number">0</span> <span class="number">10px</span> blue,</span><br><span class="line">              <span class="number">0</span> <span class="number">0</span> <span class="number">0</span> <span class="number">20px</span> green;</span><br><span class="line"><span class="comment">/* no offset, no blur, only spread */</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
-<li><p>outline（只能实现两个，且样式不完全统一）</p>
+<li><p>outline (只能实现两个，且样式不完全统一)</p>
 </li>
 </ol>
 </li>
 </ul>
 <h1 id="2016-04-26"><a href="#2016-04-26" class="headerlink" title="2016-04-26"></a>2016-04-26</h1><ul>
-<li><p>CSS Secrets(1): 半透明border实现</p>
+<li><p>CSS Secrets (1): 半透明border实现</p>
 <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">div</span> &#123;</span><br><span class="line">  <span class="attribute">background</span>: blue;</span><br><span class="line">  <span class="attribute">border</span>: <span class="built_in">rgba</span>(0,0,0,0.4);</span><br><span class="line">  <span class="attribute">background-clip</span>: padding-box;</span><br><span class="line">  <span class="comment">/* 定义背景覆盖的盒子范围，content-box也可以 */</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>观察者模式、发布订阅模式(TO READ: <em>JavaScript Patterns</em>)</p>
@@ -100,7 +126,7 @@
 <li>Wireshark</li>
 </ul>
 <h1 id="2016-04-23"><a href="#2016-04-23" class="headerlink" title="2016-04-23"></a>2016-04-23</h1><ul>
-<li><p>重构MyNote(2)</p>
+<li><p>重构MyNote (2)</p>
 <ul>
 <li><p>滚动条效果 <a href="http://www.cnblogs.com/rubylouvre/archive/2011/03/01/1968057.html" target="_blank" rel="external">参考</a></p>
 <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-pseudo">::-webkit-scrollbar</span> &#123;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">5px</span>; <span class="comment">/* 水平 */</span></span><br><span class="line">  <span class="attribute">height</span>: <span class="number">5px</span>; <span class="comment">/* 垂直 */</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-pseudo">::-webkit-scrollbar-thumb</span> &#123;</span><br><span class="line">  <span class="comment">/* 滚动块 */</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-pseudo">::-webkit-scrollbar-track</span> &#123;</span><br><span class="line">  <span class="comment">/* 轨道 */</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -121,7 +147,7 @@
 <li>全站换成HTTPS</li>
 </ul>
 <h1 id="2016-04-21"><a href="#2016-04-21" class="headerlink" title="2016-04-21"></a>2016-04-21</h1><ul>
-<li>重构MyNote(1)<ul>
+<li>重构MyNote (1)<ul>
 <li>JS<ul>
 <li>把事件处理相关程序移到C层</li>
 <li>各个View之间解耦</li>
