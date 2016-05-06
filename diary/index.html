@@ -1,4 +1,52 @@
-<!DOCTYPE html><html><head><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><title> 技术日记 · Consolas</title><meta name="description" content="技术日记 - Ziqi"><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="short icon" href="/blog/favicon.png"><link rel="stylesheet" href="/blog/css/apollo.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600" type="text/css"></head><body><header><a href="/blog/" class="logo-link"><img src="/blog/logo.jpg"></a><ul class="nav nav-list"><li class="nav-list-item"><a href="/blog/" target="_self" class="nav-list-link">BLOG</a></li><li class="nav-list-item"><a href="/blog/diary/" target="_self" class="nav-list-link">DIARY</a></li><li class="nav-list-item"><a href="/blog/archives/" target="_self" class="nav-list-link">ARCHIVE</a></li><li class="nav-list-item"><a href="/blog/tags/" target="_self" class="nav-list-link">TAGS</a></li></ul></header><section class="container"><div class="post"><article class="post-block"><h1 class="post-title">技术日记</h1><div class="post-time">Apr 24, 2016</div><div class="post-content"><h1 id="2016-05-05"><a href="#2016-05-05" class="headerlink" title="2016-05-05"></a>2016-05-05</h1><ul>
+<!DOCTYPE html><html><head><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><title> 技术日记 · Consolas</title><meta name="description" content="技术日记 - Ziqi"><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="short icon" href="/blog/favicon.png"><link rel="stylesheet" href="/blog/css/apollo.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600" type="text/css"></head><body><header><a href="/blog/" class="logo-link"><img src="/blog/logo.jpg"></a><ul class="nav nav-list"><li class="nav-list-item"><a href="/blog/" target="_self" class="nav-list-link">BLOG</a></li><li class="nav-list-item"><a href="/blog/diary/" target="_self" class="nav-list-link">DIARY</a></li><li class="nav-list-item"><a href="/blog/archives/" target="_self" class="nav-list-link">ARCHIVE</a></li><li class="nav-list-item"><a href="/blog/tags/" target="_self" class="nav-list-link">TAGS</a></li></ul></header><section class="container"><div class="post"><article class="post-block"><h1 class="post-title">技术日记</h1><div class="post-time">Apr 24, 2016</div><div class="post-content"><h1 id="2016-05-06"><a href="#2016-05-06" class="headerlink" title="2016-05-06"></a>2016-05-06</h1><ul>
+<li><p><em>You don’t know JS</em> (4)</p>
+<ul>
+<li>对象<ul>
+<li>属性描述符<ul>
+<li>value</li>
+<li>writeable</li>
+<li>configurable</li>
+<li>enumerable</li>
+</ul>
+</li>
+<li>不变性<ul>
+<li>writable: false, configurable: false (单个属性不可修改、重定义、删除)</li>
+<li>Object.preventExtensions (不可添加新属性)</li>
+<li>Object.seal (不可添加新属性、不能修改或删除已有属性)</li>
+<li>Object.freeze (禁止对对象及其直接属性作修改)</li>
+</ul>
+</li>
+<li>存在性<ul>
+<li>in (检查是否在对象及其原型链中)</li>
+<li>hasOwnProperty (只检查对象本身)</li>
+<li>for … in (可枚举属性)</li>
+</ul>
+</li>
+<li>遍历<ul>
+<li>for … in (用于数组不妥)</li>
+<li>forEach, every, some (用于数组)</li>
+<li>for … of (需要对象定义了迭代器对象，数组内置)<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Object</span>.defineProperty(obj, <span class="built_in">Symbol</span>.iterator, &#123;</span><br><span class="line">  value: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> &#123;</span><br><span class="line">      next: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;&#125;,</span><br><span class="line">      done: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;&#125;</span><br><span class="line">    &#125;;</span><br><span class="line">  &#125;,</span><br><span class="line">  enumerable: <span class="literal">false</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Udacity: <em>Front End Frameworks</em> (LESSON 2)</p>
+<ul>
+<li>Yeoman</li>
+<li>Angular<ul>
+<li>Module</li>
+<li>Template</li>
+<li>Controller</li>
+<li>Scope</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h1 id="2016-05-05"><a href="#2016-05-05" class="headerlink" title="2016-05-05"></a>2016-05-05</h1><ul>
 <li><em>You don’t know JS</em> (3)<ul>
 <li><strong>this</strong><ul>
 <li>为什么使用<strong>this</strong>？ 为了方便的访问上下文</li>
