@@ -5,7 +5,7 @@
   <link href="/blog/atom.xml" rel="self"/>
   
   <link href="http://shaoziqi.tk/blog/"/>
-  <updated>2016-04-15T05:41:27.313Z</updated>
+  <updated>2016-11-16T11:24:34.166Z</updated>
   <id>http://shaoziqi.tk/blog/</id>
   
   <author>
@@ -14,6 +14,88 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>A Note Of Programming Languages</title>
+    <link href="http://shaoziqi.tk/blog/A-Note-Of-Programing-Language/"/>
+    <id>http://shaoziqi.tk/blog/A-Note-Of-Programing-Language/</id>
+    <published>2016-11-15T16:00:00.000Z</published>
+    <updated>2016-11-16T11:24:34.166Z</updated>
+    
+    <content type="html">&lt;h1 id=&quot;Brief-Intro&quot;&gt;&lt;a href=&quot;#Brief-Intro&quot; class=&quot;headerlink&quot; title=&quot;Brief Intro&quot;&gt;&lt;/a&gt;Brief Intro&lt;/h1&gt;&lt;h2 id=&quot;Four-kinds-of-languages&quot;&gt;&lt;a href=&quot;#Four-kinds-of-languages&quot; class=&quot;headerlink&quot; title=&quot;Four kinds of languages&quot;&gt;&lt;/a&gt;Four kinds of languages&lt;/h2&gt;&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th style=&quot;text-align:center&quot;&gt;&lt;/th&gt;
+&lt;th style=&quot;text-align:center&quot;&gt;函数式 (Functional)&lt;/th&gt;
+&lt;th style=&quot;text-align:center&quot;&gt;面向对象 (Object-Oriented)&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;静态 (Static)&lt;/td&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;ML&lt;/td&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;Java&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;动态 (Dynamic)&lt;/td&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;Racket&lt;/td&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;Ruby&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h2 id=&quot;Essential-pieces-of-programming-language&quot;&gt;&lt;a href=&quot;#Essential-pieces-of-programming-language&quot; class=&quot;headerlink&quot; title=&quot;Essential pieces of programming language&quot;&gt;&lt;/a&gt;Essential pieces of programming language&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;语法 (Syntax)&lt;/li&gt;
+&lt;li&gt;语义 (Semantic)&lt;/li&gt;
+&lt;li&gt;Idioms: Common approaches to using language features ot express computation&lt;/li&gt;
+&lt;li&gt;Libraries: 现成可以用的库，以及如操作文件这种没法自己实现的功能&lt;/li&gt;
+&lt;li&gt;Tools: Compiler, REPL, Debugger, etc.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&quot;ML-Part&quot;&gt;&lt;a href=&quot;#ML-Part&quot; class=&quot;headerlink&quot; title=&quot;ML Part&quot;&gt;&lt;/a&gt;ML Part&lt;/h1&gt;&lt;h2 id=&quot;Immutable&quot;&gt;&lt;a href=&quot;#Immutable&quot; class=&quot;headerlink&quot; title=&quot;Immutable&quot;&gt;&lt;/a&gt;Immutable&lt;/h2&gt;&lt;p&gt;数据默认是不可变的&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;一个比较明显的好处是排除了引用（别名）的危害。&lt;br&gt;如果数据不会被修改，那一个“变量”是否是引用就并不重要。&lt;br&gt;甚至于数据结构的存储是可以共享的，以此节省空间的开销。&lt;/p&gt;
+&lt;figure class=&quot;highlight ml&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;val&lt;/span&gt; x = [&lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;, &lt;span class=&quot;number&quot;&gt;2&lt;/span&gt;, &lt;span class=&quot;number&quot;&gt;3&lt;/span&gt;]&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;val&lt;/span&gt; y = [&lt;span class=&quot;number&quot;&gt;4&lt;/span&gt;, &lt;span class=&quot;number&quot;&gt;5&lt;/span&gt;, &lt;span class=&quot;number&quot;&gt;6&lt;/span&gt;]&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;val&lt;/span&gt; z = x::y &lt;span class=&quot;comment&quot;&gt;(* z 为 x 和 y 两个列表拼接而成 *)&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;(* 如果 x 和 y 是引用， 那么更改 x 或 y 都会使得 z 的值发生变化&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;但是如果数据是不可变的就没有这个问题，甚至在内存分配上 z 其实只要共享 x 和 y 的空间就可以了 *)&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;因此 ML 中的数据结构只提供如何取得数据和如何构造数据结构的能力，而不提供如何改变数据的方法&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;利于并行和并发。这个好处使得函数式语言（或者理念）焕发新生。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;Option&quot;&gt;&lt;a href=&quot;#Option&quot; class=&quot;headerlink&quot; title=&quot;Option&quot;&gt;&lt;/a&gt;Option&lt;/h2&gt;&lt;p&gt;Option 提供了一种处理边界情况的能力,&lt;br&gt;即运算得到的可能是某种你需要的结果 (SOME)，也可能没有结果 (NONE)。&lt;/p&gt;
+&lt;p&gt;比如写一个找出一个 int list 中最大值的函数&lt;br&gt;&lt;figure class=&quot;highlight ml&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;(* Without Option *)&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;fun&lt;/span&gt; find_greatest (xs: &lt;span class=&quot;built_in&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;built_in&quot;&gt;list&lt;/span&gt;) =&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; null xs &lt;span class=&quot;comment&quot;&gt;(* 考虑空列表这种边界情况 *)&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;keyword&quot;&gt;then&lt;/span&gt; &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt; &lt;span class=&quot;comment&quot;&gt;(* 这里如果返回 0 就是一种很不好的风格 *)&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;keyword&quot;&gt;else&lt;/span&gt; greatest_number&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;在一门静态语言中，函数返回值的类型是确定的，在没有 Option 的情况下只能返回一个特定的数&lt;/p&gt;
+&lt;figure class=&quot;highlight ml&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;(* With Option *)&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;fun&lt;/span&gt; find_greatest (xs: &lt;span class=&quot;built_in&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;built_in&quot;&gt;list&lt;/span&gt;) =&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; null xs &lt;span class=&quot;keyword&quot;&gt;then&lt;/span&gt; &lt;span class=&quot;type&quot;&gt;NONE&lt;/span&gt; &lt;span class=&quot;comment&quot;&gt;(* 没有结果，即找不到最大值 *)&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;keyword&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;type&quot;&gt;SOME&lt;/span&gt; (greatest_number) &lt;span class=&quot;comment&quot;&gt;(* 有最大值，则包装成 Option 返回 *)&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h2 id=&quot;Build-New-Types&quot;&gt;&lt;a href=&quot;#Build-New-Types&quot; class=&quot;headerlink&quot; title=&quot;Build New Types&quot;&gt;&lt;/a&gt;Build New Types&lt;/h2&gt;&lt;p&gt;一门语言中一般会提供一些基本类型，如 int, bool, float, etc.&lt;/p&gt;
+&lt;p&gt;一般也会提供构造自定义类型的能力&lt;/p&gt;
+&lt;p&gt;自定义类型可以分为下面三种&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Each Of : 即数据类型同时包含多个类型的值，比如元组 (1, “string”) 类型是 (int * string)&lt;/li&gt;
+&lt;li&gt;One Of : 数据类型包含多个类型中的一个，比如 int option，可能包含一个 int 值，也可能没有&lt;/li&gt;
+&lt;li&gt;Self Reference : 自指的类型，用于描述递归的数据类型，&lt;br&gt;比如 int list 可能是空的，也可能是一个 int 值和另一个 int list 的组合（递归地定义）&lt;br&gt;（事实上 int list 融合了以上三种）&lt;figure class=&quot;highlight ml&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;[&lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;,&lt;span class=&quot;number&quot;&gt;2&lt;/span&gt;,&lt;span class=&quot;number&quot;&gt;3&lt;/span&gt;,&lt;span class=&quot;number&quot;&gt;4&lt;/span&gt;,&lt;span class=&quot;number&quot;&gt;5&lt;/span&gt;] = [&lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;, [&lt;span class=&quot;number&quot;&gt;2&lt;/span&gt;, [&lt;span class=&quot;number&quot;&gt;3&lt;/span&gt;, [&lt;span class=&quot;number&quot;&gt;4&lt;/span&gt;, [&lt;span class=&quot;number&quot;&gt;5&lt;/span&gt;, &lt;span class=&quot;literal&quot;&gt;[]&lt;/span&gt;]]]]] &lt;span class=&quot;comment&quot;&gt;(* 类似俄罗斯套娃 *)&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;Pattern-Match&quot;&gt;&lt;a href=&quot;#Pattern-Match&quot; class=&quot;headerlink&quot; title=&quot;Pattern Match&quot;&gt;&lt;/a&gt;Pattern Match&lt;/h2&gt;&lt;p&gt;模式匹配提供了强大优雅的从各种自定义数据类型中取数据的能力，即解构的能力&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;case 表达式&lt;/p&gt;
+&lt;figure class=&quot;highlight ml&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;fun&lt;/span&gt; getOrElse &lt;span class=&quot;keyword&quot;&gt;op&lt;/span&gt; =&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;keyword&quot;&gt;case&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;op&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;of&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;      &lt;span class=&quot;type&quot;&gt;NONE&lt;/span&gt; =&amp;gt; &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    | &lt;span class=&quot;type&quot;&gt;SOME&lt;/span&gt; x =&amp;gt; x &lt;span class=&quot;comment&quot;&gt;(* 从 Option 中解构出包装的值 *)&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;fun&lt;/span&gt; find_greatest xs =&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;keyword&quot;&gt;case&lt;/span&gt; xs &lt;span class=&quot;keyword&quot;&gt;of&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    head :: tail =&amp;gt; &lt;span class=&quot;comment&quot;&gt;(* 从列表解构出表头 *)&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    head :: (body :: tail) =&amp;gt; &lt;span class=&quot;comment&quot;&gt;(* Nested Pattern，匹配至少有一个元素的列表 *)&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;函数参数解构&lt;/p&gt;
+&lt;figure class=&quot;highlight ml&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;fun&lt;/span&gt; is_greater (x, y) = &lt;span class=&quot;comment&quot;&gt;(* 这里以及发生了模式匹配， ML 所有的函数都是单参数的， 这里实际的参数是 (x, y) 这个元组 *)&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  x &amp;gt; y &lt;span class=&quot;comment&quot;&gt;(* 在函数体内取得的是已经从元组中解构出的值 *)&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;(* ML 中另一种实现多参函数的方法是柯里化 (Currying) *)&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;let, val 解构&lt;/p&gt;
+&lt;figure class=&quot;highlight ml&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;fun&lt;/span&gt; sum_triple (triple: &lt;span class=&quot;built_in&quot;&gt;int&lt;/span&gt; * &lt;span class=&quot;built_in&quot;&gt;int&lt;/span&gt; * &lt;span class=&quot;built_in&quot;&gt;int&lt;/span&gt;) =&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;keyword&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;val&lt;/span&gt; (x,y,z) = triple &lt;span class=&quot;comment&quot;&gt;(* 解构出元组中的值 *)&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;keyword&quot;&gt;in&lt;/span&gt; x + y + z&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;keyword&quot;&gt;end&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;Type-Inference&quot;&gt;&lt;a href=&quot;#Type-Inference&quot; class=&quot;headerlink&quot; title=&quot;Type Inference&quot;&gt;&lt;/a&gt;Type Inference&lt;/h2&gt;&lt;p&gt;ML 是一门静态强类型的语言，但确实一门不显式指定类型的语言，这得益于它强大的类型推导能力&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;Brief-Intro&quot;&gt;&lt;a href=&quot;#Brief-Intro&quot; class=&quot;headerlink&quot; title=&quot;Brief Intro&quot;&gt;&lt;/a&gt;Brief Intro&lt;/h1&gt;&lt;h2 id=&quot;Four-kinds-of-languages&quot;&gt;&lt;a h
+    
+    </summary>
+    
+    
+      <category term="编程语言" scheme="http://shaoziqi.tk/blog/tags/pl/"/>
+    
+  </entry>
   
   <entry>
     <title>网易前端暑期实习生笔试面经（2016春）</title>
