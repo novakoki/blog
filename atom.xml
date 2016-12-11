@@ -4,9 +4,9 @@
   
   <link href="/blog/atom.xml" rel="self"/>
   
-  <link href="http://shaoziqi.tk/blog/"/>
+  <link href="http://ziqi.moe/blog/"/>
   <updated>2016-12-11T13:01:58.415Z</updated>
-  <id>http://shaoziqi.tk/blog/</id>
+  <id>http://ziqi.moe/blog/</id>
   
   <author>
     <name>Ziqi</name>
@@ -17,8 +17,8 @@
   
   <entry>
     <title>A Note Of Programming Languages(1)</title>
-    <link href="http://shaoziqi.tk/blog/A-Note-Of-Programing-Languages-ML/"/>
-    <id>http://shaoziqi.tk/blog/A-Note-Of-Programing-Languages-ML/</id>
+    <link href="http://ziqi.moe/blog/A-Note-Of-Programing-Languages-ML/"/>
+    <id>http://ziqi.moe/blog/A-Note-Of-Programing-Languages-ML/</id>
     <published>2016-11-15T16:00:00.000Z</published>
     <updated>2016-12-11T13:01:58.415Z</updated>
     
@@ -151,14 +151,14 @@
     </summary>
     
     
-      <category term="编程语言" scheme="http://shaoziqi.tk/blog/tags/pl/"/>
+      <category term="编程语言" scheme="http://ziqi.moe/blog/tags/pl/"/>
     
   </entry>
   
   <entry>
     <title>网易前端暑期实习生笔试面经（2016春）</title>
-    <link href="http://shaoziqi.tk/blog/2016-Spring-Netease-Front-End-Interview/"/>
-    <id>http://shaoziqi.tk/blog/2016-Spring-Netease-Front-End-Interview/</id>
+    <link href="http://ziqi.moe/blog/2016-Spring-Netease-Front-End-Interview/"/>
+    <id>http://ziqi.moe/blog/2016-Spring-Netease-Front-End-Interview/</id>
     <published>2016-04-14T16:00:00.000Z</published>
     <updated>2016-04-15T05:41:27.313Z</updated>
     
@@ -267,14 +267,14 @@
     </summary>
     
     
-      <category term="前端开发" scheme="http://shaoziqi.tk/blog/tags/front-end/"/>
+      <category term="前端开发" scheme="http://ziqi.moe/blog/tags/front-end/"/>
     
   </entry>
   
   <entry>
     <title>Jade如何用同一模板渲染出不同文章的页面</title>
-    <link href="http://shaoziqi.tk/blog/JS-Object-Clone/"/>
-    <id>http://shaoziqi.tk/blog/JS-Object-Clone/</id>
+    <link href="http://ziqi.moe/blog/JS-Object-Clone/"/>
+    <id>http://ziqi.moe/blog/JS-Object-Clone/</id>
     <published>2016-04-02T09:24:53.000Z</published>
     <updated>2016-04-11T06:35:43.868Z</updated>
     
@@ -305,14 +305,14 @@
     </summary>
     
     
-      <category term="前端开发" scheme="http://shaoziqi.tk/blog/tags/front-end/"/>
+      <category term="前端开发" scheme="http://ziqi.moe/blog/tags/front-end/"/>
     
   </entry>
   
   <entry>
     <title>CSS中外边距层叠的问题</title>
-    <link href="http://shaoziqi.tk/blog/Margin-Collapsing/"/>
-    <id>http://shaoziqi.tk/blog/Margin-Collapsing/</id>
+    <link href="http://ziqi.moe/blog/Margin-Collapsing/"/>
+    <id>http://ziqi.moe/blog/Margin-Collapsing/</id>
     <published>2016-03-31T06:31:15.000Z</published>
     <updated>2016-03-31T06:42:28.490Z</updated>
     
@@ -355,16 +355,16 @@
     </summary>
     
     
-      <category term="前端开发" scheme="http://shaoziqi.tk/blog/tags/front-end/"/>
+      <category term="前端开发" scheme="http://ziqi.moe/blog/tags/front-end/"/>
     
   </entry>
   
   <entry>
     <title>A Note 0f Computer Network</title>
-    <link href="http://shaoziqi.tk/blog/A-Note-0f-Computer-Network/"/>
-    <id>http://shaoziqi.tk/blog/A-Note-0f-Computer-Network/</id>
+    <link href="http://ziqi.moe/blog/A-Note-0f-Computer-Network/"/>
+    <id>http://ziqi.moe/blog/A-Note-0f-Computer-Network/</id>
     <published>2015-08-20T14:25:17.000Z</published>
-    <updated>2016-03-28T01:47:05.221Z</updated>
+    <updated>2016-12-11T13:44:51.217Z</updated>
     
     <content type="html">&lt;h2 id=&quot;I-Introduction&quot;&gt;&lt;a href=&quot;#I-Introduction&quot; class=&quot;headerlink&quot; title=&quot;I. Introduction&quot;&gt;&lt;/a&gt;I. Introduction&lt;/h2&gt;&lt;h3 id=&quot;1-Computer-Network-and-Distributed-System&quot;&gt;&lt;a href=&quot;#1-Computer-Network-and-Distributed-System&quot; class=&quot;headerlink&quot; title=&quot;1. Computer Network and Distributed System&quot;&gt;&lt;/a&gt;1. Computer Network and Distributed System&lt;/h3&gt;&lt;p&gt; Example: World Wide Web, Hadoop&lt;/p&gt;
 &lt;p&gt;&lt;hr&gt;&lt;/p&gt;
@@ -583,14 +583,14 @@
     </summary>
     
     
-      <category term="课堂笔记" scheme="http://shaoziqi.tk/blog/tags/note/"/>
+      <category term="课堂笔记" scheme="http://ziqi.moe/blog/tags/note/"/>
     
   </entry>
   
   <entry>
     <title>换壳</title>
-    <link href="http://shaoziqi.tk/blog/Migration/"/>
-    <id>http://shaoziqi.tk/blog/Migration/</id>
+    <link href="http://ziqi.moe/blog/Migration/"/>
+    <id>http://ziqi.moe/blog/Migration/</id>
     <published>2015-08-14T08:24:33.000Z</published>
     <updated>2016-03-28T01:46:28.277Z</updated>
     
@@ -611,54 +611,16 @@
     </summary>
     
     
-      <category term="随笔" scheme="http://shaoziqi.tk/blog/tags/eassy/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>在快速排序中选择好的枢纽点</title>
-    <link href="http://shaoziqi.tk/blog/Choose-Good-Pivot-In-Quciksort/"/>
-    <id>http://shaoziqi.tk/blog/Choose-Good-Pivot-In-Quciksort/</id>
-    <published>2015-02-12T16:00:00.000Z</published>
-    <updated>2016-03-28T01:43:30.979Z</updated>
-    
-    <content type="html">&lt;p&gt;快速排序是一个典型的分治(DIVIDE-AND-CONQUER)算法.&lt;br&gt;&lt;figure class=&quot;highlight python&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;QuickSort(array A,length n)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; n == &lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;  &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    pivot = ChoosePivot(A,n)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    Partition A around pivot&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    Recursively sort &lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;st part&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    Recursively sort &lt;span class=&quot;number&quot;&gt;2&lt;/span&gt;nd part&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
-&lt;p&gt;而决定这个算法效率的关键就在于枢纽点(pivot)的选取，因为这直接影响到分割(partition)的好坏。最坏情况下，即每次选取的枢纽点都为最大或最小的数，则时间复杂度为 $\theta(n^2)$ .而如果能够奇迹般地每次都选择了中位数，时间复杂度就为 $\theta(n \log n)$ .以上都为理想情况的分析，而对于排序来说，效率的衡量在于比较次数。以下对各种枢纽点的选取方法做一个比较次数的测量，数据为10000个0~9999之间的整数。&lt;br&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;&lt;p&gt;选取首尾元素&lt;br&gt;首：162085次比较&lt;br&gt;尾：164123&lt;/p&gt;
-&lt;p&gt;这种方法的效率取决于输入数据的预排序程度，如果是已经有序的状态，则效率很低&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;三数中值分割法，即选择下标为第一个、最后一个、中间的三个数的中位数作枢纽点&lt;br&gt;138382&lt;/p&gt;
-&lt;p&gt;效率很高&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;随机选取枢纽点&lt;br&gt;测试了五次：&lt;br&gt;148958，149598，163443，161712，161399&lt;/p&gt;
-&lt;p&gt;随机选取枢纽点无疑是安全的，因为不可能每次都选中最坏的情形。但是另一方面，随机数的生成也耗费了时间，对实际排序的时间造成了影响。&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-&lt;hr&gt;
-&lt;p&gt;所用的数据：&lt;br&gt;&lt;a href=&quot;http://spark-public.s3.amazonaws.com/algo1/programming_prob/QuickSort.txt&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://spark-public.s3.amazonaws.com/algo1/programming_prob/QuickSort.txt&lt;/a&gt;&lt;br&gt;参考资料：&lt;br&gt;&lt;a href=&quot;http://www.nowamagic.net/librarys/veda/detail/2397&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://www.nowamagic.net/librarys/veda/detail/2397&lt;/a&gt;&lt;/p&gt;
-&lt;hr&gt;
-&lt;p&gt;参考代码：&lt;br&gt;&lt;figure class=&quot;highlight cpp&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;19&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;20&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;21&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;22&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;23&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;24&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;25&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;26&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;27&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;28&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;29&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;30&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;31&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;32&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;33&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;34&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;35&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;36&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;37&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;38&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;39&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;40&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;41&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;42&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;43&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;44&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;45&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;46&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;47&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;48&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;49&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;50&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;51&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;52&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;53&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;54&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;55&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;56&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;meta&quot;&gt;#&lt;span class=&quot;meta-keyword&quot;&gt;include&lt;/span&gt;&lt;span class=&quot;meta-string&quot;&gt;&amp;lt;iostream&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;meta&quot;&gt;#&lt;span class=&quot;meta-keyword&quot;&gt;include&lt;/span&gt; &lt;span class=&quot;meta-string&quot;&gt;&amp;lt;fstream&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;meta&quot;&gt;#&lt;span class=&quot;meta-keyword&quot;&gt;include&lt;/span&gt; &lt;span class=&quot;meta-string&quot;&gt;&amp;lt;cstdlib&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;meta&quot;&gt;#&lt;span class=&quot;meta-keyword&quot;&gt;include&lt;/span&gt; &lt;span class=&quot;meta-string&quot;&gt;&amp;lt;ctime&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;using&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;namespace&lt;/span&gt; &lt;span class=&quot;built_in&quot;&gt;std&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; sum = &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;pivot&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;(&lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt;* A,&lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; lo,&lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; hi)&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;//	三数中值分割法 &lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;//	int a = A[lo];&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;//	int b = A[hi];&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;//	int c = A[(lo+hi)/2];&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;//	if(( (a&amp;gt;=b) &amp;amp;&amp;amp; (a&amp;lt;=c) ) || ( (a&amp;gt;=c) &amp;amp;&amp;amp; (a&amp;lt;=b) ))&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;//		return lo;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;//	if(((b&amp;gt;=a)&amp;amp;&amp;amp;(b&amp;lt;=c))||((b&amp;gt;=c)&amp;amp;&amp;amp;(b&amp;lt;=a)))&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;//		return hi;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;//	if(((c&amp;gt;=b)&amp;amp;&amp;amp;(c&amp;lt;=a))||((c&amp;gt;=a)&amp;amp;&amp;amp;(c&amp;lt;=b)))&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;//		return (lo+hi)/2;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&lt;span class=&quot;comment&quot;&gt;//首尾 &lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&lt;span class=&quot;comment&quot;&gt;//return lo;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&lt;span class=&quot;comment&quot;&gt;//return hi;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&lt;span class=&quot;comment&quot;&gt;//随机 &lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&lt;span class=&quot;comment&quot;&gt;//srand((int)time(0));&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&lt;span class=&quot;comment&quot;&gt;//return lo + rand()%(hi-lo);&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;swap&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;(&lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt;&amp;amp; a,&lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt;&amp;amp; b)&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; tmp = a;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	a = b;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	b = tmp;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;QuickSort&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;(&lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt;* A,&lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; l,&lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; r)&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt;(l == r+&lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;) &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;//	for(int i = 0;i &amp;lt; 10;i++)&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;//		cout&amp;lt;&amp;lt;A[i]&amp;lt;&amp;lt;&quot; &quot;;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;//	cout&amp;lt;&amp;lt;endl;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; p = pivot(A,l,r);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&lt;span class=&quot;comment&quot;&gt;//cout&amp;lt;&amp;lt;A[p]&amp;lt;&amp;lt;&quot; &quot;;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	swap(A[l],A[p]);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; i = l + &lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&lt;span class=&quot;keyword&quot;&gt;for&lt;/span&gt;(&lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; j = l + &lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;;j &amp;lt;= r;j++)&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;		&lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt;(A[j] &amp;lt; A[l])&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;			swap(A[j],A[i]);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;			i++;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;		&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;		sum++;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	swap(A[l],A[i&lt;span class=&quot;number&quot;&gt;-1&lt;/span&gt;]);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	QuickSort(A,l,i&lt;span class=&quot;number&quot;&gt;-2&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	QuickSort(A,i,r);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
-</content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;快速排序是一个典型的分治(DIVIDE-AND-CONQUER)算法.&lt;br&gt;&lt;figure class=&quot;highlight python&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;QuickSort(array A,length n)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; n == &lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;  &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    pivot = ChoosePivot(A,n)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    Partition A around pivot&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    Recursively sort &lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;st part&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    Recursively sort &lt;span class=&quot;number&quot;&gt;2&lt;/span&gt;nd part&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
-&lt;p&gt;而决定这个算法效率的关键就在于枢纽点(pivot)的选取，因为这直接影响到分割(partition)的好坏。最坏情况下，即每次选取的枢纽点都为最大或最小的数，则时间复杂度为 $\theta(n^2)$ .而如果能够奇迹般地每次都选择了中位数，时间复杂度就为 $\theta(n \log n)$ .以上都为理想情况的分析，而对于排序来说，效率的衡量在于比较次数。以下对各种枢纽点的选取方法做一个比较次数的测量，数据为10000个0~9999之间的整数。&lt;br&gt;
-    
-    </summary>
-    
-    
-      <category term="数据结构与算法" scheme="http://shaoziqi.tk/blog/tags/algo/"/>
+      <category term="随笔" scheme="http://ziqi.moe/blog/tags/eassy/"/>
     
   </entry>
   
   <entry>
     <title>分治法</title>
-    <link href="http://shaoziqi.tk/blog/DIVIDE-AND-CONQUER/"/>
-    <id>http://shaoziqi.tk/blog/DIVIDE-AND-CONQUER/</id>
+    <link href="http://ziqi.moe/blog/DIVIDE-AND-CONQUER/"/>
+    <id>http://ziqi.moe/blog/DIVIDE-AND-CONQUER/</id>
     <published>2015-02-12T16:00:00.000Z</published>
-    <updated>2016-03-28T01:43:37.759Z</updated>
+    <updated>2016-12-11T13:45:34.149Z</updated>
     
     <content type="html">&lt;h4 id=&quot;理论&quot;&gt;&lt;a href=&quot;#理论&quot; class=&quot;headerlink&quot; title=&quot;理论&quot;&gt;&lt;/a&gt;理论&lt;/h4&gt;&lt;h4 id=&quot;流程&quot;&gt;&lt;a href=&quot;#流程&quot; class=&quot;headerlink&quot; title=&quot;流程&quot;&gt;&lt;/a&gt;流程&lt;/h4&gt;&lt;ol&gt;
 &lt;li&gt;分割成很多个同类型的子问题(&lt;strong&gt;Divide&lt;/strong&gt;)&lt;/li&gt;
@@ -690,16 +652,54 @@
     </summary>
     
     
-      <category term="数据结构与算法" scheme="http://shaoziqi.tk/blog/tags/algo/"/>
+      <category term="数据结构与算法" scheme="http://ziqi.moe/blog/tags/algo/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>在快速排序中选择好的枢纽点</title>
+    <link href="http://ziqi.moe/blog/Choose-Good-Pivot-In-Quciksort/"/>
+    <id>http://ziqi.moe/blog/Choose-Good-Pivot-In-Quciksort/</id>
+    <published>2015-02-12T16:00:00.000Z</published>
+    <updated>2016-12-11T13:45:04.065Z</updated>
+    
+    <content type="html">&lt;p&gt;快速排序是一个典型的分治(DIVIDE-AND-CONQUER)算法.&lt;br&gt;&lt;figure class=&quot;highlight python&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;QuickSort(array A,length n)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; n == &lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;  &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    pivot = ChoosePivot(A,n)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    Partition A around pivot&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    Recursively sort &lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;st part&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    Recursively sort &lt;span class=&quot;number&quot;&gt;2&lt;/span&gt;nd part&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;而决定这个算法效率的关键就在于枢纽点(pivot)的选取，因为这直接影响到分割(partition)的好坏。最坏情况下，即每次选取的枢纽点都为最大或最小的数，则时间复杂度为 $\theta(n^2)$ .而如果能够奇迹般地每次都选择了中位数，时间复杂度就为 $\theta(n \log n)$ .以上都为理想情况的分析，而对于排序来说，效率的衡量在于比较次数。以下对各种枢纽点的选取方法做一个比较次数的测量，数据为10000个0~9999之间的整数。&lt;br&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;选取首尾元素&lt;br&gt;首：162085次比较&lt;br&gt;尾：164123&lt;/p&gt;
+&lt;p&gt;这种方法的效率取决于输入数据的预排序程度，如果是已经有序的状态，则效率很低&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;三数中值分割法，即选择下标为第一个、最后一个、中间的三个数的中位数作枢纽点&lt;br&gt;138382&lt;/p&gt;
+&lt;p&gt;效率很高&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;随机选取枢纽点&lt;br&gt;测试了五次：&lt;br&gt;148958，149598，163443，161712，161399&lt;/p&gt;
+&lt;p&gt;随机选取枢纽点无疑是安全的，因为不可能每次都选中最坏的情形。但是另一方面，随机数的生成也耗费了时间，对实际排序的时间造成了影响。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;hr&gt;
+&lt;p&gt;所用的数据：&lt;br&gt;&lt;a href=&quot;http://spark-public.s3.amazonaws.com/algo1/programming_prob/QuickSort.txt&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://spark-public.s3.amazonaws.com/algo1/programming_prob/QuickSort.txt&lt;/a&gt;&lt;br&gt;参考资料：&lt;br&gt;&lt;a href=&quot;http://www.nowamagic.net/librarys/veda/detail/2397&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://www.nowamagic.net/librarys/veda/detail/2397&lt;/a&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;参考代码：&lt;br&gt;&lt;figure class=&quot;highlight cpp&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;19&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;20&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;21&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;22&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;23&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;24&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;25&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;26&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;27&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;28&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;29&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;30&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;31&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;32&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;33&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;34&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;35&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;36&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;37&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;38&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;39&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;40&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;41&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;42&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;43&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;44&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;45&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;46&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;47&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;48&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;49&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;50&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;51&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;52&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;53&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;54&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;55&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;56&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;meta&quot;&gt;#&lt;span class=&quot;meta-keyword&quot;&gt;include&lt;/span&gt;&lt;span class=&quot;meta-string&quot;&gt;&amp;lt;iostream&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;meta&quot;&gt;#&lt;span class=&quot;meta-keyword&quot;&gt;include&lt;/span&gt; &lt;span class=&quot;meta-string&quot;&gt;&amp;lt;fstream&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;meta&quot;&gt;#&lt;span class=&quot;meta-keyword&quot;&gt;include&lt;/span&gt; &lt;span class=&quot;meta-string&quot;&gt;&amp;lt;cstdlib&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;meta&quot;&gt;#&lt;span class=&quot;meta-keyword&quot;&gt;include&lt;/span&gt; &lt;span class=&quot;meta-string&quot;&gt;&amp;lt;ctime&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;using&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;namespace&lt;/span&gt; &lt;span class=&quot;built_in&quot;&gt;std&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; sum = &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;pivot&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;(&lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt;* A,&lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; lo,&lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; hi)&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;//	三数中值分割法 &lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;//	int a = A[lo];&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;//	int b = A[hi];&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;//	int c = A[(lo+hi)/2];&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;//	if(( (a&amp;gt;=b) &amp;amp;&amp;amp; (a&amp;lt;=c) ) || ( (a&amp;gt;=c) &amp;amp;&amp;amp; (a&amp;lt;=b) ))&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;//		return lo;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;//	if(((b&amp;gt;=a)&amp;amp;&amp;amp;(b&amp;lt;=c))||((b&amp;gt;=c)&amp;amp;&amp;amp;(b&amp;lt;=a)))&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;//		return hi;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;//	if(((c&amp;gt;=b)&amp;amp;&amp;amp;(c&amp;lt;=a))||((c&amp;gt;=a)&amp;amp;&amp;amp;(c&amp;lt;=b)))&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;//		return (lo+hi)/2;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&lt;span class=&quot;comment&quot;&gt;//首尾 &lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&lt;span class=&quot;comment&quot;&gt;//return lo;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&lt;span class=&quot;comment&quot;&gt;//return hi;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&lt;span class=&quot;comment&quot;&gt;//随机 &lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&lt;span class=&quot;comment&quot;&gt;//srand((int)time(0));&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&lt;span class=&quot;comment&quot;&gt;//return lo + rand()%(hi-lo);&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;swap&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;(&lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt;&amp;amp; a,&lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt;&amp;amp; b)&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; tmp = a;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	a = b;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	b = tmp;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;QuickSort&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;(&lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt;* A,&lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; l,&lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; r)&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt;(l == r+&lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;) &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;//	for(int i = 0;i &amp;lt; 10;i++)&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;//		cout&amp;lt;&amp;lt;A[i]&amp;lt;&amp;lt;&quot; &quot;;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;//	cout&amp;lt;&amp;lt;endl;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; p = pivot(A,l,r);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&lt;span class=&quot;comment&quot;&gt;//cout&amp;lt;&amp;lt;A[p]&amp;lt;&amp;lt;&quot; &quot;;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	swap(A[l],A[p]);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; i = l + &lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&lt;span class=&quot;keyword&quot;&gt;for&lt;/span&gt;(&lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; j = l + &lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;;j &amp;lt;= r;j++)&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;		&lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt;(A[j] &amp;lt; A[l])&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;			swap(A[j],A[i]);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;			i++;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;		&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;		sum++;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	swap(A[l],A[i&lt;span class=&quot;number&quot;&gt;-1&lt;/span&gt;]);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	QuickSort(A,l,i&lt;span class=&quot;number&quot;&gt;-2&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	QuickSort(A,i,r);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;快速排序是一个典型的分治(DIVIDE-AND-CONQUER)算法.&lt;br&gt;&lt;figure class=&quot;highlight python&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;QuickSort(array A,length n)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; n == &lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;  &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    pivot = ChoosePivot(A,n)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    Partition A around pivot&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    Recursively sort &lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;st part&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    Recursively sort &lt;span class=&quot;number&quot;&gt;2&lt;/span&gt;nd part&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;而决定这个算法效率的关键就在于枢纽点(pivot)的选取，因为这直接影响到分割(partition)的好坏。最坏情况下，即每次选取的枢纽点都为最大或最小的数，则时间复杂度为 $\theta(n^2)$ .而如果能够奇迹般地每次都选择了中位数，时间复杂度就为 $\theta(n \log n)$ .以上都为理想情况的分析，而对于排序来说，效率的衡量在于比较次数。以下对各种枢纽点的选取方法做一个比较次数的测量，数据为10000个0~9999之间的整数。&lt;br&gt;
+    
+    </summary>
+    
+    
+      <category term="数据结构与算法" scheme="http://ziqi.moe/blog/tags/algo/"/>
     
   </entry>
   
   <entry>
     <title>Machine Learning : Linear Regression</title>
-    <link href="http://shaoziqi.tk/blog/Machine-Learning-Linear-Regression/"/>
-    <id>http://shaoziqi.tk/blog/Machine-Learning-Linear-Regression/</id>
+    <link href="http://ziqi.moe/blog/Machine-Learning-Linear-Regression/"/>
+    <id>http://ziqi.moe/blog/Machine-Learning-Linear-Regression/</id>
     <published>2015-02-07T13:10:00.000Z</published>
-    <updated>2016-03-28T01:46:57.035Z</updated>
+    <updated>2016-12-11T13:45:57.129Z</updated>
     
     <content type="html">&lt;p&gt;线性回归即用线性函数对因变量和一个或多个自变量之间的关系进行建模。这个函数是多个称为回归系数的参数的线性组合。&lt;/p&gt;
 &lt;p&gt;给定数据集（n个变量，m组数据） &lt;/p&gt;
@@ -733,16 +733,16 @@
     </summary>
     
     
-      <category term="机器学习" scheme="http://shaoziqi.tk/blog/tags/ml/"/>
+      <category term="机器学习" scheme="http://ziqi.moe/blog/tags/ml/"/>
     
   </entry>
   
   <entry>
     <title>Machine Learning : Introduction</title>
-    <link href="http://shaoziqi.tk/blog/Machine-Learning-Introduction/"/>
-    <id>http://shaoziqi.tk/blog/Machine-Learning-Introduction/</id>
+    <link href="http://ziqi.moe/blog/Machine-Learning-Introduction/"/>
+    <id>http://ziqi.moe/blog/Machine-Learning-Introduction/</id>
     <published>2015-02-06T16:00:00.000Z</published>
-    <updated>2016-03-28T01:46:52.259Z</updated>
+    <updated>2016-12-11T13:45:47.274Z</updated>
     
     <content type="html">&lt;h2 id=&quot;定义&quot;&gt;&lt;a href=&quot;#定义&quot; class=&quot;headerlink&quot; title=&quot;定义&quot;&gt;&lt;/a&gt;定义&lt;/h2&gt;&lt;p&gt;Old&lt;/p&gt;
 &lt;blockquote&gt;
@@ -778,14 +778,14 @@
     </summary>
     
     
-      <category term="机器学习" scheme="http://shaoziqi.tk/blog/tags/ml/"/>
+      <category term="机器学习" scheme="http://ziqi.moe/blog/tags/ml/"/>
     
   </entry>
   
   <entry>
     <title>内存泄漏</title>
-    <link href="http://shaoziqi.tk/blog/Memory-Leak/"/>
-    <id>http://shaoziqi.tk/blog/Memory-Leak/</id>
+    <link href="http://ziqi.moe/blog/Memory-Leak/"/>
+    <id>http://ziqi.moe/blog/Memory-Leak/</id>
     <published>2015-02-04T13:25:09.000Z</published>
     <updated>2016-03-28T01:46:12.833Z</updated>
     
@@ -832,14 +832,14 @@
     </summary>
     
     
-      <category term="随笔" scheme="http://shaoziqi.tk/blog/tags/eassy/"/>
+      <category term="随笔" scheme="http://ziqi.moe/blog/tags/eassy/"/>
     
   </entry>
   
   <entry>
     <title>数据结构讲义中的格言</title>
-    <link href="http://shaoziqi.tk/blog/Motto-In-Data-Structure/"/>
-    <id>http://shaoziqi.tk/blog/Motto-In-Data-Structure/</id>
+    <link href="http://ziqi.moe/blog/Motto-In-Data-Structure/"/>
+    <id>http://ziqi.moe/blog/Motto-In-Data-Structure/</id>
     <published>2014-11-22T11:34:00.000Z</published>
     <updated>2016-03-28T01:43:41.281Z</updated>
     
@@ -1003,14 +1003,14 @@
     </summary>
     
     
-      <category term="数据结构与算法" scheme="http://shaoziqi.tk/blog/tags/algo/"/>
+      <category term="数据结构与算法" scheme="http://ziqi.moe/blog/tags/algo/"/>
     
   </entry>
   
   <entry>
     <title>Getting Started On Android</title>
-    <link href="http://shaoziqi.tk/blog/Getting-Started-On-Android/"/>
-    <id>http://shaoziqi.tk/blog/Getting-Started-On-Android/</id>
+    <link href="http://ziqi.moe/blog/Getting-Started-On-Android/"/>
+    <id>http://ziqi.moe/blog/Getting-Started-On-Android/</id>
     <published>2014-03-05T13:23:40.000Z</published>
     <updated>2016-03-27T13:24:15.821Z</updated>
     
@@ -1032,8 +1032,8 @@
   
   <entry>
     <title>Websites Recommendation</title>
-    <link href="http://shaoziqi.tk/blog/Websites-Recommendation/"/>
-    <id>http://shaoziqi.tk/blog/Websites-Recommendation/</id>
+    <link href="http://ziqi.moe/blog/Websites-Recommendation/"/>
+    <id>http://ziqi.moe/blog/Websites-Recommendation/</id>
     <published>2014-03-02T13:18:00.000Z</published>
     <updated>2016-03-28T01:46:17.845Z</updated>
     
@@ -1085,14 +1085,14 @@
     </summary>
     
     
-      <category term="随笔" scheme="http://shaoziqi.tk/blog/tags/eassy/"/>
+      <category term="随笔" scheme="http://ziqi.moe/blog/tags/eassy/"/>
     
   </entry>
   
   <entry>
     <title>世界，你好！</title>
-    <link href="http://shaoziqi.tk/blog/Hello-World/"/>
-    <id>http://shaoziqi.tk/blog/Hello-World/</id>
+    <link href="http://ziqi.moe/blog/Hello-World/"/>
+    <id>http://ziqi.moe/blog/Hello-World/</id>
     <published>2014-02-28T13:13:41.000Z</published>
     <updated>2016-03-28T01:46:36.611Z</updated>
     
@@ -1110,7 +1110,7 @@
     </summary>
     
     
-      <category term="随笔" scheme="http://shaoziqi.tk/blog/tags/eassy/"/>
+      <category term="随笔" scheme="http://ziqi.moe/blog/tags/eassy/"/>
     
   </entry>
   
