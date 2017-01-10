@@ -5,7 +5,7 @@
   <link href="/blog/atom.xml" rel="self"/>
   
   <link href="http://ziqi.moe/blog/"/>
-  <updated>2017-01-10T13:24:47.146Z</updated>
+  <updated>2017-01-10T13:37:10.145Z</updated>
   <id>http://ziqi.moe/blog/</id>
   
   <author>
@@ -16,11 +16,11 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>Vue2 VS Vue1</title>
+    <title>从 Vue1 升级到 Vue2 的一些思考</title>
     <link href="http://ziqi.moe/blog/Vue2-Versus-Vue1/"/>
     <id>http://ziqi.moe/blog/Vue2-Versus-Vue1/</id>
     <published>2017-01-09T16:00:00.000Z</published>
-    <updated>2017-01-10T13:24:47.146Z</updated>
+    <updated>2017-01-10T13:37:10.145Z</updated>
     
     <content type="html">&lt;p&gt;之前在公司花了大约一个星期的时间把负责开发的会员卡模块从 Vue1 升级到了 Vue2，中间经历了不少坑，其中大部分是因为原本的代码偏离 Vue2 的最佳实践比较多（主要是数据流是双向还是单向），另一部分是因为 Vue2 底层的变化（引入了 Virtual DOM）。&lt;/p&gt;
 &lt;h1 id=&quot;升级的缘由及考量&quot;&gt;&lt;a href=&quot;#升级的缘由及考量&quot; class=&quot;headerlink&quot; title=&quot;升级的缘由及考量&quot;&gt;&lt;/a&gt;升级的缘由及考量&lt;/h1&gt;&lt;p&gt;升级的考量无非两个方面，是否满足现在和以后的需求，升级的好处和代价分别有多大。&lt;/p&gt;
@@ -70,7 +70,7 @@
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;以上两个重要变化，单向数据流（数据向下，事件向上）与渲染函数（Virtual DOM），使我觉得 Vue2 在语义风格层面在向 React 靠近。可能未来各个框架之间，差异会一直变小，框架之间会一直相互借鉴。这是一件好事，因为框架最终都是拿来解决问题的，而不是拿来划分领地的。但不禁又想，前端下一个类似 Virtual DOM 的引领潮流的新功能或是设计会是什么？&lt;/p&gt;
+&lt;p&gt;以上两个重要变化，单向数据流（数据向下，事件向上）与渲染函数（Virtual DOM），使我觉得 Vue2 在语义风格层面在向 React 靠近。可能未来各个框架之间，差异会一直变小，框架之间会一直相互借鉴。这是一件好事，因为框架最终都是拿来解决问题的，而不是拿来划分领地的。但不禁又想，前端下一个类似 Virtual DOM 引领潮流的新功能或是设计会是什么？&lt;/p&gt;
 </content>
     
     <summary type="html">
