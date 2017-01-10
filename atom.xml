@@ -5,7 +5,7 @@
   <link href="/blog/atom.xml" rel="self"/>
   
   <link href="http://ziqi.moe/blog/"/>
-  <updated>2017-01-10T13:23:00.795Z</updated>
+  <updated>2017-01-10T13:24:47.146Z</updated>
   <id>http://ziqi.moe/blog/</id>
   
   <author>
@@ -20,16 +20,18 @@
     <link href="http://ziqi.moe/blog/Vue2-Versus-Vue1/"/>
     <id>http://ziqi.moe/blog/Vue2-Versus-Vue1/</id>
     <published>2017-01-09T16:00:00.000Z</published>
-    <updated>2017-01-10T13:23:00.795Z</updated>
+    <updated>2017-01-10T13:24:47.146Z</updated>
     
     <content type="html">&lt;p&gt;之前在公司花了大约一个星期的时间把负责开发的会员卡模块从 Vue1 升级到了 Vue2，中间经历了不少坑，其中大部分是因为原本的代码偏离 Vue2 的最佳实践比较多（主要是数据流是双向还是单向），另一部分是因为 Vue2 底层的变化（引入了 Virtual DOM）。&lt;/p&gt;
 &lt;h1 id=&quot;升级的缘由及考量&quot;&gt;&lt;a href=&quot;#升级的缘由及考量&quot; class=&quot;headerlink&quot; title=&quot;升级的缘由及考量&quot;&gt;&lt;/a&gt;升级的缘由及考量&lt;/h1&gt;&lt;p&gt;升级的考量无非两个方面，是否满足现在和以后的需求，升级的好处和代价分别有多大。&lt;/p&gt;
 &lt;h2 id=&quot;需求&quot;&gt;&lt;a href=&quot;#需求&quot; class=&quot;headerlink&quot; title=&quot;需求&quot;&gt;&lt;/a&gt;需求&lt;/h2&gt;&lt;ul&gt;
 &lt;li&gt;首屏服务端渲染的需求，由于存在两套技术栈，一套是 PHP 模板，一套是前后端分离的 Vue 和 Play for Scala，当从旧有页面切换到 Vue 编写的页面时，会有明显的空白加载时间&lt;/li&gt;
 &lt;li&gt;组件校验的需求，当时还是官方推荐的 vue-validator 还不支持这一点，但在它 3.0 的计划中，并且只支持 Vue2。 这也是一个很大的考量因素，即 Vue 周边的一些东西最后可能都会根据 Vue2 来开发和迭代。&lt;/li&gt;
-&lt;li&gt;一些已有的 bug，但在 Vue2 中修复了。比如 v-model 的 number 修饰下， input 为空时会变成 0（后面看到这个 bug 在 Vue1 中也修复了，但并不能排除一些小 bug 可能不会再考虑 Vue1）。&lt;/li&gt;
+&lt;li&gt;一些已有的 bug，但在 Vue2 中修复了。比如 v-model 的 number 修饰下， input 为空时会变成 0（后面看到这个 bug 在 Vue1 中也修复了，但并不能排除一些小 bug 可能不会再考虑 Vue1）。&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+好处&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2 id=&quot;好处&quot;&gt;&lt;a href=&quot;#好处&quot; class=&quot;headerlink&quot; title=&quot;好处&quot;&gt;&lt;/a&gt;好处&lt;/h2&gt;&lt;p&gt;除了解决上述需求和问题之外，我暂时没有找到一个让我从 Vue1 升级到 Vue2 决定性的优势。&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;除了解决上述需求和问题之外，我暂时没有找到一个让我从 Vue1 升级到 Vue2 决定性的优势。&lt;/p&gt;
 &lt;h2 id=&quot;代价&quot;&gt;&lt;a href=&quot;#代价&quot; class=&quot;headerlink&quot; title=&quot;代价&quot;&gt;&lt;/a&gt;代价&lt;/h2&gt;&lt;ul&gt;
 &lt;li&gt;迁移所需要的时间，这个时间不真的开始改代码其实很难估计，当时我用 vue-migrate-tool 检测出大约几百处需要修改（这里不包括 Vuex），我预计的时间是两到三天，实际花了一个星期。而且在升级过程中，项目是无法完整运行的（为什么说完整？因为只要一个模块一个模块改，就能保证有一部分是可运行可测试的）。以及包括后续升级其他也用 Vue1 开发中或开发完的项目所需时间。&lt;/li&gt;
 &lt;li&gt;项目迁移完成之后的风险，即使有良好的单元测试也无法保证和之前 Vue1 版本表现是真的一致了&lt;/li&gt;
@@ -73,7 +75,12 @@
     
     <summary type="html">
     
-      &lt;p&gt;之前在公司花了大约一个星期的时间把负责开发的会员卡模块从 Vue1 升级到了 Vue2，中间经历了不少坑，其中大部分是因为原本的代码偏离 Vue2 的最佳实践比较多（主要是数据流是双向还是单向），另一部分是因为 Vue2 底层的变化（引入了 Virtual DOM）。&lt;/p
+      &lt;p&gt;之前在公司花了大约一个星期的时间把负责开发的会员卡模块从 Vue1 升级到了 Vue2，中间经历了不少坑，其中大部分是因为原本的代码偏离 Vue2 的最佳实践比较多（主要是数据流是双向还是单向），另一部分是因为 Vue2 底层的变化（引入了 Virtual DOM）。&lt;/p&gt;
+&lt;h1 id=&quot;升级的缘由及考量&quot;&gt;&lt;a href=&quot;#升级的缘由及考量&quot; class=&quot;headerlink&quot; title=&quot;升级的缘由及考量&quot;&gt;&lt;/a&gt;升级的缘由及考量&lt;/h1&gt;&lt;p&gt;升级的考量无非两个方面，是否满足现在和以后的需求，升级的好处和代价分别有多大。&lt;/p&gt;
+&lt;h2 id=&quot;需求&quot;&gt;&lt;a href=&quot;#需求&quot; class=&quot;headerlink&quot; title=&quot;需求&quot;&gt;&lt;/a&gt;需求&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;首屏服务端渲染的需求，由于存在两套技术栈，一套是 PHP 模板，一套是前后端分离的 Vue 和 Play for Scala，当从旧有页面切换到 Vue 编写的页面时，会有明显的空白加载时间&lt;/li&gt;
+&lt;li&gt;组件校验的需求，当时还是官方推荐的 vue-validator 还不支持这一点，但在它 3.0 的计划中，并且只支持 Vue2。 这也是一个很大的考量因素，即 Vue 周边的一些东西最后可能都会根据 Vue2 来开发和迭代。&lt;/li&gt;
+&lt;li&gt;一些已有的 bug，但在 Vue2 中修复了。比如 v-model 的 number 修饰下， input 为空时会变成 0（后面看到这个 bug 在 Vue1 中也修复了，但并不能排除一些小 bug 可能不会再考虑 Vue1）。
     
     </summary>
     

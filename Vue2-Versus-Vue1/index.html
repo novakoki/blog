@@ -3,9 +3,11 @@
 <h2 id="需求"><a href="#需求" class="headerlink" title="需求"></a>需求</h2><ul>
 <li>首屏服务端渲染的需求，由于存在两套技术栈，一套是 PHP 模板，一套是前后端分离的 Vue 和 Play for Scala，当从旧有页面切换到 Vue 编写的页面时，会有明显的空白加载时间</li>
 <li>组件校验的需求，当时还是官方推荐的 vue-validator 还不支持这一点，但在它 3.0 的计划中，并且只支持 Vue2。 这也是一个很大的考量因素，即 Vue 周边的一些东西最后可能都会根据 Vue2 来开发和迭代。</li>
-<li>一些已有的 bug，但在 Vue2 中修复了。比如 v-model 的 number 修饰下， input 为空时会变成 0（后面看到这个 bug 在 Vue1 中也修复了，但并不能排除一些小 bug 可能不会再考虑 Vue1）。</li>
+<li>一些已有的 bug，但在 Vue2 中修复了。比如 v-model 的 number 修饰下， input 为空时会变成 0（后面看到这个 bug 在 Vue1 中也修复了，但并不能排除一些小 bug 可能不会再考虑 Vue1）。<a id="more"></a>
+好处</li>
 </ul>
-<h2 id="好处"><a href="#好处" class="headerlink" title="好处"></a>好处</h2><p>除了解决上述需求和问题之外，我暂时没有找到一个让我从 Vue1 升级到 Vue2 决定性的优势。</p>
+<hr>
+<p>除了解决上述需求和问题之外，我暂时没有找到一个让我从 Vue1 升级到 Vue2 决定性的优势。</p>
 <h2 id="代价"><a href="#代价" class="headerlink" title="代价"></a>代价</h2><ul>
 <li>迁移所需要的时间，这个时间不真的开始改代码其实很难估计，当时我用 vue-migrate-tool 检测出大约几百处需要修改（这里不包括 Vuex），我预计的时间是两到三天，实际花了一个星期。而且在升级过程中，项目是无法完整运行的（为什么说完整？因为只要一个模块一个模块改，就能保证有一部分是可运行可测试的）。以及包括后续升级其他也用 Vue1 开发中或开发完的项目所需时间。</li>
 <li>项目迁移完成之后的风险，即使有良好的单元测试也无法保证和之前 Vue1 版本表现是真的一致了</li>
@@ -45,7 +47,7 @@
 </li>
 </ol>
 <p>以上两个重要变化，单向数据流（数据向下，事件向上）与渲染函数（Virtual DOM），使我觉得 Vue2 在语义风格层面在向 React 靠近。可能未来各个框架之间，差异会一直变小，框架之间会一直相互借鉴。这是一件好事，因为框架最终都是拿来解决问题的，而不是拿来划分领地的。但不禁又想，前端下一个类似 Virtual DOM 的引领潮流的新功能或是设计会是什么？</p>
-</div></article></div></section><footer><div class="paginator"><a href="/blog/A-Note-of-Programing-Languages-ML/" class="next">下一篇</a></div><div data-thread-key="Vue2-Versus-Vue1/" data-title="Vue2 VS Vue1" data-url="http://ziqi.moe/blog/blog/Vue2-Versus-Vue1/" data-author-key="1" class="ds-thread"></div><script>var duoshuoQuery = {short_name:"ziqiblog"};
+</div></article></div></section><footer><div class="paginator"><a href="/blog/A-Note-of-Programing-Languages-ML/" class="next">NEXT</a></div><div data-thread-key="Vue2-Versus-Vue1/" data-title="Vue2 VS Vue1" data-url="http://ziqi.moe/blog/blog/Vue2-Versus-Vue1/" data-author-key="1" class="ds-thread"></div><script>var duoshuoQuery = {short_name:"ziqiblog"};
 (function() {
     var ds = document.createElement('script');
     ds.type = 'text/javascript';ds.async = true;
