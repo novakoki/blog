@@ -2,9 +2,30 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://ziqi.moe/blog/blog/A-Note-Of-Programing-Languages-ML/</loc>
+    <loc>http://ziqi.moe/blog/blog/Vue2-Versus-Vue1/</loc>
     
-    <lastmod>2016-12-18T04:08:47.150Z</lastmod>
+    <lastmod>2017-01-10T13:23:00.795Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://ziqi.moe/blog/blog/A-Note-of-Programing-Languages-ML/</loc>
+    
+    <lastmod>2017-01-10T08:15:20.348Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://ziqi.moe/blog/blog/2016-Spring-Netease-Front-End-Interview/</loc>
+    
+    <lastmod>2017-01-10T08:14:25.262Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://ziqi.moe/blog/blog/A-Note-of-Computer-Network/</loc>
+    
+    <lastmod>2017-01-10T06:58:59.982Z</lastmod>
     
   </url>
   
@@ -37,13 +58,6 @@
   </url>
   
   <url>
-    <loc>http://ziqi.moe/blog/blog/A-Note-0f-Computer-Network/</loc>
-    
-    <lastmod>2016-12-11T13:44:51.217Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://ziqi.moe/blog/diary/index.html</loc>
     
     <lastmod>2016-05-14T13:50:45.155Z</lastmod>
@@ -54,13 +68,6 @@
     <loc>http://ziqi.moe/blog/tags/index.html</loc>
     
     <lastmod>2016-04-30T07:36:45.706Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://ziqi.moe/blog/blog/2016-Spring-Netease-Front-End-Interview/</loc>
-    
-    <lastmod>2016-04-15T05:41:27.313Z</lastmod>
     
   </url>
   

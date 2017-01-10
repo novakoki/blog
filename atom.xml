@@ -5,7 +5,7 @@
   <link href="/blog/atom.xml" rel="self"/>
   
   <link href="http://ziqi.moe/blog/"/>
-  <updated>2016-12-18T04:08:47.150Z</updated>
+  <updated>2017-01-10T13:23:00.795Z</updated>
   <id>http://ziqi.moe/blog/</id>
   
   <author>
@@ -16,11 +16,78 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>A Note Of Programming Languages(1)</title>
-    <link href="http://ziqi.moe/blog/A-Note-Of-Programing-Languages-ML/"/>
-    <id>http://ziqi.moe/blog/A-Note-Of-Programing-Languages-ML/</id>
+    <title>Vue2 VS Vue1</title>
+    <link href="http://ziqi.moe/blog/Vue2-Versus-Vue1/"/>
+    <id>http://ziqi.moe/blog/Vue2-Versus-Vue1/</id>
+    <published>2017-01-09T16:00:00.000Z</published>
+    <updated>2017-01-10T13:23:00.795Z</updated>
+    
+    <content type="html">&lt;p&gt;之前在公司花了大约一个星期的时间把负责开发的会员卡模块从 Vue1 升级到了 Vue2，中间经历了不少坑，其中大部分是因为原本的代码偏离 Vue2 的最佳实践比较多（主要是数据流是双向还是单向），另一部分是因为 Vue2 底层的变化（引入了 Virtual DOM）。&lt;/p&gt;
+&lt;h1 id=&quot;升级的缘由及考量&quot;&gt;&lt;a href=&quot;#升级的缘由及考量&quot; class=&quot;headerlink&quot; title=&quot;升级的缘由及考量&quot;&gt;&lt;/a&gt;升级的缘由及考量&lt;/h1&gt;&lt;p&gt;升级的考量无非两个方面，是否满足现在和以后的需求，升级的好处和代价分别有多大。&lt;/p&gt;
+&lt;h2 id=&quot;需求&quot;&gt;&lt;a href=&quot;#需求&quot; class=&quot;headerlink&quot; title=&quot;需求&quot;&gt;&lt;/a&gt;需求&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;首屏服务端渲染的需求，由于存在两套技术栈，一套是 PHP 模板，一套是前后端分离的 Vue 和 Play for Scala，当从旧有页面切换到 Vue 编写的页面时，会有明显的空白加载时间&lt;/li&gt;
+&lt;li&gt;组件校验的需求，当时还是官方推荐的 vue-validator 还不支持这一点，但在它 3.0 的计划中，并且只支持 Vue2。 这也是一个很大的考量因素，即 Vue 周边的一些东西最后可能都会根据 Vue2 来开发和迭代。&lt;/li&gt;
+&lt;li&gt;一些已有的 bug，但在 Vue2 中修复了。比如 v-model 的 number 修饰下， input 为空时会变成 0（后面看到这个 bug 在 Vue1 中也修复了，但并不能排除一些小 bug 可能不会再考虑 Vue1）。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;好处&quot;&gt;&lt;a href=&quot;#好处&quot; class=&quot;headerlink&quot; title=&quot;好处&quot;&gt;&lt;/a&gt;好处&lt;/h2&gt;&lt;p&gt;除了解决上述需求和问题之外，我暂时没有找到一个让我从 Vue1 升级到 Vue2 决定性的优势。&lt;/p&gt;
+&lt;h2 id=&quot;代价&quot;&gt;&lt;a href=&quot;#代价&quot; class=&quot;headerlink&quot; title=&quot;代价&quot;&gt;&lt;/a&gt;代价&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;迁移所需要的时间，这个时间不真的开始改代码其实很难估计，当时我用 vue-migrate-tool 检测出大约几百处需要修改（这里不包括 Vuex），我预计的时间是两到三天，实际花了一个星期。而且在升级过程中，项目是无法完整运行的（为什么说完整？因为只要一个模块一个模块改，就能保证有一部分是可运行可测试的）。以及包括后续升级其他也用 Vue1 开发中或开发完的项目所需时间。&lt;/li&gt;
+&lt;li&gt;项目迁移完成之后的风险，即使有良好的单元测试也无法保证和之前 Vue1 版本表现是真的一致了&lt;/li&gt;
+&lt;li&gt;学习成本，这个比起 Angular 是好多了，大多数变化都在 API 改名字之类的语法层面，而且大多数变化是在做减法，在减去一些不常用的或是累赘的 API，但其实 Vue2 改动了一些底层的东西（主要是 Virtual DOM），导致语义风格上其实有一些变化了（我认为是开始偏向 React 了）&lt;/li&gt;
+&lt;li&gt;服务端渲染方面，就不仅仅是前端的问题了，整个前后端的架构也要动，涉及到后端和运维方面的改变。要考虑是不是加一层 Node 作所谓后端的前端，可行性和整个项目进度是否允许等等。（最终这个项目没有用 Vue 的服务端渲染，而是用 Play 直出一部分公共的组件（侧边栏、顶部导航等），再加载 Vue 的 JS 文件去渲染剩下的部分）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;总结一下，如果没有找到一个促使你升级的决定性因素，升级要谨慎，可以考虑还在开发中的以及后续项目尽量遵循 Vue2 一些最佳实践，少用 Vue2 废弃的东西。&lt;/p&gt;
+&lt;h1 id=&quot;Vue2-VS-Vue1&quot;&gt;&lt;a href=&quot;#Vue2-VS-Vue1&quot; class=&quot;headerlink&quot; title=&quot;Vue2 VS Vue1&quot;&gt;&lt;/a&gt;Vue2 VS Vue1&lt;/h1&gt;&lt;p&gt;回到正题上，Vue2 相比 Vue1 有了哪一些比较重要的变化？&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;单向还是双向？&lt;/p&gt;
+&lt;p&gt; 知乎上有个问题问 Vue 所谓的渐进式框架是什么意思，答案大多都说渐进式是主张最少的意思。那我想在单向还是双向这个问题上，Vue 还是主张了。在 Vue1 中，子组件可以修改父组件传给它的 prop，而在 Vue2 中不行。而我在用 Vue1 开发的过程中，大量使用了双向数据流，把之前的 sync 改成自定义事件这部分工作占据了我迁移的大多数时间。&lt;/p&gt;
+&lt;p&gt; 我在哪些地方用了 sync ？&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;通用基础组件&lt;/p&gt;
+&lt;p&gt;  比如 Popup, Sidepage 这类组件都需要一个变量来控制是否显示。双向数据流下，这个变量可以由父组件置为打开，当需要关闭的时候由子组件置为关闭。单向数据流下，需要关闭时，由子组件触发自定义事件，父组件监听该事件并在捕获到事件后将变量置为关闭状态。（其实 Vue1 下还有一种做法，就是这个变量可以是子组件的本地数据，父组件触发子组件的事件来完成操作，但是在 Vue2 中事件流只能向上不能向下）&lt;/p&gt;
+&lt;p&gt;  这个场景下，简单地比较一下两者的差异，双向简单（写起来觉得爽），单向略为复杂但是仍有好处。扩展一下这个简单场景，如果关闭不仅仅是关闭，而是在关闭的同时要做一些其他事情，那么双向情况下，控制权在子组件，你需要传一个回调函数给子组件，而单向情况下，控制权在父组件，只要在原本的事件回调中增加逻辑。所以其实最终要考虑的是，数据的控制权究竟归属于父组件还是子组件，还是说比较中立，无论谁来操作都没有影响。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;多层嵌套组件&lt;/p&gt;
+&lt;p&gt;  组件需要嵌套多层，有一个祖先组件的数据，在它的后代中层层传递，很多个组件都需要它，最终的数据修改发生在比较深的地方。这种情况其实不太需要多讨论，双向情况下，如 Vue 文档里说的，考虑数据的安全性，任意子组件都可能修改这份数据，容易出现未知的错误。而单向情况下，操作起来就比上面那种两层的情况更麻烦了，最终我把这个情况全部改成了用 Vuex 来做。（之前在 Vue1，我只有在非父子的横向关系共享数据上使用 Vuex）&lt;/p&gt;
+&lt;p&gt;注： 文档提及 Vue2 中有一个例外，就是如果是引用类型的数据，就没法阻止子组件去改变父组件的数据。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;渲染函数与 Virtual DOM&lt;/p&gt;
+&lt;p&gt; 我觉得这是 Vue2 中最重要的改变，即在 watch 和 依赖收集之上，修改真实 DOM 之下，加了一个通过渲染函数计算新的 Virtual DOM 的过程。模板最终都会被编译成渲染函数，以及这个渲染函数是组件级别的，这意味着要重新审视模板了。&lt;/p&gt;
+&lt;p&gt; 模板中可能出现的有：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;普通的数据绑定&lt;/li&gt;
+&lt;li&gt;动态绑定的 DOM 属性&lt;/li&gt;
+&lt;li&gt;props&lt;/li&gt;
+&lt;li&gt;事件回调&lt;/li&gt;
+&lt;li&gt;filter&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;directive&lt;/p&gt;
+&lt;p&gt;模板中上述任一部分都可能会出现副作用，而且这些副作用会随着渲染函数的计算一遍遍地重复。比如在 props 中使用了引用类型的字面量，会导致每次渲染都新建对象，涉及的问题有内存和性能开销以及可能出现引用类型之间比较引起的未知错误。再比如，在 filter 中做输出操作，会觉得明明没有修改 filter 作用的数据却仍然调用了 filter 。（因为渲染函数是组件级别的，组件的任意数据更改都会响应式地去调用渲染函数）如果不重新看待模板，不改变旧有的编码风格，就可能出现意想不到的错误。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;以上两个重要变化，单向数据流（数据向下，事件向上）与渲染函数（Virtual DOM），使我觉得 Vue2 在语义风格层面在向 React 靠近。可能未来各个框架之间，差异会一直变小，框架之间会一直相互借鉴。这是一件好事，因为框架最终都是拿来解决问题的，而不是拿来划分领地的。但不禁又想，前端下一个类似 Virtual DOM 的引领潮流的新功能或是设计会是什么？&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;之前在公司花了大约一个星期的时间把负责开发的会员卡模块从 Vue1 升级到了 Vue2，中间经历了不少坑，其中大部分是因为原本的代码偏离 Vue2 的最佳实践比较多（主要是数据流是双向还是单向），另一部分是因为 Vue2 底层的变化（引入了 Virtual DOM）。&lt;/p
+    
+    </summary>
+    
+    
+      <category term="前端开发" scheme="http://ziqi.moe/blog/tags/front-end/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>A Note of Programming Languages (1)</title>
+    <link href="http://ziqi.moe/blog/A-Note-of-Programing-Languages-ML/"/>
+    <id>http://ziqi.moe/blog/A-Note-of-Programing-Languages-ML/</id>
     <published>2016-11-15T16:00:00.000Z</published>
-    <updated>2016-12-18T04:08:47.150Z</updated>
+    <updated>2017-01-10T08:15:20.348Z</updated>
     
     <content type="html">&lt;h1 id=&quot;Brief-Intro&quot;&gt;&lt;a href=&quot;#Brief-Intro&quot; class=&quot;headerlink&quot; title=&quot;Brief Intro&quot;&gt;&lt;/a&gt;Brief Intro&lt;/h1&gt;&lt;h2 id=&quot;Four-kinds-of-languages&quot;&gt;&lt;a href=&quot;#Four-kinds-of-languages&quot; class=&quot;headerlink&quot; title=&quot;Four kinds of languages&quot;&gt;&lt;/a&gt;Four kinds of languages&lt;/h2&gt;&lt;table&gt;
 &lt;thead&gt;
@@ -174,7 +241,7 @@
     <link href="http://ziqi.moe/blog/2016-Spring-Netease-Front-End-Interview/"/>
     <id>http://ziqi.moe/blog/2016-Spring-Netease-Front-End-Interview/</id>
     <published>2016-04-14T16:00:00.000Z</published>
-    <updated>2016-04-15T05:41:27.313Z</updated>
+    <updated>2017-01-10T08:14:25.262Z</updated>
     
     <content type="html">&lt;h2 id=&quot;笔试&quot;&gt;&lt;a href=&quot;#笔试&quot; class=&quot;headerlink&quot; title=&quot;笔试&quot;&gt;&lt;/a&gt;笔试&lt;/h2&gt;&lt;p&gt;选择题忽略&lt;/p&gt;
 &lt;p&gt;问答题：&lt;/p&gt;
@@ -182,22 +249,34 @@
 &lt;li&gt;用原生JS实现一个接口，能够用Ajax上传文件并显示上传进度，上传完成后接收一个来自服务器的json数据&lt;/li&gt;
 &lt;li&gt;实现一个三列布局&lt;/li&gt;
 &lt;li&gt;如何防范CSRF（跨站请求伪造）&lt;/li&gt;
-&lt;li&gt;请列举减少HTTP请求数和资源文件大小的方法&lt;/li&gt;
+&lt;li&gt;请列举减少HTTP请求数和资源文件大小的方法&lt;br&gt;&lt;a href=&quot;https://csspod.com/frontend-performance-best-practices/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Reference&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;列举实现跨域请求的方法&lt;/li&gt;
 &lt;/ol&gt;
 &lt;h2 id=&quot;一面&quot;&gt;&lt;a href=&quot;#一面&quot; class=&quot;headerlink&quot; title=&quot;一面&quot;&gt;&lt;/a&gt;一面&lt;/h2&gt;&lt;p&gt;一上来先是自我介绍，在这个过程中，面试官会看你的简历&lt;/p&gt;
-&lt;p&gt;Q：CSS和JS熟悉哪个？&lt;br&gt;A：JS&lt;/p&gt;
-&lt;p&gt;Q：浏览器端的JS包含哪几个部分？&lt;br&gt;A：ECMAScript+DOM&lt;/p&gt;
-&lt;p&gt;Q：DOM包含哪些对象？&lt;br&gt;A：Node对象，然后继承下来的有Document,Element,Text，还有想不起来了&lt;/p&gt;
-&lt;p&gt;Q：JS有哪些基本类型？&lt;br&gt;A：Number,String,undefined,null,还有引用类型的 //这里我少答了Boolean，然后我以为问的是数据类型&lt;/p&gt;
+&lt;p&gt;Q：CSS和JS熟悉哪个？&lt;/p&gt;
+&lt;p&gt;A：JS&lt;/p&gt;
+&lt;p&gt;Q：浏览器端的JS包含哪几个部分？&lt;/p&gt;
+&lt;p&gt;A：ECMAScript+DOM&lt;/p&gt;
+&lt;p&gt;Q：DOM包含哪些对象？&lt;/p&gt;
+&lt;p&gt;A：Node对象，然后继承下来的有Document,Element,Text，还有想不起来了&lt;/p&gt;
+&lt;p&gt;( 常用的： Node(Document, Element, CharacterData(Text, Comment, CDATASection), DocumentFragment), Window, Attr, NodeList, Event, etc. )&lt;/p&gt;
+&lt;p&gt;Q：JS有哪些基本类型？&lt;/p&gt;
+&lt;p&gt;A：Number, String, undefined, null, 还有引用类型的&lt;/p&gt;
+&lt;p&gt;( 这里我少答了Boolean，然后我以为问的是数据类型。ES6 新增了 Symbol )&lt;/p&gt;
 &lt;p&gt;Q：基本类型和引用类型有什么区别？&lt;/p&gt;
-&lt;p&gt;A：赋值的时候基本类型按值，引用类型按引用，就是基本类型会复制一份，引用类型就是一个新的指针。&lt;br&gt;函数传参的时候都是按值传递&lt;br&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;br&gt;Q：&lt;br&gt;&lt;figure class=&quot;highlight js&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; obj = &amp;#123;a : &lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;&amp;#125;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;(&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; (&lt;span class=&quot;params&quot;&gt;obj&lt;/span&gt;) &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  obj = &amp;#123;a : &lt;span class=&quot;number&quot;&gt;2&lt;/span&gt;&amp;#125;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;)(obj); &lt;span class=&quot;comment&quot;&gt;//问obj怎么变？&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;A：赋值的时候基本类型按值，引用类型按引用，就是基本类型会复制一份，引用类型就是一个新的指针。函数传参的时候都是按值传递.&lt;br&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Q： &lt;/p&gt;
+&lt;figure class=&quot;highlight js&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; obj = &amp;#123;a : &lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;&amp;#125;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;(&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; (&lt;span class=&quot;params&quot;&gt;obj&lt;/span&gt;) &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  obj = &amp;#123;a : &lt;span class=&quot;number&quot;&gt;2&lt;/span&gt;&amp;#125;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;)(obj); &lt;span class=&quot;comment&quot;&gt;//问obj怎么变？&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 &lt;p&gt;A：外面的obj不变，因为里面等于让局部的obj指向了一个新的对象&lt;/p&gt;
-&lt;p&gt;//下面两题是因为我简历有写我会C++&lt;/p&gt;
-&lt;p&gt;Q：C++的引用类型是怎么样的？&lt;br&gt;A：C++里面的引用相当于一个变量的别名，对引用做操作也会影响该变量&lt;/p&gt;
-&lt;p&gt;Q：JS和C++有什么区别？&lt;br&gt;A：面向对象不一样，C++是类式继承，JS是原型链式。C++在函数式方面没有JS来的强。&lt;br&gt;JS没有C++的一些高级特性，比如模板、泛型。&lt;/p&gt;
+&lt;p&gt;// 下面两题是因为我简历有写我会C++&lt;/p&gt;
+&lt;p&gt;Q：C++ 的引用类型是怎么样的？&lt;/p&gt;
+&lt;p&gt;A：C++ 里面的引用相当于一个变量的别名，对引用做操作也会影响该变量&lt;/p&gt;
+&lt;p&gt;Q：JS 和 C++ 有什么区别？&lt;/p&gt;
+&lt;p&gt;A：面向对象不一样，C++ 是类式继承，JS 是原型链式。C++ 在函数式方面没有JS来的强。JS 没有 C++ 的一些高级特性，比如模板、泛型。&lt;/p&gt;
 &lt;p&gt;Q：实现一个左边定宽右边自适应的两列布局，要求使用浮动和flex两种方法&lt;/p&gt;
-&lt;p&gt;A：&lt;br&gt;&lt;figure class=&quot;highlight&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;.left &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  float: left;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  width: 320px; //这个是面试官给的，面试官画了图&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;//下面这段我少写了，然后面试官就问你上面这样能够让右边自适应吗？囧&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;.right &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  margin-left: 320px;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;//flex憋了很久没写出来。。。&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;A：&lt;/p&gt;
+&lt;figure class=&quot;highlight html&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;div&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;class&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;root&quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;div&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;class&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;left&quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;div&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;div&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;class&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;right&quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;div&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;div&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;18&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;.left &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  float: left;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  width: 320px; //这个是面试官给的，面试官画了图&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;/* 下面这段我少写了，然后面试官就问你上面这样能够让右边自适应吗？囧 */&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;.right &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  margin-left: 320px;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;/* flex 憋了很久没写出来。。。 */&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;.root &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  display: flex;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;.left &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  width: 320px;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;.right &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  flex: 1;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 &lt;p&gt;Q：position有哪些属性？各自有什么特点？&lt;/p&gt;
 &lt;p&gt;A：&lt;/p&gt;
 &lt;ul&gt;
@@ -206,50 +285,90 @@
 &lt;li&gt;absolute：相对于第一个不是static的父元素定位&lt;/li&gt;
 &lt;li&gt;fixed：相对于浏览器定位&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;Q：画一下标准盒模型&lt;br&gt;A：//感觉这里已经质疑我CSS是不是一点不会了，囧&lt;/p&gt;
-&lt;p&gt;Q：闭包是什么？有什么用？&lt;br&gt;A：//这里我讲得很不清楚，大致说了就是函数里面套函数，可以保存变量&lt;/p&gt;
-&lt;p&gt;Q：ES5中，除了函数，什么能够产生作用域？&lt;br&gt;A：对象？&lt;br&gt;//然后被回问对象有作用域吗？然后我说对象里面this会变。。。完全把作用域和执行环境弄混了&lt;/p&gt;
+&lt;p&gt;Q：画一下标准盒模型&lt;/p&gt;
+&lt;p&gt;A：// 感觉这里已经质疑我CSS是不是一点不会了，囧&lt;/p&gt;
+&lt;p&gt;Q：闭包是什么？有什么用？&lt;/p&gt;
+&lt;p&gt;A：// 这里我讲得很不清楚，大致说了就是函数里面套函数，可以保存变量&lt;/p&gt;
+&lt;p&gt;Q：ES5中，除了函数，什么能够产生作用域？&lt;/p&gt;
+&lt;p&gt;A：对象？&lt;br&gt;// 然后被回问对象有作用域吗？然后我说对象里面this会变。。。完全把作用域和执行环境弄混了&lt;/p&gt;
+&lt;p&gt;( with 和 catch 都能产生作用域 )&lt;/p&gt;
 &lt;p&gt;Q：函数有哪几种调用方式？&lt;/p&gt;
 &lt;p&gt;A：&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;直接调用&lt;/li&gt;
 &lt;li&gt;作为对象的方法调用&lt;/li&gt;
-&lt;li&gt;apply,call&lt;/li&gt;
+&lt;li&gt;apply, call&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;Q：&lt;br&gt;&lt;figure class=&quot;highlight js&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; obj = &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  a : &lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  func : &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; (&lt;span class=&quot;params&quot;&gt;&lt;/span&gt;) &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    (&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; (&lt;span class=&quot;params&quot;&gt;&lt;/span&gt;) &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    a = &lt;span class=&quot;number&quot;&gt;2&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#125;();&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;obj.func();&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
-&lt;p&gt;问a怎么变，匿名函数里的this是什么？怎么改变里面的this？匿名函数不能传参怎么改变obj.a的值？&lt;/p&gt;
-&lt;p&gt;A: obj.a不变，匿名函数里的this指向全局对象(window)，相当于给window加了一个名为a的属性。&lt;br&gt;&lt;figure class=&quot;highlight js&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;(&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; (&lt;span class=&quot;params&quot;&gt;&lt;/span&gt;) &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;.a = &lt;span class=&quot;number&quot;&gt;2&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;).call(&lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;); &lt;span class=&quot;comment&quot;&gt;//或者apply&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;//或者&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;func: &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; (&lt;span class=&quot;params&quot;&gt;&lt;/span&gt;) &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; self = &lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  (&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; (&lt;span class=&quot;params&quot;&gt;&lt;/span&gt;) &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    self.a = &lt;span class=&quot;number&quot;&gt;2&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &amp;#125;)();&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;Q：&lt;/p&gt;
+&lt;figure class=&quot;highlight js&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; obj = &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  a : &lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  func : &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; (&lt;span class=&quot;params&quot;&gt;&lt;/span&gt;) &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    (&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; (&lt;span class=&quot;params&quot;&gt;&lt;/span&gt;) &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    a = &lt;span class=&quot;number&quot;&gt;2&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#125;();&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;obj.func();&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;问 &lt;strong&gt;a&lt;/strong&gt; 怎么变，匿名函数里的 &lt;strong&gt;this&lt;/strong&gt; 是什么？怎么改变里面的 &lt;strong&gt;this&lt;/strong&gt; ？匿名函数不能传参怎么改变 &lt;strong&gt;obj.a&lt;/strong&gt; 的值？&lt;/p&gt;
+&lt;p&gt;A: obj.a 不变，匿名函数里的 this 指向全局对象(window)，相当于给 window 加了一个名为 a 的属性。&lt;/p&gt;
+&lt;figure class=&quot;highlight js&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;(&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; (&lt;span class=&quot;params&quot;&gt;&lt;/span&gt;) &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;.a = &lt;span class=&quot;number&quot;&gt;2&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;).call(&lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;); &lt;span class=&quot;comment&quot;&gt;//或者apply&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;//或者&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;func: &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; (&lt;span class=&quot;params&quot;&gt;&lt;/span&gt;) &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; self = &lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  (&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; (&lt;span class=&quot;params&quot;&gt;&lt;/span&gt;) &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    self.a = &lt;span class=&quot;number&quot;&gt;2&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &amp;#125;)();&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 &lt;p&gt;Q：描述一下事件模型？IE的事件模型是怎样的？事件代理是什么？事件代理中怎么定位实际事件产生的目标？&lt;/p&gt;
-&lt;p&gt;A：捕获-&amp;gt;处于目标-&amp;gt;冒泡，IE应该是只有冒泡没有捕获。&lt;br&gt;事件代理就是在父元素上绑定事件来处理，通过event对象的target来定位。&lt;/p&gt;
-&lt;p&gt;Q：JS动画有哪些实现方法？&lt;br&gt;A：不太清楚&lt;/p&gt;
-&lt;p&gt;Q：那你知道还有什么实现动画的方法？&lt;br&gt;A：CSS3的animation，还有用canvas做的算吗？&lt;/p&gt;
-&lt;p&gt;Q：你最近有用过什么框架或库？&lt;br&gt;A：用React Native做安卓，还在学 //然后面试官说那你现在还是主要在原生JS的层面咯&lt;/p&gt;
-&lt;p&gt;Q：你主要有哪些学习渠道？&lt;br&gt;A：MDN,Udacity,慕课网&lt;/p&gt;
-&lt;p&gt;Q：node.js有用过吗？&lt;br&gt;A：有，主要用一些工具，比如gulp&lt;/p&gt;
-&lt;p&gt;Q：你有用过什么代码管理工具？&lt;br&gt;A：//然后面试官看到简历上有GitHub就不问了&lt;/p&gt;
-&lt;p&gt;Q：你还有什么问题吗？&lt;br&gt;A：//这里我问了这个部门主要是面向技术人员还是普通用户开发，回答是都有，还回问了我一句你想做哪方面&lt;/p&gt;
-&lt;p&gt;最后面试官说你先去休息一下，待会儿还有个二面 //意思是一面居然过了。。。&lt;/p&gt;
+&lt;p&gt;A：捕获-&amp;gt;处于目标-&amp;gt;冒泡，IE应该是只有冒泡没有捕获。&lt;br&gt;事件代理就是在父元素上绑定事件来处理，通过 event 对象的 target 来定位。&lt;/p&gt;
+&lt;p&gt;Q：JS动画有哪些实现方法？&lt;/p&gt;
+&lt;p&gt;A：不太清楚&lt;/p&gt;
+&lt;p&gt;( setTimeout/setInterval, requestAnimactionFrame )&lt;/p&gt;
+&lt;p&gt;Q：那你知道还有什么实现动画的方法？&lt;/p&gt;
+&lt;p&gt;A：CSS3的animation，还有用canvas做的算吗？&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://developers.google.com/web/fundamentals/design-and-ui/animations/css-vs-javascript&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;CSS Versus JavaScript Animations&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Q：你最近有用过什么框架或库？&lt;/p&gt;
+&lt;p&gt;A：用React Native做安卓，还在学 // 然后面试官说那你现在还是主要在原生JS的层面咯&lt;/p&gt;
+&lt;p&gt;Q：你主要有哪些学习渠道？&lt;/p&gt;
+&lt;p&gt;A：MDN,Udacity,慕课网&lt;/p&gt;
+&lt;p&gt;Q：node.js有用过吗？&lt;/p&gt;
+&lt;p&gt;A：有，主要用一些工具，比如gulp&lt;/p&gt;
+&lt;p&gt;Q：你有用过什么代码管理工具？&lt;/p&gt;
+&lt;p&gt;A：// 然后面试官看到简历上有GitHub就不问了&lt;/p&gt;
+&lt;p&gt;Q：你还有什么问题吗？&lt;/p&gt;
+&lt;p&gt;A：// 这里我问了这个部门主要是面向技术人员还是普通用户开发，回答是都有，还回问了我一句你想做哪方面&lt;/p&gt;
+&lt;p&gt;最后面试官说你先去休息一下，待会儿还有个二面 // 意思是一面居然过了。。。&lt;/p&gt;
 &lt;h2 id=&quot;二面&quot;&gt;&lt;a href=&quot;#二面&quot; class=&quot;headerlink&quot; title=&quot;二面&quot;&gt;&lt;/a&gt;二面&lt;/h2&gt;&lt;p&gt;二面没让自我介绍，直接看到简历上有写项目经历就开问了&lt;/p&gt;
-&lt;p&gt;Q：说说你做过的项目以及从项目中学到了什么&lt;br&gt;A：//balabala… 感觉很紧张，说得不是很清楚&lt;/p&gt;
-&lt;p&gt;Q：函数声明和函数表达式有什么区别？&lt;br&gt;A：函数声明会将那个函数提升到最前面，成为全局函数。函数声明要指定函数名，而函数表达式不用，可以用作匿名函数。&lt;/p&gt;
-&lt;p&gt;Q：作用域链是什么？&lt;br&gt;A：//说的不是很清楚&lt;/p&gt;
-&lt;p&gt;Q：面向对象有哪几个特点？&lt;br&gt;A：继承、多态。。。想不起来了&lt;/p&gt;
-&lt;p&gt;Q：JS怎么实现继承？&lt;br&gt;A：将父对象的一个实例赋值给子对象的原型&lt;/p&gt;
-&lt;p&gt;Q：怎么判断属性来自对象自身还是原型链？&lt;br&gt;A：hasOwnProperty&lt;/p&gt;
-&lt;p&gt;Q：双向链表怎么找中点？&lt;br&gt;A：头尾指针都往中间走，两个指针相等或交替的时候为中点&lt;/p&gt;
-&lt;p&gt;Q：单向链表呢？&lt;br&gt;A：先走到尾记下有几个元素，然后再走到一半的地方&lt;br&gt;//面完查了下可以用快慢指针，一个指针每次走一步，另外个走两步，快指针到尾部时慢指针在中点&lt;/p&gt;
-&lt;p&gt;Q：上次笔试之后有没有学到什么？&lt;br&gt;A：了解了下跨域安全和性能相关的问题&lt;/p&gt;
-&lt;p&gt;Q：那你描述一下跨域安全问题吧&lt;br&gt;A：//balabala…最后发现根本讲不清楚，我还说考完之后去翻了《HTTP权威指南》，囧&lt;/p&gt;
-&lt;p&gt;Q：怎么实现跨域请求？&lt;br&gt;A：JSONP，http自定义origin头部&lt;/p&gt;
-&lt;p&gt;Q：只写origin就够了吗？&lt;br&gt;A：不太清楚&lt;/p&gt;
-&lt;p&gt;Q：解释下TCP三次握手&lt;br&gt;A：客户端发一个SYN，服务器回一个ACK，客户端再回一个ACK&lt;/p&gt;
-&lt;p&gt;Q：HTTP头中哪些是和缓存相关的？&lt;br&gt;A：ETag，cache-control。。。想不起来了&lt;/p&gt;
-&lt;p&gt;Q：cookie和session有什么区别？&lt;br&gt;A：cookie在客户端，session在服务端&lt;/p&gt;
-&lt;p&gt;Q：浏览器在发送cookie时会发送哪几个部分？&lt;br&gt;A：不太清楚&lt;/p&gt;
-&lt;p&gt;Q：那你知道cookie有哪几个组成部分吗？&lt;br&gt;A：不太清楚&lt;/p&gt;
-&lt;p&gt;Q：你有用开发者工具看过cookie吗？&lt;br&gt;A：有&lt;/p&gt;
-&lt;p&gt;Q：那cookie有哪几个组成部分？&lt;br&gt;A：//已死，我的内心是崩溃的&lt;/p&gt;
-&lt;p&gt;Q：我没有问题了，你还有什么问题吗？&lt;br&gt;A：//崩溃的我居然问了刚刚那个cookie的问题可以告诉我答案吗。。。估计被定位成伸手党了&lt;/p&gt;
+&lt;p&gt;Q：说说你做过的项目以及从项目中学到了什么&lt;/p&gt;
+&lt;p&gt;A：// balabala… 感觉很紧张，说得不是很清楚&lt;/p&gt;
+&lt;p&gt;Q：函数声明和函数表达式有什么区别？&lt;/p&gt;
+&lt;p&gt;A：函数声明会将那个函数提升到最前面，成为全局函数。函数声明要指定函数名，而函数表达式不用，可以用作匿名函数。&lt;/p&gt;
+&lt;p&gt;Q：作用域链是什么？&lt;/p&gt;
+&lt;p&gt;A：// 说的不是很清楚&lt;/p&gt;
+&lt;p&gt;Q：面向对象有哪几个特点？&lt;/p&gt;
+&lt;p&gt;A：继承、多态。。。想不起来了&lt;/p&gt;
+&lt;p&gt;( 封装、继承、多态、抽象 )&lt;/p&gt;
+&lt;p&gt;Q：JS怎么实现继承？&lt;/p&gt;
+&lt;p&gt;A：将父对象的一个实例赋值给子对象的原型&lt;/p&gt;
+&lt;p&gt;Q：怎么判断属性来自对象自身还是原型链？&lt;/p&gt;
+&lt;p&gt;A：hasOwnProperty&lt;/p&gt;
+&lt;p&gt;Q：双向链表怎么找中点？&lt;/p&gt;
+&lt;p&gt;A：头尾指针都往中间走，两个指针相等或交替的时候为中点&lt;/p&gt;
+&lt;p&gt;Q：单向链表呢？&lt;/p&gt;
+&lt;p&gt;A：先走到尾记下有几个元素，然后再走到一半的地方&lt;br&gt;//面完查了下可以用快慢指针，一个指针每次走一步，另外个走两步，快指针到尾部时慢指针在中点&lt;/p&gt;
+&lt;p&gt;Q：上次笔试之后有没有学到什么？&lt;/p&gt;
+&lt;p&gt;A：了解了下跨域安全和性能相关的问题&lt;/p&gt;
+&lt;p&gt;Q：那你描述一下跨域安全问题吧&lt;/p&gt;
+&lt;p&gt;A：//balabala…最后发现根本讲不清楚，我还说考完之后去翻了《HTTP权威指南》，囧&lt;/p&gt;
+&lt;p&gt;( CSRF（跨站请求伪造）： 诱骗用户去访问曾经访问过的保有凭据的网站。 检查 Referer 头， 或者 URL 增加校验 token )&lt;/p&gt;
+&lt;p&gt;Q：怎么实现跨域请求？&lt;/p&gt;
+&lt;p&gt;A：JSONP，http自定义origin头部&lt;/p&gt;
+&lt;p&gt;( JSONP, CORS, iframe(window.name or document.domain), postMessage )&lt;/p&gt;
+&lt;p&gt;Q：只写origin就够了吗？&lt;/p&gt;
+&lt;p&gt;A：不太清楚&lt;/p&gt;
+&lt;p&gt;Q：解释下TCP三次握手&lt;/p&gt;
+&lt;p&gt;A：客户端发一个SYN，服务器回一个ACK，客户端再回一个ACK&lt;/p&gt;
+&lt;p&gt;Q：HTTP头中哪些是和缓存相关的？&lt;/p&gt;
+&lt;p&gt;A：ETag，cache-control。。。想不起来了&lt;/p&gt;
+&lt;p&gt;Q：cookie和session有什么区别？&lt;/p&gt;
+&lt;p&gt;A：cookie在客户端，session在服务端&lt;/p&gt;
+&lt;p&gt;Q：浏览器在发送cookie时会发送哪几个部分？&lt;/p&gt;
+&lt;p&gt;A：不太清楚&lt;/p&gt;
+&lt;p&gt;( value )&lt;/p&gt;
+&lt;p&gt;Q：那你知道cookie有哪几个组成部分吗？&lt;/p&gt;
+&lt;p&gt;A：不太清楚&lt;/p&gt;
+&lt;p&gt;( name, value, domain, path, expires/max-age, size, http-only, secure, samesite )&lt;/p&gt;
+&lt;p&gt;Q：你有用开发者工具看过cookie吗？&lt;/p&gt;
+&lt;p&gt;A：有&lt;/p&gt;
+&lt;p&gt;Q：那cookie有哪几个组成部分？&lt;/p&gt;
+&lt;p&gt;A：// 已死，我的内心是崩溃的&lt;/p&gt;
+&lt;p&gt;Q：我没有问题了，你还有什么问题吗？&lt;/p&gt;
+&lt;p&gt;A：// 崩溃的我居然问了刚刚那个cookie的问题可以告诉我答案吗。。。估计被定位成伸手党了&lt;/p&gt;
 &lt;p&gt;面完之后去前台问被告知二面挂了，然后愉快（误）地滚回了学校&lt;/p&gt;
 &lt;h2 id=&quot;总结&quot;&gt;&lt;a href=&quot;#总结&quot; class=&quot;headerlink&quot; title=&quot;总结&quot;&gt;&lt;/a&gt;总结&lt;/h2&gt;&lt;ul&gt;
 &lt;li&gt;一面比较注重基础知识，这方面听到有的面试官建议多看几遍《JavaScript高级程序设计》的，现场也有看到有人随身带着这本书&lt;br&gt;(我算是粗略地读过三遍左右，也确实大多数上面问到的问题都能在书中找到答案)&lt;/li&gt;
@@ -267,16 +386,22 @@
 &lt;li&gt;用原生JS实现一个接口，能够用Ajax上传文件并显示上传进度，上传完成后接收一个来自服务器的json数据&lt;/li&gt;
 &lt;li&gt;实现一个三列布局&lt;/li&gt;
 &lt;li&gt;如何防范CSRF（跨站请求伪造）&lt;/li&gt;
-&lt;li&gt;请列举减少HTTP请求数和资源文件大小的方法&lt;/li&gt;
+&lt;li&gt;请列举减少HTTP请求数和资源文件大小的方法&lt;br&gt;&lt;a href=&quot;https://csspod.com/frontend-performance-best-practices/&quot;&gt;Reference&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;列举实现跨域请求的方法&lt;/li&gt;
 &lt;/ol&gt;
 &lt;h2 id=&quot;一面&quot;&gt;&lt;a href=&quot;#一面&quot; class=&quot;headerlink&quot; title=&quot;一面&quot;&gt;&lt;/a&gt;一面&lt;/h2&gt;&lt;p&gt;一上来先是自我介绍，在这个过程中，面试官会看你的简历&lt;/p&gt;
-&lt;p&gt;Q：CSS和JS熟悉哪个？&lt;br&gt;A：JS&lt;/p&gt;
-&lt;p&gt;Q：浏览器端的JS包含哪几个部分？&lt;br&gt;A：ECMAScript+DOM&lt;/p&gt;
-&lt;p&gt;Q：DOM包含哪些对象？&lt;br&gt;A：Node对象，然后继承下来的有Document,Element,Text，还有想不起来了&lt;/p&gt;
-&lt;p&gt;Q：JS有哪些基本类型？&lt;br&gt;A：Number,String,undefined,null,还有引用类型的 //这里我少答了Boolean，然后我以为问的是数据类型&lt;/p&gt;
+&lt;p&gt;Q：CSS和JS熟悉哪个？&lt;/p&gt;
+&lt;p&gt;A：JS&lt;/p&gt;
+&lt;p&gt;Q：浏览器端的JS包含哪几个部分？&lt;/p&gt;
+&lt;p&gt;A：ECMAScript+DOM&lt;/p&gt;
+&lt;p&gt;Q：DOM包含哪些对象？&lt;/p&gt;
+&lt;p&gt;A：Node对象，然后继承下来的有Document,Element,Text，还有想不起来了&lt;/p&gt;
+&lt;p&gt;( 常用的： Node(Document, Element, CharacterData(Text, Comment, CDATASection), DocumentFragment), Window, Attr, NodeList, Event, etc. )&lt;/p&gt;
+&lt;p&gt;Q：JS有哪些基本类型？&lt;/p&gt;
+&lt;p&gt;A：Number, String, undefined, null, 还有引用类型的&lt;/p&gt;
+&lt;p&gt;( 这里我少答了Boolean，然后我以为问的是数据类型。ES6 新增了 Symbol )&lt;/p&gt;
 &lt;p&gt;Q：基本类型和引用类型有什么区别？&lt;/p&gt;
-&lt;p&gt;A：赋值的时候基本类型按值，引用类型按引用，就是基本类型会复制一份，引用类型就是一个新的指针。&lt;br&gt;函数传参的时候都是按值传递&lt;br&gt;
+&lt;p&gt;A：赋值的时候基本类型按值，引用类型按引用，就是基本类型会复制一份，引用类型就是一个新的指针。函数传参的时候都是按值传递.&lt;br&gt;
     
     </summary>
     
@@ -374,11 +499,11 @@
   </entry>
   
   <entry>
-    <title>A Note 0f Computer Network</title>
-    <link href="http://ziqi.moe/blog/A-Note-0f-Computer-Network/"/>
-    <id>http://ziqi.moe/blog/A-Note-0f-Computer-Network/</id>
+    <title>A Note of Computer Network</title>
+    <link href="http://ziqi.moe/blog/A-Note-of-Computer-Network/"/>
+    <id>http://ziqi.moe/blog/A-Note-of-Computer-Network/</id>
     <published>2015-08-20T14:25:17.000Z</published>
-    <updated>2016-12-11T13:44:51.217Z</updated>
+    <updated>2017-01-10T06:58:59.982Z</updated>
     
     <content type="html">&lt;h2 id=&quot;I-Introduction&quot;&gt;&lt;a href=&quot;#I-Introduction&quot; class=&quot;headerlink&quot; title=&quot;I. Introduction&quot;&gt;&lt;/a&gt;I. Introduction&lt;/h2&gt;&lt;h3 id=&quot;1-Computer-Network-and-Distributed-System&quot;&gt;&lt;a href=&quot;#1-Computer-Network-and-Distributed-System&quot; class=&quot;headerlink&quot; title=&quot;1. Computer Network and Distributed System&quot;&gt;&lt;/a&gt;1. Computer Network and Distributed System&lt;/h3&gt;&lt;p&gt; Example: World Wide Web, Hadoop&lt;/p&gt;
 &lt;p&gt;&lt;hr&gt;&lt;/p&gt;
