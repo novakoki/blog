@@ -1,0 +1,55 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><title> A Note of Programming Languages (2) · Consolas</title><meta name="description" content="A Note of Programming Languages (2) - Ziqi"><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="short icon" href="/blog/favicon.png"><link rel="stylesheet" href="/blog/css/apollo.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600" type="text/css"></head><body><header><a href="/blog/" class="logo-link"><img src="/blog/logo.jpg"></a><ul class="nav nav-list"><li class="nav-list-item"><a href="/blog/" target="_self" class="nav-list-link">BLOG</a></li><li class="nav-list-item"><a href="/blog/diary/" target="_self" class="nav-list-link">DIARY</a></li><li class="nav-list-item"><a href="/blog/archives/" target="_self" class="nav-list-link">ARCHIVE</a></li><li class="nav-list-item"><a href="/blog/tags/" target="_self" class="nav-list-link">TAGS</a></li></ul></header><section class="container"><div class="post"><article class="post-block"><h1 class="post-title">A Note of Programming Languages (2)</h1><div class="post-time">Jan 11, 2016</div><div class="post-content"><table>
+<thead>
+<tr>
+<th style="text-align:center"></th>
+<th style="text-align:center">函数式 (Functional)</th>
+<th style="text-align:center">面向对象 (Object-Oriented)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">静态 (Static)</td>
+<td style="text-align:center">ML</td>
+<td style="text-align:center">Java</td>
+</tr>
+<tr>
+<td style="text-align:center">动态 (Dynamic)</td>
+<td style="text-align:center">Racket</td>
+<td style="text-align:center">Ruby</td>
+</tr>
+</tbody>
+</table>
+<h1 id="Racket-Part"><a href="#Racket-Part" class="headerlink" title="Racket Part"></a>Racket Part</h1><p>Racket 是一门由 Scheme 而来的动态类型、函数式的语言 （其实比起 Scheme，它有类和对象）</p>
+<h1 id="Syntax"><a href="#Syntax" class="headerlink" title="Syntax"></a>Syntax</h1><p>Racket 在语法方面比较特别，有两个特点：括号和前缀表达。</p>
+<p>Racket 里的所有东西都可以分为两种情况：</p>
+<ol>
+<li>原子类型 (atom)：<ul>
+<li>字面量： #t, 11, “hi”, null, etc.</li>
+<li>变量名：x</li>
+<li>关键字： define, lambda, if, etc.</li>
+</ul>
+</li>
+<li>一个在括号中的序列<ul>
+<li>每个序列中的第一个元素会对后面的元素产生作用</li>
+<li>如果第一个元素不是关键字且整个序列是表达式的一部分，那就把它作为函数来调用 （包括 +, -, *, / 也都是函数）</li>
+<li>整个序列表示了对应的抽象语法树且没有二义性</li>
+</ul>
+</li>
+</ol>
+<h1 id="Delayed-Evaluation"><a href="#Delayed-Evaluation" class="headerlink" title="Delayed Evaluation"></a>Delayed Evaluation</h1><p>语言设计上的一个关键语义：子表达式什么时候被求值</p>
+<h2 id="Thunk"><a href="#Thunk" class="headerlink" title="Thunk"></a>Thunk</h2><p>对于 Racket, ML 以及大部分语言来说，当调用函数时，传入的参数表达式在执行函数体前被求值。但如果这个参数是一个函数，那在被调用之前，函数体的代码是不会被执行的。<br><figure class="highlight scheme"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">(<span class="name"><span class="builtin-name">define</span></span> (<span class="name">my-if-bad</span> x y z) (<span class="name"><span class="builtin-name">if</span></span> x y z))</span><br><span class="line"><span class="comment">; 无论 x 真假，y 和 z 都会被求值</span></span><br><span class="line">(<span class="name"><span class="builtin-name">define</span></span> (<span class="name">my-if</span> x y z) (<span class="name"><span class="builtin-name">if</span></span> x (<span class="name">y</span>) (<span class="name">z</span>)))</span><br><span class="line"><span class="comment">; 当 y 和 z 是函数时，只会求值其中一个</span></span><br></pre></td></tr></table></figure></p>
+<p>这种用来延迟计算的函数称为 thunk<br><a id="more"></a></p>
+<h2 id="Lazy-Evaluation"><a href="#Lazy-Evaluation" class="headerlink" title="Lazy Evaluation"></a>Lazy Evaluation</h2><p>假设有一个很耗时的计算，但是并不知道最终会不会用到这个结果。假设用到了这个结果，也并不知道是不是会多次使用。即使用了 thunk 来延迟这个计算，每一次需要用到结果还是需要做一次相同的计算。（这里的前提是无副作用）为了解决这个问题，我们需要记录这个计算是否执行过，以及它执行得到的结果。（和 ML 一样， Racket 也是允许 mutation 的）</p>
+<p>在一些语言中，比如 Haskell，有内建的惰性求值，即参数要么不被求值，要么只被求值一次，称为 call by need 。（常见的语言都是 call by value）</p>
+<p>TO BE UPDATED…</p>
+</div></article></div></section><footer><div class="paginator"><a href="/blog/Margin-Collapsing/" class="prev">上一篇</a><a href="/blog/A-Note-of-Computer-Network/" class="next">下一篇</a></div><div data-thread-key="A-Note-of-Programming-Languages-Racket/" data-title="A Note of Programming Languages (2)" data-url="http://ziqi.moe/blog/blog/A-Note-of-Programming-Languages-Racket/" data-author-key="1" class="ds-thread"></div><script>var duoshuoQuery = {short_name:"ziqiblog"};
+(function() {
+    var ds = document.createElement('script');
+    ds.type = 'text/javascript';ds.async = true;
+    ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+    ds.charset = 'UTF-8';
+    (document.getElementsByTagName('head')[0] 
+     || document.getElementsByTagName('body')[0]).appendChild(ds);
+})();
+
+</script><div class="copyright"><p>© 2014 - 2017 <a href="http://ziqi.moe/blog">Ziqi</a>, unless otherwise noted.</p></div></footer></body></html>

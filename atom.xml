@@ -506,6 +506,110 @@
   </entry>
   
   <entry>
+    <title>A Note of Programming Languages (2)</title>
+    <link href="http://ziqi.moe/blog/A-Note-of-Programming-Languages-Racket/"/>
+    <id>http://ziqi.moe/blog/A-Note-of-Programming-Languages-Racket/</id>
+    <published>2016-01-10T16:00:00.000Z</published>
+    <updated>2017-01-11T14:37:19.381Z</updated>
+    
+    <content type="html">&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th style=&quot;text-align:center&quot;&gt;&lt;/th&gt;
+&lt;th style=&quot;text-align:center&quot;&gt;函数式 (Functional)&lt;/th&gt;
+&lt;th style=&quot;text-align:center&quot;&gt;面向对象 (Object-Oriented)&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;静态 (Static)&lt;/td&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;ML&lt;/td&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;Java&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;动态 (Dynamic)&lt;/td&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;Racket&lt;/td&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;Ruby&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h1 id=&quot;Racket-Part&quot;&gt;&lt;a href=&quot;#Racket-Part&quot; class=&quot;headerlink&quot; title=&quot;Racket Part&quot;&gt;&lt;/a&gt;Racket Part&lt;/h1&gt;&lt;p&gt;Racket 是一门由 Scheme 而来的动态类型、函数式的语言 （其实比起 Scheme，它有类和对象）&lt;/p&gt;
+&lt;h1 id=&quot;Syntax&quot;&gt;&lt;a href=&quot;#Syntax&quot; class=&quot;headerlink&quot; title=&quot;Syntax&quot;&gt;&lt;/a&gt;Syntax&lt;/h1&gt;&lt;p&gt;Racket 在语法方面比较特别，有两个特点：括号和前缀表达。&lt;/p&gt;
+&lt;p&gt;Racket 里的所有东西都可以分为两种情况：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;原子类型 (atom)：&lt;ul&gt;
+&lt;li&gt;字面量： #t, 11, “hi”, null, etc.&lt;/li&gt;
+&lt;li&gt;变量名：x&lt;/li&gt;
+&lt;li&gt;关键字： define, lambda, if, etc.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;一个在括号中的序列&lt;ul&gt;
+&lt;li&gt;每个序列中的第一个元素会对后面的元素产生作用&lt;/li&gt;
+&lt;li&gt;如果第一个元素不是关键字且整个序列是表达式的一部分，那就把它作为函数来调用 （包括 +, -, *, / 也都是函数）&lt;/li&gt;
+&lt;li&gt;整个序列表示了对应的抽象语法树且没有二义性&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h1 id=&quot;Delayed-Evaluation&quot;&gt;&lt;a href=&quot;#Delayed-Evaluation&quot; class=&quot;headerlink&quot; title=&quot;Delayed Evaluation&quot;&gt;&lt;/a&gt;Delayed Evaluation&lt;/h1&gt;&lt;p&gt;语言设计上的一个关键语义：子表达式什么时候被求值&lt;/p&gt;
+&lt;h2 id=&quot;Thunk&quot;&gt;&lt;a href=&quot;#Thunk&quot; class=&quot;headerlink&quot; title=&quot;Thunk&quot;&gt;&lt;/a&gt;Thunk&lt;/h2&gt;&lt;p&gt;对于 Racket, ML 以及大部分语言来说，当调用函数时，传入的参数表达式在执行函数体前被求值。但如果这个参数是一个函数，那在被调用之前，函数体的代码是不会被执行的。&lt;br&gt;&lt;figure class=&quot;highlight scheme&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;(&lt;span class=&quot;name&quot;&gt;&lt;span class=&quot;builtin-name&quot;&gt;define&lt;/span&gt;&lt;/span&gt; (&lt;span class=&quot;name&quot;&gt;my-if-bad&lt;/span&gt; x y z) (&lt;span class=&quot;name&quot;&gt;&lt;span class=&quot;builtin-name&quot;&gt;if&lt;/span&gt;&lt;/span&gt; x y z))&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;; 无论 x 真假，y 和 z 都会被求值&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;(&lt;span class=&quot;name&quot;&gt;&lt;span class=&quot;builtin-name&quot;&gt;define&lt;/span&gt;&lt;/span&gt; (&lt;span class=&quot;name&quot;&gt;my-if&lt;/span&gt; x y z) (&lt;span class=&quot;name&quot;&gt;&lt;span class=&quot;builtin-name&quot;&gt;if&lt;/span&gt;&lt;/span&gt; x (&lt;span class=&quot;name&quot;&gt;y&lt;/span&gt;) (&lt;span class=&quot;name&quot;&gt;z&lt;/span&gt;)))&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;; 当 y 和 z 是函数时，只会求值其中一个&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;这种用来延迟计算的函数称为 thunk&lt;br&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&quot;Lazy-Evaluation&quot;&gt;&lt;a href=&quot;#Lazy-Evaluation&quot; class=&quot;headerlink&quot; title=&quot;Lazy Evaluation&quot;&gt;&lt;/a&gt;Lazy Evaluation&lt;/h2&gt;&lt;p&gt;假设有一个很耗时的计算，但是并不知道最终会不会用到这个结果。假设用到了这个结果，也并不知道是不是会多次使用。即使用了 thunk 来延迟这个计算，每一次需要用到结果还是需要做一次相同的计算。（这里的前提是无副作用）为了解决这个问题，我们需要记录这个计算是否执行过，以及它执行得到的结果。（和 ML 一样， Racket 也是允许 mutation 的）&lt;/p&gt;
+&lt;p&gt;在一些语言中，比如 Haskell，有内建的惰性求值，即参数要么不被求值，要么只被求值一次，称为 call by need 。（常见的语言都是 call by value）&lt;/p&gt;
+&lt;p&gt;TO BE UPDATED…&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th style=&quot;text-align:center&quot;&gt;&lt;/th&gt;
+&lt;th style=&quot;text-align:center&quot;&gt;函数式 (Functional)&lt;/th&gt;
+&lt;th style=&quot;text-align:center&quot;&gt;面向对象 (Object-Oriented)&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;静态 (Static)&lt;/td&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;ML&lt;/td&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;Java&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;动态 (Dynamic)&lt;/td&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;Racket&lt;/td&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;Ruby&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h1 id=&quot;Racket-Part&quot;&gt;&lt;a href=&quot;#Racket-Part&quot; class=&quot;headerlink&quot; title=&quot;Racket Part&quot;&gt;&lt;/a&gt;Racket Part&lt;/h1&gt;&lt;p&gt;Racket 是一门由 Scheme 而来的动态类型、函数式的语言 （其实比起 Scheme，它有类和对象）&lt;/p&gt;
+&lt;h1 id=&quot;Syntax&quot;&gt;&lt;a href=&quot;#Syntax&quot; class=&quot;headerlink&quot; title=&quot;Syntax&quot;&gt;&lt;/a&gt;Syntax&lt;/h1&gt;&lt;p&gt;Racket 在语法方面比较特别，有两个特点：括号和前缀表达。&lt;/p&gt;
+&lt;p&gt;Racket 里的所有东西都可以分为两种情况：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;原子类型 (atom)：&lt;ul&gt;
+&lt;li&gt;字面量： #t, 11, “hi”, null, etc.&lt;/li&gt;
+&lt;li&gt;变量名：x&lt;/li&gt;
+&lt;li&gt;关键字： define, lambda, if, etc.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;一个在括号中的序列&lt;ul&gt;
+&lt;li&gt;每个序列中的第一个元素会对后面的元素产生作用&lt;/li&gt;
+&lt;li&gt;如果第一个元素不是关键字且整个序列是表达式的一部分，那就把它作为函数来调用 （包括 +, -, *, / 也都是函数）&lt;/li&gt;
+&lt;li&gt;整个序列表示了对应的抽象语法树且没有二义性&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h1 id=&quot;Delayed-Evaluation&quot;&gt;&lt;a href=&quot;#Delayed-Evaluation&quot; class=&quot;headerlink&quot; title=&quot;Delayed Evaluation&quot;&gt;&lt;/a&gt;Delayed Evaluation&lt;/h1&gt;&lt;p&gt;语言设计上的一个关键语义：子表达式什么时候被求值&lt;/p&gt;
+&lt;h2 id=&quot;Thunk&quot;&gt;&lt;a href=&quot;#Thunk&quot; class=&quot;headerlink&quot; title=&quot;Thunk&quot;&gt;&lt;/a&gt;Thunk&lt;/h2&gt;&lt;p&gt;对于 Racket, ML 以及大部分语言来说，当调用函数时，传入的参数表达式在执行函数体前被求值。但如果这个参数是一个函数，那在被调用之前，函数体的代码是不会被执行的。&lt;br&gt;&lt;figure class=&quot;highlight scheme&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;(&lt;span class=&quot;name&quot;&gt;&lt;span class=&quot;builtin-name&quot;&gt;define&lt;/span&gt;&lt;/span&gt; (&lt;span class=&quot;name&quot;&gt;my-if-bad&lt;/span&gt; x y z) (&lt;span class=&quot;name&quot;&gt;&lt;span class=&quot;builtin-name&quot;&gt;if&lt;/span&gt;&lt;/span&gt; x y z))&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;; 无论 x 真假，y 和 z 都会被求值&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;(&lt;span class=&quot;name&quot;&gt;&lt;span class=&quot;builtin-name&quot;&gt;define&lt;/span&gt;&lt;/span&gt; (&lt;span class=&quot;name&quot;&gt;my-if&lt;/span&gt; x y z) (&lt;span class=&quot;name&quot;&gt;&lt;span class=&quot;builtin-name&quot;&gt;if&lt;/span&gt;&lt;/span&gt; x (&lt;span class=&quot;name&quot;&gt;y&lt;/span&gt;) (&lt;span class=&quot;name&quot;&gt;z&lt;/span&gt;)))&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;; 当 y 和 z 是函数时，只会求值其中一个&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;这种用来延迟计算的函数称为 thunk&lt;br&gt;
+    
+    </summary>
+    
+    
+      <category term="编程语言" scheme="http://ziqi.moe/blog/tags/pl/"/>
+    
+  </entry>
+  
+  <entry>
     <title>A Note of Computer Network</title>
     <link href="http://ziqi.moe/blog/A-Note-of-Computer-Network/"/>
     <id>http://ziqi.moe/blog/A-Note-of-Computer-Network/</id>

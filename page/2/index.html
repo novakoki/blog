@@ -1,4 +1,44 @@
-<!DOCTYPE html><html><head><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><title> Consolas</title><meta name="description" content="A Blog Powered By Hexo"><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="short icon" href="/blog/favicon.png"><link rel="stylesheet" href="/blog/css/apollo.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600" type="text/css"></head><body><header><a href="/blog/" class="logo-link"><img src="/blog/logo.jpg"></a><ul class="nav nav-list"><li class="nav-list-item"><a href="/blog/" target="_self" class="nav-list-link">BLOG</a></li><li class="nav-list-item"><a href="/blog/diary/" target="_self" class="nav-list-link">DIARY</a></li><li class="nav-list-item"><a href="/blog/archives/" target="_self" class="nav-list-link">ARCHIVE</a></li><li class="nav-list-item"><a href="/blog/tags/" target="_self" class="nav-list-link">TAGS</a></li></ul></header><section class="container"><ul class="home post-list"><li class="post-list-item"><article class="post-block"><h2 class="post-title"><a href="/blog/A-Note-of-Computer-Network/" class="post-title-link">A Note of Computer Network</a></h2><div class="post-time">Aug 20, 2015</div><div class="post-content"><h2 id="I-Introduction"><a href="#I-Introduction" class="headerlink" title="I. Introduction"></a>I. Introduction</h2><h3 id="1-Computer-Network-and-Distributed-System"><a href="#1-Computer-Network-and-Distributed-System" class="headerlink" title="1. Computer Network and Distributed System"></a>1. Computer Network and Distributed System</h3><p> Example: World Wide Web, Hadoop</p>
+<!DOCTYPE html><html><head><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><title> Consolas</title><meta name="description" content="A Blog Powered By Hexo"><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="short icon" href="/blog/favicon.png"><link rel="stylesheet" href="/blog/css/apollo.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600" type="text/css"></head><body><header><a href="/blog/" class="logo-link"><img src="/blog/logo.jpg"></a><ul class="nav nav-list"><li class="nav-list-item"><a href="/blog/" target="_self" class="nav-list-link">BLOG</a></li><li class="nav-list-item"><a href="/blog/diary/" target="_self" class="nav-list-link">DIARY</a></li><li class="nav-list-item"><a href="/blog/archives/" target="_self" class="nav-list-link">ARCHIVE</a></li><li class="nav-list-item"><a href="/blog/tags/" target="_self" class="nav-list-link">TAGS</a></li></ul></header><section class="container"><ul class="home post-list"><li class="post-list-item"><article class="post-block"><h2 class="post-title"><a href="/blog/A-Note-of-Programming-Languages-Racket/" class="post-title-link">A Note of Programming Languages (2)</a></h2><div class="post-time">Jan 11, 2016</div><div class="post-content"><table>
+<thead>
+<tr>
+<th style="text-align:center"></th>
+<th style="text-align:center">函数式 (Functional)</th>
+<th style="text-align:center">面向对象 (Object-Oriented)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">静态 (Static)</td>
+<td style="text-align:center">ML</td>
+<td style="text-align:center">Java</td>
+</tr>
+<tr>
+<td style="text-align:center">动态 (Dynamic)</td>
+<td style="text-align:center">Racket</td>
+<td style="text-align:center">Ruby</td>
+</tr>
+</tbody>
+</table>
+<h1 id="Racket-Part"><a href="#Racket-Part" class="headerlink" title="Racket Part"></a>Racket Part</h1><p>Racket 是一门由 Scheme 而来的动态类型、函数式的语言 （其实比起 Scheme，它有类和对象）</p>
+<h1 id="Syntax"><a href="#Syntax" class="headerlink" title="Syntax"></a>Syntax</h1><p>Racket 在语法方面比较特别，有两个特点：括号和前缀表达。</p>
+<p>Racket 里的所有东西都可以分为两种情况：</p>
+<ol>
+<li>原子类型 (atom)：<ul>
+<li>字面量： #t, 11, “hi”, null, etc.</li>
+<li>变量名：x</li>
+<li>关键字： define, lambda, if, etc.</li>
+</ul>
+</li>
+<li>一个在括号中的序列<ul>
+<li>每个序列中的第一个元素会对后面的元素产生作用</li>
+<li>如果第一个元素不是关键字且整个序列是表达式的一部分，那就把它作为函数来调用 （包括 +, -, *, / 也都是函数）</li>
+<li>整个序列表示了对应的抽象语法树且没有二义性</li>
+</ul>
+</li>
+</ol>
+<h1 id="Delayed-Evaluation"><a href="#Delayed-Evaluation" class="headerlink" title="Delayed Evaluation"></a>Delayed Evaluation</h1><p>语言设计上的一个关键语义：子表达式什么时候被求值</p>
+<h2 id="Thunk"><a href="#Thunk" class="headerlink" title="Thunk"></a>Thunk</h2><p>对于 Racket, ML 以及大部分语言来说，当调用函数时，传入的参数表达式在执行函数体前被求值。但如果这个参数是一个函数，那在被调用之前，函数体的代码是不会被执行的。<br><figure class="highlight scheme"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">(<span class="name"><span class="builtin-name">define</span></span> (<span class="name">my-if-bad</span> x y z) (<span class="name"><span class="builtin-name">if</span></span> x y z))</span><br><span class="line"><span class="comment">; 无论 x 真假，y 和 z 都会被求值</span></span><br><span class="line">(<span class="name"><span class="builtin-name">define</span></span> (<span class="name">my-if</span> x y z) (<span class="name"><span class="builtin-name">if</span></span> x (<span class="name">y</span>) (<span class="name">z</span>)))</span><br><span class="line"><span class="comment">; 当 y 和 z 是函数时，只会求值其中一个</span></span><br></pre></td></tr></table></figure></p>
+<p>这种用来延迟计算的函数称为 thunk<br></div><a href="/blog/A-Note-of-Programming-Languages-Racket/" class="read-more">...阅读全文</a></article></li><li class="post-list-item"><article class="post-block"><h2 class="post-title"><a href="/blog/A-Note-of-Computer-Network/" class="post-title-link">A Note of Computer Network</a></h2><div class="post-time">Aug 20, 2015</div><div class="post-content"><h2 id="I-Introduction"><a href="#I-Introduction" class="headerlink" title="I. Introduction"></a>I. Introduction</h2><h3 id="1-Computer-Network-and-Distributed-System"><a href="#1-Computer-Network-and-Distributed-System" class="headerlink" title="1. Computer Network and Distributed System"></a>1. Computer Network and Distributed System</h3><p> Example: World Wide Web, Hadoop</p>
 <p><hr></p>
 <h3 id="2-Uses"><a href="#2-Uses" class="headerlink" title="2. Uses"></a>2. Uses</h3><ul>
 <li><strong>Business Application</strong><ul>
@@ -22,6 +62,4 @@
 <li>分割成很多个同类型的子问题(<strong>Divide</strong>)</li>
 <li>递归地解决这些子问题(<strong>Conquer</strong>)</li>
 <li>合并子问题的答案(<strong>Combine</strong>)</li>
-</ol></div><a href="/blog/DIVIDE-AND-CONQUER/" class="read-more">...阅读全文</a></article></li><li class="post-list-item"><article class="post-block"><h2 class="post-title"><a href="/blog/Machine-Learning-Linear-Regression/" class="post-title-link">Machine Learning : Linear Regression</a></h2><div class="post-time">Feb 7, 2015</div><div class="post-content"><p>线性回归即用线性函数对因变量和一个或多个自变量之间的关系进行建模。这个函数是多个称为回归系数的参数的线性组合。</p>
-<p>给定数据集（n个变量，m组数据） </p>
-<p>用矩阵来表示数据集<br>$$<br>X=<br>\begin{pmatrix}<br>1&amp;x_{11}&amp;x_{21}&amp;\cdots&amp;x_{n1}\\<br>\vdots&amp;\vdots&amp;\vdots&amp;\ddots&amp;\vdots\\<br>1&amp;x_{1m}&amp;x_{2m}&amp;\cdots&amp;x_{nm}<br>\end{pmatrix}<br>$$<br></div><a href="/blog/Machine-Learning-Linear-Regression/" class="read-more">...阅读全文</a></article></li></ul></section><footer><div class="paginator"><a href="/blog/" class="prev">上一页</a><a href="/blog/page/3/" class="next">下一页</a></div><div class="copyright"><p>© 2014 - 2017 <a href="http://ziqi.moe/blog">Ziqi</a>, unless otherwise noted.</p></div></footer></body></html>
+</ol></div><a href="/blog/DIVIDE-AND-CONQUER/" class="read-more">...阅读全文</a></article></li></ul></section><footer><div class="paginator"><a href="/blog/" class="prev">上一页</a><a href="/blog/page/3/" class="next">下一页</a></div><div class="copyright"><p>© 2014 - 2017 <a href="http://ziqi.moe/blog">Ziqi</a>, unless otherwise noted.</p></div></footer></body></html>
