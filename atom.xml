@@ -5,7 +5,7 @@
   <link href="/blog/atom.xml" rel="self"/>
   
   <link href="http://ziqi.moe/blog/"/>
-  <updated>2017-01-10T13:37:10.145Z</updated>
+  <updated>2017-01-12T14:14:02.291Z</updated>
   <id>http://ziqi.moe/blog/</id>
   
   <author>
@@ -14,6 +14,189 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>A Note of Programming Languages (2)</title>
+    <link href="http://ziqi.moe/blog/A-Note-of-Programming-Languages-Racket/"/>
+    <id>http://ziqi.moe/blog/A-Note-of-Programming-Languages-Racket/</id>
+    <published>2017-01-11T16:00:00.000Z</published>
+    <updated>2017-01-12T14:14:02.291Z</updated>
+    
+    <content type="html">&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th style=&quot;text-align:center&quot;&gt;&lt;/th&gt;
+&lt;th style=&quot;text-align:center&quot;&gt;函数式 (Functional)&lt;/th&gt;
+&lt;th style=&quot;text-align:center&quot;&gt;面向对象 (Object-Oriented)&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;静态 (Static)&lt;/td&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;ML&lt;/td&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;Java&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;动态 (Dynamic)&lt;/td&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;Racket&lt;/td&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;Ruby&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h1 id=&quot;Racket-Part&quot;&gt;&lt;a href=&quot;#Racket-Part&quot; class=&quot;headerlink&quot; title=&quot;Racket Part&quot;&gt;&lt;/a&gt;Racket Part&lt;/h1&gt;&lt;p&gt;Racket 是一门由 Scheme 而来的动态类型、函数式的语言 （其实比起 Scheme，它有类和对象）&lt;/p&gt;
+&lt;h2 id=&quot;Syntax&quot;&gt;&lt;a href=&quot;#Syntax&quot; class=&quot;headerlink&quot; title=&quot;Syntax&quot;&gt;&lt;/a&gt;Syntax&lt;/h2&gt;&lt;p&gt;Racket 在语法方面比较特别，有两个特点：括号和前缀表达。&lt;/p&gt;
+&lt;p&gt;Racket 里的所有东西都可以分为两种情况：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;原子类型 (atom)：&lt;ul&gt;
+&lt;li&gt;字面量： #t, 11, “hi”, null, etc.&lt;/li&gt;
+&lt;li&gt;变量名：x&lt;/li&gt;
+&lt;li&gt;关键字： define, lambda, if, etc.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;一个在括号中的序列&lt;ul&gt;
+&lt;li&gt;每个序列中的第一个元素会对后面的元素产生作用&lt;/li&gt;
+&lt;li&gt;如果第一个元素不是关键字且整个序列是表达式的一部分，那就把它作为函数来调用 （包括 +, -, *, / 也都是函数）&lt;/li&gt;
+&lt;li&gt;整个序列表示了对应的抽象语法树且没有二义性&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&quot;Delayed-Evaluation-And-Thunk&quot;&gt;&lt;a href=&quot;#Delayed-Evaluation-And-Thunk&quot; class=&quot;headerlink&quot; title=&quot;Delayed Evaluation And Thunk&quot;&gt;&lt;/a&gt;Delayed Evaluation And Thunk&lt;/h2&gt;&lt;p&gt;语言设计上的一个关键语义：子表达式什么时候被求值&lt;/p&gt;
+&lt;p&gt;对于 Racket, ML 以及大部分语言来说，当调用函数时，传入的参数表达式在执行函数体前被求值。但如果这个参数是一个函数，那在被调用之前，函数体的代码是不会被执行的。&lt;br&gt;&lt;figure class=&quot;highlight scheme&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;(&lt;span class=&quot;name&quot;&gt;&lt;span class=&quot;builtin-name&quot;&gt;define&lt;/span&gt;&lt;/span&gt; (&lt;span class=&quot;name&quot;&gt;my-if-bad&lt;/span&gt; x y z) (&lt;span class=&quot;name&quot;&gt;&lt;span class=&quot;builtin-name&quot;&gt;if&lt;/span&gt;&lt;/span&gt; x y z))&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;; 无论 x 真假，y 和 z 都会被求值&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;(&lt;span class=&quot;name&quot;&gt;&lt;span class=&quot;builtin-name&quot;&gt;define&lt;/span&gt;&lt;/span&gt; (&lt;span class=&quot;name&quot;&gt;my-if&lt;/span&gt; x y z) (&lt;span class=&quot;name&quot;&gt;&lt;span class=&quot;builtin-name&quot;&gt;if&lt;/span&gt;&lt;/span&gt; x (&lt;span class=&quot;name&quot;&gt;y&lt;/span&gt;) (&lt;span class=&quot;name&quot;&gt;z&lt;/span&gt;)))&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;; 当 y 和 z 是函数时，只会求值其中一个&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;这种用来延迟计算的函数称为 thunk&lt;br&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&quot;Lazy-Evaluation-And-Memoization&quot;&gt;&lt;a href=&quot;#Lazy-Evaluation-And-Memoization&quot; class=&quot;headerlink&quot; title=&quot;Lazy Evaluation And Memoization&quot;&gt;&lt;/a&gt;Lazy Evaluation And Memoization&lt;/h2&gt;&lt;p&gt;假设有一个很耗时的计算，但是并不知道最终会不会用到这个结果。这时我们可以用 thunk （或者一些语言有内建的 call-by-name 机制，比如 Scala）来延迟这个计算。&lt;/p&gt;
+&lt;p&gt;假设用到了这个结果，也并不知道是不是会多次使用。即使用了 thunk 来延迟这个计算，每一次需要用到结果还是需要做一次相同的计算。（这里的前提是无副作用）为了解决这个问题，我们需要记录这个计算是否执行过，以及它执行得到的结果。（和 ML 一样， Racket 也是允许 mutation 的）在一些语言中，比如 Haskell，有内建的这种机制，即参数要么不被求值，要么只被求值一次，称为 call by need 。（常见的语言都是 call by value）&lt;/p&gt;
+&lt;h2 id=&quot;Stream&quot;&gt;&lt;a href=&quot;#Stream&quot; class=&quot;headerlink&quot; title=&quot;Stream&quot;&gt;&lt;/a&gt;Stream&lt;/h2&gt;&lt;p&gt;如何产生一个无穷的序列，无论在空间上还是时间上都无法做到显式产生，但是我们可以用递推的方式描述它，以及编写方法来取得我们需要的部分。这样的方法称为流，典型的流就是 linux 的管道。&lt;br&gt;&lt;figure class=&quot;highlight scheme&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;(&lt;span class=&quot;name&quot;&gt;&lt;span class=&quot;builtin-name&quot;&gt;define&lt;/span&gt;&lt;/span&gt; ones (&lt;span class=&quot;name&quot;&gt;&lt;span class=&quot;builtin-name&quot;&gt;lambda&lt;/span&gt;&lt;/span&gt; () (&lt;span class=&quot;name&quot;&gt;&lt;span class=&quot;builtin-name&quot;&gt;cons&lt;/span&gt;&lt;/span&gt; &lt;span class=&quot;number&quot;&gt;1&lt;/span&gt; ones))) &lt;span class=&quot;comment&quot;&gt;; 产生无限个 1&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;; 每次得到一个值和产生它后继的 thunk&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;h2 id=&quot;Macros&quot;&gt;&lt;a href=&quot;#Macros&quot; class=&quot;headerlink&quot; title=&quot;Macros&quot;&gt;&lt;/a&gt;Macros&lt;/h2&gt;&lt;p&gt;宏允许语言的使用者自定义语法，即可以扩展语言。宏展开在程序最开始执行，即在类型检查、编译、运行之前。&lt;/p&gt;
+&lt;p&gt;Racket VS C/C++：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Tokenization： 不是简单的替换，而是会区分单词。比如定义 head 为 car 的宏，headt 不会被替换成 cart&lt;/li&gt;
+&lt;li&gt;Parenthesization： C/C++ 里需要用很多括号来确保宏替换后的正确执行，Racket 没有这个问题，因为括号在 Racket 里意味着一个语法序列的边界。&lt;/li&gt;
+&lt;li&gt;Scope： Racket 不会在变量定义处进行宏替换&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Hygiene：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;在宏里面定义局部变量不会影响外部的同名变量&lt;/p&gt;
+ &lt;figure class=&quot;highlight scheme&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;(&lt;span class=&quot;name&quot;&gt;&lt;span class=&quot;builtin-name&quot;&gt;define-syntax&lt;/span&gt;&lt;/span&gt; double4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  (&lt;span class=&quot;name&quot;&gt;&lt;span class=&quot;builtin-name&quot;&gt;syntax-rules&lt;/span&gt;&lt;/span&gt; ()&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    [(&lt;span class=&quot;name&quot;&gt;double4&lt;/span&gt; e)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    (&lt;span class=&quot;name&quot;&gt;&lt;span class=&quot;builtin-name&quot;&gt;let*&lt;/span&gt;&lt;/span&gt; ([&lt;span class=&quot;name&quot;&gt;zero&lt;/span&gt; &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;]&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            [&lt;span class=&quot;name&quot;&gt;x&lt;/span&gt; e])&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;      (&lt;span class=&quot;name&quot;&gt;&lt;span class=&quot;builtin-name&quot;&gt;+&lt;/span&gt;&lt;/span&gt; x x zero))]))&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;(&lt;span class=&quot;name&quot;&gt;&lt;span class=&quot;builtin-name&quot;&gt;let&lt;/span&gt;&lt;/span&gt; ([&lt;span class=&quot;name&quot;&gt;zero&lt;/span&gt; &lt;span class=&quot;number&quot;&gt;17&lt;/span&gt;])&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  (&lt;span class=&quot;name&quot;&gt;double4&lt;/span&gt; zero)) &lt;span class=&quot;comment&quot;&gt;; 结果为 34&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;在宏里面定义的局部变量永远指向宏定义处的环境，而非宏调用时的环境&lt;/p&gt;
+ &lt;figure class=&quot;highlight scheme&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;(&lt;span class=&quot;name&quot;&gt;&lt;span class=&quot;builtin-name&quot;&gt;define-syntax&lt;/span&gt;&lt;/span&gt; double&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  (&lt;span class=&quot;name&quot;&gt;&lt;span class=&quot;builtin-name&quot;&gt;syntax-rules&lt;/span&gt;&lt;/span&gt; ()&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    [(&lt;span class=&quot;name&quot;&gt;double&lt;/span&gt; e)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    (&lt;span class=&quot;name&quot;&gt;&lt;span class=&quot;builtin-name&quot;&gt;let&lt;/span&gt;&lt;/span&gt; ([&lt;span class=&quot;name&quot;&gt;x&lt;/span&gt; e])&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;      (&lt;span class=&quot;name&quot;&gt;&lt;span class=&quot;builtin-name&quot;&gt;+&lt;/span&gt;&lt;/span&gt; x x))]))&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;(&lt;span class=&quot;name&quot;&gt;&lt;span class=&quot;builtin-name&quot;&gt;let&lt;/span&gt;&lt;/span&gt; ([&lt;span class=&quot;name&quot;&gt;&lt;span class=&quot;builtin-name&quot;&gt;+&lt;/span&gt;&lt;/span&gt; *])&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  (&lt;span class=&quot;name&quot;&gt;double&lt;/span&gt; &lt;span class=&quot;number&quot;&gt;17&lt;/span&gt;)) &lt;span class=&quot;comment&quot;&gt;; 结果为 34&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;Eval&quot;&gt;&lt;a href=&quot;#Eval&quot; class=&quot;headerlink&quot; title=&quot;Eval&quot;&gt;&lt;/a&gt;Eval&lt;/h2&gt;&lt;p&gt;很多语言都提供了执行自身代码的函数，比如 JavaScript, Python 都有。但 Racket 的区别在于，它以列表的形式表示要执行的代码而非字符串。&lt;br&gt;&lt;figure class=&quot;highlight scheme&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;(&lt;span class=&quot;name&quot;&gt;&lt;span class=&quot;builtin-name&quot;&gt;define&lt;/span&gt;&lt;/span&gt; my-code&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  (&lt;span class=&quot;name&quot;&gt;&lt;span class=&quot;builtin-name&quot;&gt;list&lt;/span&gt;&lt;/span&gt; &lt;span class=&quot;symbol&quot;&gt;&#39;+&lt;/span&gt; &lt;span class=&quot;number&quot;&gt;5&lt;/span&gt; &lt;span class=&quot;number&quot;&gt;3&lt;/span&gt;)) &lt;span class=&quot;comment&quot;&gt;; &#39;+ 是一个 Symbol&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;(&lt;span class=&quot;name&quot;&gt;&lt;span class=&quot;builtin-name&quot;&gt;eval&lt;/span&gt;&lt;/span&gt; my-code) &lt;span class=&quot;comment&quot;&gt;; 8&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;h1 id=&quot;Static-VS-Dynamic&quot;&gt;&lt;a href=&quot;#Static-VS-Dynamic&quot; class=&quot;headerlink&quot; title=&quot;Static VS Dynamic&quot;&gt;&lt;/a&gt;Static VS Dynamic&lt;/h1&gt;&lt;p&gt;一门语言称之为静态或是动态，指的是它在什么时候进行类型检查。&lt;/p&gt;
+&lt;h2 id=&quot;ML-VS-Racket&quot;&gt;&lt;a href=&quot;#ML-VS-Racket&quot; class=&quot;headerlink&quot; title=&quot;ML VS Racket&quot;&gt;&lt;/a&gt;ML VS Racket&lt;/h2&gt;&lt;p&gt;可以有两种看法：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;ML 某种程度上是 Racket 的子集，Racket 支持的写法更多，因为一部分 Racket 中允许的表达式不会被 ML 的静态检查通过。比如 if 语句的两个分支返回不同的类型。&lt;/li&gt;
+&lt;li&gt;Racket 里的变量其实不是“没有类型”，而是只有“一个类型”。 &lt;figure class=&quot;highlight ml&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;datatype&lt;/span&gt; theType = &lt;span class=&quot;comment&quot;&gt;(* 所有的变量类型都一样，所以没有必要标注或是检查 *)&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;type&quot;&gt;Int&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;of&lt;/span&gt; &lt;span class=&quot;built_in&quot;&gt;int&lt;/span&gt; | &lt;span class=&quot;comment&quot;&gt;(* 变量所持有的值是有不同类型的，即运行时值是带有所谓标签的 *)&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;type&quot;&gt;String&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;of&lt;/span&gt; &lt;span class=&quot;built_in&quot;&gt;string&lt;/span&gt; |&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;type&quot;&gt;Pair&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;of&lt;/span&gt; theType * theType |&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;type&quot;&gt;Fun&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;of&lt;/span&gt; theType -&amp;gt; theType |&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  ...&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&quot;Static-Checking&quot;&gt;&lt;a href=&quot;#Static-Checking&quot; class=&quot;headerlink&quot; title=&quot;Static Checking&quot;&gt;&lt;/a&gt;Static Checking&lt;/h2&gt;&lt;p&gt;静态检查处在语法分析之后，程序运行之前，所以称之为“编译时检查”（但这跟语言用编译器还是解释器没有关系）。静态检查如何作用是语言定义的一部分，有的语言做得多有的语言做得少，给定检查规则，也可以自己实现工具来做期望的检查。&lt;/p&gt;
+&lt;p&gt;实现静态检查的方式主要是类型系统，但类型系统只是实现静态检查的方式，而不是静态检查的目的。静态检查的目的是防止错误，但这个错误的范围很有限，比如大多数静态检查都不会检查数组是否越界，静态检查也没法告诉你某个地方你应该用乘法但是你用了加法。它能防止的是，字符串不能与整型相除，某个类型不能做某些事情。&lt;/p&gt;
+&lt;p&gt;相比于动态检查（即给值加上标签，运行时进行检查），静态检查其实拒绝了一部分并不会出错的程序。这里值得讨论的东西在于，首先，你如何定义错误。&lt;/p&gt;
+&lt;p&gt;考虑一个简单的“错误”： 3 / 0，你可以在下面这些时间点阻止这个“错误”&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Keystroke-time： 在编辑这段代码的时候阻止，意味着你写下 3 / 0 就已经是一个错误&lt;/li&gt;
+&lt;li&gt;Compile-time： 当静态检查器“看到”这段代码的时候阻止，意味着这段代码不应该出现&lt;/li&gt;
+&lt;li&gt;Link-time： 当发现这段代码会被调用的时候阻止，意味着调用这段代码是一个错误&lt;/li&gt;
+&lt;li&gt;Run-time： 当执行这段代码的时候阻止，即被 0 除这个运算是一种错误&lt;/li&gt;
+&lt;li&gt;Even-later&lt;ul&gt;
+&lt;li&gt;执行这段代码没有错，但如果用到了这个运算返回的结果（可以是一个表示未定义的标识，比如 undefined），才是一种错误（比如把 undefined 用作数组下标）&lt;/li&gt;
+&lt;li&gt;甚至用返回的结果来做计算也没错，3 / 0 应该表示正无穷，同样的 tan(π/2) 也表示正无穷，你可以让它参与计算（事实上， Racket 里 (/ 3.0 0.0) 就返回 +inf.0）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;第二个值得讨论的就是如何定义正确，怎么判断类型检查是符合语言定义的。&lt;/p&gt;
+&lt;h2 id=&quot;Soundness-And-Completeness&quot;&gt;&lt;a href=&quot;#Soundness-And-Completeness&quot; class=&quot;headerlink&quot; title=&quot;Soundness And Completeness&quot;&gt;&lt;/a&gt;Soundness And Completeness&lt;/h2&gt;&lt;p&gt;设 X 为我们希望类型检查阻止的一件事，定义一个类型系统是&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;可靠的：不接受存在某个输入，使得 X 会发生的程序&lt;/li&gt;
+&lt;li&gt;完备的：不拒绝对任意输入都不会使得 X 发生的程序&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;现代语言的类型系统都是可靠的，但不是完备的。可靠意味着使用这门语言的人，可以依赖于 X 不会发生这个事实来编程。完备当然很好，但是实际上被类型系统误诊的情况很少，并且也很容易修改以通过类型检查。&lt;/p&gt;
+&lt;p&gt;但是为什么现代语言都不是完备的？实际上，静态检查不能够同时满足下面三件事：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;程序会终止 (Always terminate)&lt;/li&gt;
+&lt;li&gt;可靠 (Soundness)&lt;/li&gt;
+&lt;li&gt;完备 (Completeness)&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;如果一定要抛弃一个，抛弃完备性是一个较好的选择。&lt;/p&gt;
+&lt;p&gt;（为什么不能同时满足？是因为不可判定性，我解释不了）&lt;/p&gt;
+&lt;h2 id=&quot;Weak-Typing&quot;&gt;&lt;a href=&quot;#Weak-Typing&quot; class=&quot;headerlink&quot; title=&quot;Weak Typing&quot;&gt;&lt;/a&gt;Weak Typing&lt;/h2&gt;&lt;p&gt;假设对于某个 X 而言，类型系统是不可靠的，那么至少要在运行时阻止这个行为。但另一种选择是，不阻止这样的行为，这是程序员的错误，语言不是必须去做检查的。这种情况下，程序可能发生各种不可预料的行为，存在这种情况的语言称为弱类型的。典型的弱类型语言就是 C 和 C++，一个典型的 X 行为就是数组越界。强类型语言比如 Java 会在运行时抛出异常，但弱类型语言不会阻止这个行为，从而发生无法预料的事。&lt;/p&gt;
+&lt;p&gt;为什么 C/C++ 会如此设计？&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;接近底层，效率优先。检查错误需要额外的时间和空间，程序员也不希望有隐藏的时间空间开销&lt;/li&gt;
+&lt;li&gt;“strong types for weak minds”， 即认为人比计算机聪明，我这么写肯定是对的，不用你来告诉我错了，事实证明这种想法是错误的，计算机比人要可靠得多&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;Flexible&quot;&gt;&lt;a href=&quot;#Flexible&quot; class=&quot;headerlink&quot; title=&quot;Flexible&quot;&gt;&lt;/a&gt;Flexible&lt;/h2&gt;&lt;p&gt;除了检查错误的时间点不同，不同的语言对相同的行为也有不同的对待，也就是有严格和灵活之分。一些语言认为是错误的，可能另一些语言不这么认为，相反赋予了一些看上去是错误的行为正确的意义。（It’s not a bug, but a feature!）&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;数组越界：一些语言没有下标越界一说，用了越界的下标会使那个数组变大。还有些语言有从尾部开始的负下标。&lt;/li&gt;
+&lt;li&gt;函数传参：一些语言无所谓参数的个数，传的多了会忽略，传的少了会用默认值代入&lt;/li&gt;
+&lt;li&gt;隐式转换：一些语言字符串可以和数相加&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;（我真的没有在黑 JavaScript）&lt;/p&gt;
+&lt;p&gt;这些特性一方面可能是不明智的，容易隐藏潜在的错误，让程序难以正确调试，但另一方面不可否认的，这种灵活有时候会很有用。这跟语言是动态还是静态也没什么关系，可能容易认为这种灵活让语言更加“动态”，但这只是改变了语义，不再阻止某些行为而已。&lt;/p&gt;
+&lt;h2 id=&quot;Static-or-Dynamic&quot;&gt;&lt;a href=&quot;#Static-or-Dynamic&quot; class=&quot;headerlink&quot; title=&quot;Static or Dynamic&quot;&gt;&lt;/a&gt;Static or Dynamic&lt;/h2&gt;&lt;p&gt;回到正题，究竟该选择静态语言还是动态语言，各有什么优点和缺点？（永远没有答案可以说，静态一定比动态好，或是反过来）&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;方便？动态没有类型的约束表达自然更加自由，但是静态有了确定类型的前提也可以少写很多类似判断类型的代码&lt;/li&gt;
+&lt;li&gt;静态语言是否阻止了一些有用的程序？事实上，这些因为类型系统被阻止的程序，因为动态语言因为给值加上标签所以可以在运行时检查，但静态语言依然可以用类似 ML 的 datatype 或是面向对象语言中的多态来显式模拟这种标签。&lt;/li&gt;
+&lt;li&gt;“过早”地检查错误？软件工程中有一个真理，bug 发现越早越容易修复。静态检查能帮你发现一些低级错误，使得程序员能专注于业务逻辑。但是动态语言的支持者同样可以说，仍然有一些错误是静态检查无法检测，需要通过测试来发现的，既然最终都要测试，那有没有静态检查也不重要。&lt;/li&gt;
+&lt;li&gt;性能好坏？动态语言有标签的开销，但可以做优化，而且静态语言也有需要标签的时候。&lt;/li&gt;
+&lt;li&gt;代码复用？显然动态语言更容易复用代码，但也因此更容易出错。&lt;/li&gt;
+&lt;li&gt;产品原型设计？动态语言不用设计类型，同时可以先设计一部分，而静态语言必须通过类型检查，但也一样可以通过通配符之类的 case 来表达剩余的未设计部分。&lt;/li&gt;
+&lt;li&gt;维护代码？动态语言方便给函数添加新的参数来扩展，并且可以不让用户感知到这一变化。对于静态语言，只要改动了一个地方，类型检查工具会告诉你所有相关联的应该修改的地方，也很方便。&lt;/li&gt;
+&lt;/ol&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th style=&quot;text-align:center&quot;&gt;&lt;/th&gt;
+&lt;th style=&quot;text-align:center&quot;&gt;函数式 (Functional)&lt;/th&gt;
+&lt;th style=&quot;text-align:center&quot;&gt;面向对象 (Object-Oriented)&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;静态 (Static)&lt;/td&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;ML&lt;/td&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;Java&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;动态 (Dynamic)&lt;/td&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;Racket&lt;/td&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;Ruby&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h1 id=&quot;Racket-Part&quot;&gt;&lt;a href=&quot;#Racket-Part&quot; class=&quot;headerlink&quot; title=&quot;Racket Part&quot;&gt;&lt;/a&gt;Racket Part&lt;/h1&gt;&lt;p&gt;Racket 是一门由 Scheme 而来的动态类型、函数式的语言 （其实比起 Scheme，它有类和对象）&lt;/p&gt;
+&lt;h2 id=&quot;Syntax&quot;&gt;&lt;a href=&quot;#Syntax&quot; class=&quot;headerlink&quot; title=&quot;Syntax&quot;&gt;&lt;/a&gt;Syntax&lt;/h2&gt;&lt;p&gt;Racket 在语法方面比较特别，有两个特点：括号和前缀表达。&lt;/p&gt;
+&lt;p&gt;Racket 里的所有东西都可以分为两种情况：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;原子类型 (atom)：&lt;ul&gt;
+&lt;li&gt;字面量： #t, 11, “hi”, null, etc.&lt;/li&gt;
+&lt;li&gt;变量名：x&lt;/li&gt;
+&lt;li&gt;关键字： define, lambda, if, etc.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;一个在括号中的序列&lt;ul&gt;
+&lt;li&gt;每个序列中的第一个元素会对后面的元素产生作用&lt;/li&gt;
+&lt;li&gt;如果第一个元素不是关键字且整个序列是表达式的一部分，那就把它作为函数来调用 （包括 +, -, *, / 也都是函数）&lt;/li&gt;
+&lt;li&gt;整个序列表示了对应的抽象语法树且没有二义性&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&quot;Delayed-Evaluation-And-Thunk&quot;&gt;&lt;a href=&quot;#Delayed-Evaluation-And-Thunk&quot; class=&quot;headerlink&quot; title=&quot;Delayed Evaluation And Thunk&quot;&gt;&lt;/a&gt;Delayed Evaluation And Thunk&lt;/h2&gt;&lt;p&gt;语言设计上的一个关键语义：子表达式什么时候被求值&lt;/p&gt;
+&lt;p&gt;对于 Racket, ML 以及大部分语言来说，当调用函数时，传入的参数表达式在执行函数体前被求值。但如果这个参数是一个函数，那在被调用之前，函数体的代码是不会被执行的。&lt;br&gt;&lt;figure class=&quot;highlight scheme&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;(&lt;span class=&quot;name&quot;&gt;&lt;span class=&quot;builtin-name&quot;&gt;define&lt;/span&gt;&lt;/span&gt; (&lt;span class=&quot;name&quot;&gt;my-if-bad&lt;/span&gt; x y z) (&lt;span class=&quot;name&quot;&gt;&lt;span class=&quot;builtin-name&quot;&gt;if&lt;/span&gt;&lt;/span&gt; x y z))&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;; 无论 x 真假，y 和 z 都会被求值&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;(&lt;span class=&quot;name&quot;&gt;&lt;span class=&quot;builtin-name&quot;&gt;define&lt;/span&gt;&lt;/span&gt; (&lt;span class=&quot;name&quot;&gt;my-if&lt;/span&gt; x y z) (&lt;span class=&quot;name&quot;&gt;&lt;span class=&quot;builtin-name&quot;&gt;if&lt;/span&gt;&lt;/span&gt; x (&lt;span class=&quot;name&quot;&gt;y&lt;/span&gt;) (&lt;span class=&quot;name&quot;&gt;z&lt;/span&gt;)))&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;; 当 y 和 z 是函数时，只会求值其中一个&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;这种用来延迟计算的函数称为 thunk&lt;br&gt;
+    
+    </summary>
+    
+    
+      <category term="编程语言" scheme="http://ziqi.moe/blog/tags/pl/"/>
+    
+  </entry>
   
   <entry>
     <title>从 Vue1 升级到 Vue2 的一些思考</title>
@@ -506,110 +689,6 @@
   </entry>
   
   <entry>
-    <title>A Note of Programming Languages (2)</title>
-    <link href="http://ziqi.moe/blog/A-Note-of-Programming-Languages-Racket/"/>
-    <id>http://ziqi.moe/blog/A-Note-of-Programming-Languages-Racket/</id>
-    <published>2016-01-10T16:00:00.000Z</published>
-    <updated>2017-01-11T14:37:19.381Z</updated>
-    
-    <content type="html">&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th style=&quot;text-align:center&quot;&gt;&lt;/th&gt;
-&lt;th style=&quot;text-align:center&quot;&gt;函数式 (Functional)&lt;/th&gt;
-&lt;th style=&quot;text-align:center&quot;&gt;面向对象 (Object-Oriented)&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;静态 (Static)&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;ML&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;Java&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;动态 (Dynamic)&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;Racket&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;Ruby&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;h1 id=&quot;Racket-Part&quot;&gt;&lt;a href=&quot;#Racket-Part&quot; class=&quot;headerlink&quot; title=&quot;Racket Part&quot;&gt;&lt;/a&gt;Racket Part&lt;/h1&gt;&lt;p&gt;Racket 是一门由 Scheme 而来的动态类型、函数式的语言 （其实比起 Scheme，它有类和对象）&lt;/p&gt;
-&lt;h1 id=&quot;Syntax&quot;&gt;&lt;a href=&quot;#Syntax&quot; class=&quot;headerlink&quot; title=&quot;Syntax&quot;&gt;&lt;/a&gt;Syntax&lt;/h1&gt;&lt;p&gt;Racket 在语法方面比较特别，有两个特点：括号和前缀表达。&lt;/p&gt;
-&lt;p&gt;Racket 里的所有东西都可以分为两种情况：&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;原子类型 (atom)：&lt;ul&gt;
-&lt;li&gt;字面量： #t, 11, “hi”, null, etc.&lt;/li&gt;
-&lt;li&gt;变量名：x&lt;/li&gt;
-&lt;li&gt;关键字： define, lambda, if, etc.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;一个在括号中的序列&lt;ul&gt;
-&lt;li&gt;每个序列中的第一个元素会对后面的元素产生作用&lt;/li&gt;
-&lt;li&gt;如果第一个元素不是关键字且整个序列是表达式的一部分，那就把它作为函数来调用 （包括 +, -, *, / 也都是函数）&lt;/li&gt;
-&lt;li&gt;整个序列表示了对应的抽象语法树且没有二义性&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h1 id=&quot;Delayed-Evaluation&quot;&gt;&lt;a href=&quot;#Delayed-Evaluation&quot; class=&quot;headerlink&quot; title=&quot;Delayed Evaluation&quot;&gt;&lt;/a&gt;Delayed Evaluation&lt;/h1&gt;&lt;p&gt;语言设计上的一个关键语义：子表达式什么时候被求值&lt;/p&gt;
-&lt;h2 id=&quot;Thunk&quot;&gt;&lt;a href=&quot;#Thunk&quot; class=&quot;headerlink&quot; title=&quot;Thunk&quot;&gt;&lt;/a&gt;Thunk&lt;/h2&gt;&lt;p&gt;对于 Racket, ML 以及大部分语言来说，当调用函数时，传入的参数表达式在执行函数体前被求值。但如果这个参数是一个函数，那在被调用之前，函数体的代码是不会被执行的。&lt;br&gt;&lt;figure class=&quot;highlight scheme&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;(&lt;span class=&quot;name&quot;&gt;&lt;span class=&quot;builtin-name&quot;&gt;define&lt;/span&gt;&lt;/span&gt; (&lt;span class=&quot;name&quot;&gt;my-if-bad&lt;/span&gt; x y z) (&lt;span class=&quot;name&quot;&gt;&lt;span class=&quot;builtin-name&quot;&gt;if&lt;/span&gt;&lt;/span&gt; x y z))&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;; 无论 x 真假，y 和 z 都会被求值&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;(&lt;span class=&quot;name&quot;&gt;&lt;span class=&quot;builtin-name&quot;&gt;define&lt;/span&gt;&lt;/span&gt; (&lt;span class=&quot;name&quot;&gt;my-if&lt;/span&gt; x y z) (&lt;span class=&quot;name&quot;&gt;&lt;span class=&quot;builtin-name&quot;&gt;if&lt;/span&gt;&lt;/span&gt; x (&lt;span class=&quot;name&quot;&gt;y&lt;/span&gt;) (&lt;span class=&quot;name&quot;&gt;z&lt;/span&gt;)))&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;; 当 y 和 z 是函数时，只会求值其中一个&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
-&lt;p&gt;这种用来延迟计算的函数称为 thunk&lt;br&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;h2 id=&quot;Lazy-Evaluation&quot;&gt;&lt;a href=&quot;#Lazy-Evaluation&quot; class=&quot;headerlink&quot; title=&quot;Lazy Evaluation&quot;&gt;&lt;/a&gt;Lazy Evaluation&lt;/h2&gt;&lt;p&gt;假设有一个很耗时的计算，但是并不知道最终会不会用到这个结果。假设用到了这个结果，也并不知道是不是会多次使用。即使用了 thunk 来延迟这个计算，每一次需要用到结果还是需要做一次相同的计算。（这里的前提是无副作用）为了解决这个问题，我们需要记录这个计算是否执行过，以及它执行得到的结果。（和 ML 一样， Racket 也是允许 mutation 的）&lt;/p&gt;
-&lt;p&gt;在一些语言中，比如 Haskell，有内建的惰性求值，即参数要么不被求值，要么只被求值一次，称为 call by need 。（常见的语言都是 call by value）&lt;/p&gt;
-&lt;p&gt;TO BE UPDATED…&lt;/p&gt;
-</content>
-    
-    <summary type="html">
-    
-      &lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th style=&quot;text-align:center&quot;&gt;&lt;/th&gt;
-&lt;th style=&quot;text-align:center&quot;&gt;函数式 (Functional)&lt;/th&gt;
-&lt;th style=&quot;text-align:center&quot;&gt;面向对象 (Object-Oriented)&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;静态 (Static)&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;ML&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;Java&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;动态 (Dynamic)&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;Racket&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;Ruby&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;h1 id=&quot;Racket-Part&quot;&gt;&lt;a href=&quot;#Racket-Part&quot; class=&quot;headerlink&quot; title=&quot;Racket Part&quot;&gt;&lt;/a&gt;Racket Part&lt;/h1&gt;&lt;p&gt;Racket 是一门由 Scheme 而来的动态类型、函数式的语言 （其实比起 Scheme，它有类和对象）&lt;/p&gt;
-&lt;h1 id=&quot;Syntax&quot;&gt;&lt;a href=&quot;#Syntax&quot; class=&quot;headerlink&quot; title=&quot;Syntax&quot;&gt;&lt;/a&gt;Syntax&lt;/h1&gt;&lt;p&gt;Racket 在语法方面比较特别，有两个特点：括号和前缀表达。&lt;/p&gt;
-&lt;p&gt;Racket 里的所有东西都可以分为两种情况：&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;原子类型 (atom)：&lt;ul&gt;
-&lt;li&gt;字面量： #t, 11, “hi”, null, etc.&lt;/li&gt;
-&lt;li&gt;变量名：x&lt;/li&gt;
-&lt;li&gt;关键字： define, lambda, if, etc.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;一个在括号中的序列&lt;ul&gt;
-&lt;li&gt;每个序列中的第一个元素会对后面的元素产生作用&lt;/li&gt;
-&lt;li&gt;如果第一个元素不是关键字且整个序列是表达式的一部分，那就把它作为函数来调用 （包括 +, -, *, / 也都是函数）&lt;/li&gt;
-&lt;li&gt;整个序列表示了对应的抽象语法树且没有二义性&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h1 id=&quot;Delayed-Evaluation&quot;&gt;&lt;a href=&quot;#Delayed-Evaluation&quot; class=&quot;headerlink&quot; title=&quot;Delayed Evaluation&quot;&gt;&lt;/a&gt;Delayed Evaluation&lt;/h1&gt;&lt;p&gt;语言设计上的一个关键语义：子表达式什么时候被求值&lt;/p&gt;
-&lt;h2 id=&quot;Thunk&quot;&gt;&lt;a href=&quot;#Thunk&quot; class=&quot;headerlink&quot; title=&quot;Thunk&quot;&gt;&lt;/a&gt;Thunk&lt;/h2&gt;&lt;p&gt;对于 Racket, ML 以及大部分语言来说，当调用函数时，传入的参数表达式在执行函数体前被求值。但如果这个参数是一个函数，那在被调用之前，函数体的代码是不会被执行的。&lt;br&gt;&lt;figure class=&quot;highlight scheme&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;(&lt;span class=&quot;name&quot;&gt;&lt;span class=&quot;builtin-name&quot;&gt;define&lt;/span&gt;&lt;/span&gt; (&lt;span class=&quot;name&quot;&gt;my-if-bad&lt;/span&gt; x y z) (&lt;span class=&quot;name&quot;&gt;&lt;span class=&quot;builtin-name&quot;&gt;if&lt;/span&gt;&lt;/span&gt; x y z))&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;; 无论 x 真假，y 和 z 都会被求值&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;(&lt;span class=&quot;name&quot;&gt;&lt;span class=&quot;builtin-name&quot;&gt;define&lt;/span&gt;&lt;/span&gt; (&lt;span class=&quot;name&quot;&gt;my-if&lt;/span&gt; x y z) (&lt;span class=&quot;name&quot;&gt;&lt;span class=&quot;builtin-name&quot;&gt;if&lt;/span&gt;&lt;/span&gt; x (&lt;span class=&quot;name&quot;&gt;y&lt;/span&gt;) (&lt;span class=&quot;name&quot;&gt;z&lt;/span&gt;)))&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;; 当 y 和 z 是函数时，只会求值其中一个&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
-&lt;p&gt;这种用来延迟计算的函数称为 thunk&lt;br&gt;
-    
-    </summary>
-    
-    
-      <category term="编程语言" scheme="http://ziqi.moe/blog/tags/pl/"/>
-    
-  </entry>
-  
-  <entry>
     <title>A Note of Computer Network</title>
     <link href="http://ziqi.moe/blog/A-Note-of-Computer-Network/"/>
     <id>http://ziqi.moe/blog/A-Note-of-Computer-Network/</id>
@@ -866,44 +945,6 @@
   </entry>
   
   <entry>
-    <title>在快速排序中选择好的枢纽点</title>
-    <link href="http://ziqi.moe/blog/Choose-Good-Pivot-In-Quciksort/"/>
-    <id>http://ziqi.moe/blog/Choose-Good-Pivot-In-Quciksort/</id>
-    <published>2015-02-12T16:00:00.000Z</published>
-    <updated>2016-12-11T13:45:04.065Z</updated>
-    
-    <content type="html">&lt;p&gt;快速排序是一个典型的分治(DIVIDE-AND-CONQUER)算法.&lt;br&gt;&lt;figure class=&quot;highlight python&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;QuickSort(array A,length n)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; n == &lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;  &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    pivot = ChoosePivot(A,n)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    Partition A around pivot&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    Recursively sort &lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;st part&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    Recursively sort &lt;span class=&quot;number&quot;&gt;2&lt;/span&gt;nd part&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
-&lt;p&gt;而决定这个算法效率的关键就在于枢纽点(pivot)的选取，因为这直接影响到分割(partition)的好坏。最坏情况下，即每次选取的枢纽点都为最大或最小的数，则时间复杂度为 $\theta(n^2)$ .而如果能够奇迹般地每次都选择了中位数，时间复杂度就为 $\theta(n \log n)$ .以上都为理想情况的分析，而对于排序来说，效率的衡量在于比较次数。以下对各种枢纽点的选取方法做一个比较次数的测量，数据为10000个0~9999之间的整数。&lt;br&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;&lt;p&gt;选取首尾元素&lt;br&gt;首：162085次比较&lt;br&gt;尾：164123&lt;/p&gt;
-&lt;p&gt;这种方法的效率取决于输入数据的预排序程度，如果是已经有序的状态，则效率很低&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;三数中值分割法，即选择下标为第一个、最后一个、中间的三个数的中位数作枢纽点&lt;br&gt;138382&lt;/p&gt;
-&lt;p&gt;效率很高&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;随机选取枢纽点&lt;br&gt;测试了五次：&lt;br&gt;148958，149598，163443，161712，161399&lt;/p&gt;
-&lt;p&gt;随机选取枢纽点无疑是安全的，因为不可能每次都选中最坏的情形。但是另一方面，随机数的生成也耗费了时间，对实际排序的时间造成了影响。&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-&lt;hr&gt;
-&lt;p&gt;所用的数据：&lt;br&gt;&lt;a href=&quot;http://spark-public.s3.amazonaws.com/algo1/programming_prob/QuickSort.txt&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://spark-public.s3.amazonaws.com/algo1/programming_prob/QuickSort.txt&lt;/a&gt;&lt;br&gt;参考资料：&lt;br&gt;&lt;a href=&quot;http://www.nowamagic.net/librarys/veda/detail/2397&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://www.nowamagic.net/librarys/veda/detail/2397&lt;/a&gt;&lt;/p&gt;
-&lt;hr&gt;
-&lt;p&gt;参考代码：&lt;br&gt;&lt;figure class=&quot;highlight cpp&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;19&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;20&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;21&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;22&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;23&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;24&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;25&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;26&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;27&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;28&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;29&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;30&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;31&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;32&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;33&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;34&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;35&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;36&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;37&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;38&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;39&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;40&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;41&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;42&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;43&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;44&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;45&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;46&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;47&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;48&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;49&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;50&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;51&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;52&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;53&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;54&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;55&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;56&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;meta&quot;&gt;#&lt;span class=&quot;meta-keyword&quot;&gt;include&lt;/span&gt;&lt;span class=&quot;meta-string&quot;&gt;&amp;lt;iostream&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;meta&quot;&gt;#&lt;span class=&quot;meta-keyword&quot;&gt;include&lt;/span&gt; &lt;span class=&quot;meta-string&quot;&gt;&amp;lt;fstream&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;meta&quot;&gt;#&lt;span class=&quot;meta-keyword&quot;&gt;include&lt;/span&gt; &lt;span class=&quot;meta-string&quot;&gt;&amp;lt;cstdlib&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;meta&quot;&gt;#&lt;span class=&quot;meta-keyword&quot;&gt;include&lt;/span&gt; &lt;span class=&quot;meta-string&quot;&gt;&amp;lt;ctime&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;using&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;namespace&lt;/span&gt; &lt;span class=&quot;built_in&quot;&gt;std&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; sum = &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;pivot&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;(&lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt;* A,&lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; lo,&lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; hi)&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;//	三数中值分割法 &lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;//	int a = A[lo];&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;//	int b = A[hi];&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;//	int c = A[(lo+hi)/2];&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;//	if(( (a&amp;gt;=b) &amp;amp;&amp;amp; (a&amp;lt;=c) ) || ( (a&amp;gt;=c) &amp;amp;&amp;amp; (a&amp;lt;=b) ))&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;//		return lo;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;//	if(((b&amp;gt;=a)&amp;amp;&amp;amp;(b&amp;lt;=c))||((b&amp;gt;=c)&amp;amp;&amp;amp;(b&amp;lt;=a)))&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;//		return hi;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;//	if(((c&amp;gt;=b)&amp;amp;&amp;amp;(c&amp;lt;=a))||((c&amp;gt;=a)&amp;amp;&amp;amp;(c&amp;lt;=b)))&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;//		return (lo+hi)/2;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&lt;span class=&quot;comment&quot;&gt;//首尾 &lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&lt;span class=&quot;comment&quot;&gt;//return lo;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&lt;span class=&quot;comment&quot;&gt;//return hi;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&lt;span class=&quot;comment&quot;&gt;//随机 &lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&lt;span class=&quot;comment&quot;&gt;//srand((int)time(0));&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&lt;span class=&quot;comment&quot;&gt;//return lo + rand()%(hi-lo);&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;swap&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;(&lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt;&amp;amp; a,&lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt;&amp;amp; b)&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; tmp = a;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	a = b;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	b = tmp;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;QuickSort&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;(&lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt;* A,&lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; l,&lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; r)&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt;(l == r+&lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;) &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;//	for(int i = 0;i &amp;lt; 10;i++)&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;//		cout&amp;lt;&amp;lt;A[i]&amp;lt;&amp;lt;&quot; &quot;;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;//	cout&amp;lt;&amp;lt;endl;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; p = pivot(A,l,r);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&lt;span class=&quot;comment&quot;&gt;//cout&amp;lt;&amp;lt;A[p]&amp;lt;&amp;lt;&quot; &quot;;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	swap(A[l],A[p]);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; i = l + &lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&lt;span class=&quot;keyword&quot;&gt;for&lt;/span&gt;(&lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; j = l + &lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;;j &amp;lt;= r;j++)&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;		&lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt;(A[j] &amp;lt; A[l])&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;			swap(A[j],A[i]);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;			i++;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;		&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;		sum++;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	swap(A[l],A[i&lt;span class=&quot;number&quot;&gt;-1&lt;/span&gt;]);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	QuickSort(A,l,i&lt;span class=&quot;number&quot;&gt;-2&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	QuickSort(A,i,r);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
-</content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;快速排序是一个典型的分治(DIVIDE-AND-CONQUER)算法.&lt;br&gt;&lt;figure class=&quot;highlight python&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;QuickSort(array A,length n)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; n == &lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;  &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    pivot = ChoosePivot(A,n)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    Partition A around pivot&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    Recursively sort &lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;st part&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    Recursively sort &lt;span class=&quot;number&quot;&gt;2&lt;/span&gt;nd part&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
-&lt;p&gt;而决定这个算法效率的关键就在于枢纽点(pivot)的选取，因为这直接影响到分割(partition)的好坏。最坏情况下，即每次选取的枢纽点都为最大或最小的数，则时间复杂度为 $\theta(n^2)$ .而如果能够奇迹般地每次都选择了中位数，时间复杂度就为 $\theta(n \log n)$ .以上都为理想情况的分析，而对于排序来说，效率的衡量在于比较次数。以下对各种枢纽点的选取方法做一个比较次数的测量，数据为10000个0~9999之间的整数。&lt;br&gt;
-    
-    </summary>
-    
-    
-      <category term="数据结构与算法" scheme="http://ziqi.moe/blog/tags/algo/"/>
-    
-  </entry>
-  
-  <entry>
     <title>分治法</title>
     <link href="http://ziqi.moe/blog/DIVIDE-AND-CONQUER/"/>
     <id>http://ziqi.moe/blog/DIVIDE-AND-CONQUER/</id>
@@ -936,6 +977,44 @@
 &lt;li&gt;递归地解决这些子问题(&lt;strong&gt;Conquer&lt;/strong&gt;)&lt;/li&gt;
 &lt;li&gt;合并子问题的答案(&lt;strong&gt;Combine&lt;/strong&gt;)&lt;/li&gt;
 &lt;/ol&gt;
+    
+    </summary>
+    
+    
+      <category term="数据结构与算法" scheme="http://ziqi.moe/blog/tags/algo/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>在快速排序中选择好的枢纽点</title>
+    <link href="http://ziqi.moe/blog/Choose-Good-Pivot-In-Quciksort/"/>
+    <id>http://ziqi.moe/blog/Choose-Good-Pivot-In-Quciksort/</id>
+    <published>2015-02-12T16:00:00.000Z</published>
+    <updated>2016-12-11T13:45:04.065Z</updated>
+    
+    <content type="html">&lt;p&gt;快速排序是一个典型的分治(DIVIDE-AND-CONQUER)算法.&lt;br&gt;&lt;figure class=&quot;highlight python&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;QuickSort(array A,length n)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; n == &lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;  &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    pivot = ChoosePivot(A,n)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    Partition A around pivot&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    Recursively sort &lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;st part&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    Recursively sort &lt;span class=&quot;number&quot;&gt;2&lt;/span&gt;nd part&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;而决定这个算法效率的关键就在于枢纽点(pivot)的选取，因为这直接影响到分割(partition)的好坏。最坏情况下，即每次选取的枢纽点都为最大或最小的数，则时间复杂度为 $\theta(n^2)$ .而如果能够奇迹般地每次都选择了中位数，时间复杂度就为 $\theta(n \log n)$ .以上都为理想情况的分析，而对于排序来说，效率的衡量在于比较次数。以下对各种枢纽点的选取方法做一个比较次数的测量，数据为10000个0~9999之间的整数。&lt;br&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;选取首尾元素&lt;br&gt;首：162085次比较&lt;br&gt;尾：164123&lt;/p&gt;
+&lt;p&gt;这种方法的效率取决于输入数据的预排序程度，如果是已经有序的状态，则效率很低&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;三数中值分割法，即选择下标为第一个、最后一个、中间的三个数的中位数作枢纽点&lt;br&gt;138382&lt;/p&gt;
+&lt;p&gt;效率很高&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;随机选取枢纽点&lt;br&gt;测试了五次：&lt;br&gt;148958，149598，163443，161712，161399&lt;/p&gt;
+&lt;p&gt;随机选取枢纽点无疑是安全的，因为不可能每次都选中最坏的情形。但是另一方面，随机数的生成也耗费了时间，对实际排序的时间造成了影响。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;hr&gt;
+&lt;p&gt;所用的数据：&lt;br&gt;&lt;a href=&quot;http://spark-public.s3.amazonaws.com/algo1/programming_prob/QuickSort.txt&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://spark-public.s3.amazonaws.com/algo1/programming_prob/QuickSort.txt&lt;/a&gt;&lt;br&gt;参考资料：&lt;br&gt;&lt;a href=&quot;http://www.nowamagic.net/librarys/veda/detail/2397&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://www.nowamagic.net/librarys/veda/detail/2397&lt;/a&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;参考代码：&lt;br&gt;&lt;figure class=&quot;highlight cpp&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;19&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;20&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;21&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;22&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;23&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;24&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;25&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;26&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;27&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;28&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;29&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;30&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;31&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;32&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;33&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;34&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;35&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;36&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;37&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;38&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;39&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;40&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;41&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;42&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;43&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;44&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;45&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;46&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;47&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;48&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;49&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;50&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;51&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;52&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;53&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;54&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;55&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;56&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;meta&quot;&gt;#&lt;span class=&quot;meta-keyword&quot;&gt;include&lt;/span&gt;&lt;span class=&quot;meta-string&quot;&gt;&amp;lt;iostream&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;meta&quot;&gt;#&lt;span class=&quot;meta-keyword&quot;&gt;include&lt;/span&gt; &lt;span class=&quot;meta-string&quot;&gt;&amp;lt;fstream&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;meta&quot;&gt;#&lt;span class=&quot;meta-keyword&quot;&gt;include&lt;/span&gt; &lt;span class=&quot;meta-string&quot;&gt;&amp;lt;cstdlib&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;meta&quot;&gt;#&lt;span class=&quot;meta-keyword&quot;&gt;include&lt;/span&gt; &lt;span class=&quot;meta-string&quot;&gt;&amp;lt;ctime&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;using&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;namespace&lt;/span&gt; &lt;span class=&quot;built_in&quot;&gt;std&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; sum = &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;pivot&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;(&lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt;* A,&lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; lo,&lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; hi)&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;//	三数中值分割法 &lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;//	int a = A[lo];&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;//	int b = A[hi];&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;//	int c = A[(lo+hi)/2];&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;//	if(( (a&amp;gt;=b) &amp;amp;&amp;amp; (a&amp;lt;=c) ) || ( (a&amp;gt;=c) &amp;amp;&amp;amp; (a&amp;lt;=b) ))&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;//		return lo;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;//	if(((b&amp;gt;=a)&amp;amp;&amp;amp;(b&amp;lt;=c))||((b&amp;gt;=c)&amp;amp;&amp;amp;(b&amp;lt;=a)))&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;//		return hi;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;//	if(((c&amp;gt;=b)&amp;amp;&amp;amp;(c&amp;lt;=a))||((c&amp;gt;=a)&amp;amp;&amp;amp;(c&amp;lt;=b)))&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;//		return (lo+hi)/2;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&lt;span class=&quot;comment&quot;&gt;//首尾 &lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&lt;span class=&quot;comment&quot;&gt;//return lo;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&lt;span class=&quot;comment&quot;&gt;//return hi;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&lt;span class=&quot;comment&quot;&gt;//随机 &lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&lt;span class=&quot;comment&quot;&gt;//srand((int)time(0));&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&lt;span class=&quot;comment&quot;&gt;//return lo + rand()%(hi-lo);&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;swap&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;(&lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt;&amp;amp; a,&lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt;&amp;amp; b)&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; tmp = a;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	a = b;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	b = tmp;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;QuickSort&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;(&lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt;* A,&lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; l,&lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; r)&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt;(l == r+&lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;) &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;//	for(int i = 0;i &amp;lt; 10;i++)&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;//		cout&amp;lt;&amp;lt;A[i]&amp;lt;&amp;lt;&quot; &quot;;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;//	cout&amp;lt;&amp;lt;endl;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; p = pivot(A,l,r);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&lt;span class=&quot;comment&quot;&gt;//cout&amp;lt;&amp;lt;A[p]&amp;lt;&amp;lt;&quot; &quot;;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	swap(A[l],A[p]);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; i = l + &lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&lt;span class=&quot;keyword&quot;&gt;for&lt;/span&gt;(&lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; j = l + &lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;;j &amp;lt;= r;j++)&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;		&lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt;(A[j] &amp;lt; A[l])&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;			swap(A[j],A[i]);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;			i++;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;		&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;		sum++;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	swap(A[l],A[i&lt;span class=&quot;number&quot;&gt;-1&lt;/span&gt;]);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	QuickSort(A,l,i&lt;span class=&quot;number&quot;&gt;-2&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	QuickSort(A,i,r);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;快速排序是一个典型的分治(DIVIDE-AND-CONQUER)算法.&lt;br&gt;&lt;figure class=&quot;highlight python&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;QuickSort(array A,length n)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; n == &lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;  &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    pivot = ChoosePivot(A,n)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    Partition A around pivot&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    Recursively sort &lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;st part&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    Recursively sort &lt;span class=&quot;number&quot;&gt;2&lt;/span&gt;nd part&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;而决定这个算法效率的关键就在于枢纽点(pivot)的选取，因为这直接影响到分割(partition)的好坏。最坏情况下，即每次选取的枢纽点都为最大或最小的数，则时间复杂度为 $\theta(n^2)$ .而如果能够奇迹般地每次都选择了中位数，时间复杂度就为 $\theta(n \log n)$ .以上都为理想情况的分析，而对于排序来说，效率的衡量在于比较次数。以下对各种枢纽点的选取方法做一个比较次数的测量，数据为10000个0~9999之间的整数。&lt;br&gt;
     
     </summary>
     

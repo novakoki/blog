@@ -1,4 +1,4 @@
-<!DOCTYPE html><html><head><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><title> A Note of Programming Languages (2) · Consolas</title><meta name="description" content="A Note of Programming Languages (2) - Ziqi"><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="short icon" href="/blog/favicon.png"><link rel="stylesheet" href="/blog/css/apollo.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600" type="text/css"></head><body><header><a href="/blog/" class="logo-link"><img src="/blog/logo.jpg"></a><ul class="nav nav-list"><li class="nav-list-item"><a href="/blog/" target="_self" class="nav-list-link">BLOG</a></li><li class="nav-list-item"><a href="/blog/diary/" target="_self" class="nav-list-link">DIARY</a></li><li class="nav-list-item"><a href="/blog/archives/" target="_self" class="nav-list-link">ARCHIVE</a></li><li class="nav-list-item"><a href="/blog/tags/" target="_self" class="nav-list-link">TAGS</a></li></ul></header><section class="container"><div class="post"><article class="post-block"><h1 class="post-title">A Note of Programming Languages (2)</h1><div class="post-time">Jan 11, 2016</div><div class="post-content"><table>
+<!DOCTYPE html><html><head><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><title> A Note of Programming Languages (2) · Consolas</title><meta name="description" content="A Note of Programming Languages (2) - Ziqi"><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="short icon" href="/blog/favicon.png"><link rel="stylesheet" href="/blog/css/apollo.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600" type="text/css"></head><body><header><a href="/blog/" class="logo-link"><img src="/blog/logo.jpg"></a><ul class="nav nav-list"><li class="nav-list-item"><a href="/blog/" target="_self" class="nav-list-link">BLOG</a></li><li class="nav-list-item"><a href="/blog/diary/" target="_self" class="nav-list-link">DIARY</a></li><li class="nav-list-item"><a href="/blog/archives/" target="_self" class="nav-list-link">ARCHIVE</a></li><li class="nav-list-item"><a href="/blog/tags/" target="_self" class="nav-list-link">TAGS</a></li></ul></header><section class="container"><div class="post"><article class="post-block"><h1 class="post-title">A Note of Programming Languages (2)</h1><div class="post-time">Jan 12, 2017</div><div class="post-content"><table>
 <thead>
 <tr>
 <th style="text-align:center"></th>
@@ -20,7 +20,7 @@
 </tbody>
 </table>
 <h1 id="Racket-Part"><a href="#Racket-Part" class="headerlink" title="Racket Part"></a>Racket Part</h1><p>Racket 是一门由 Scheme 而来的动态类型、函数式的语言 （其实比起 Scheme，它有类和对象）</p>
-<h1 id="Syntax"><a href="#Syntax" class="headerlink" title="Syntax"></a>Syntax</h1><p>Racket 在语法方面比较特别，有两个特点：括号和前缀表达。</p>
+<h2 id="Syntax"><a href="#Syntax" class="headerlink" title="Syntax"></a>Syntax</h2><p>Racket 在语法方面比较特别，有两个特点：括号和前缀表达。</p>
 <p>Racket 里的所有东西都可以分为两种情况：</p>
 <ol>
 <li>原子类型 (atom)：<ul>
@@ -36,13 +36,92 @@
 </ul>
 </li>
 </ol>
-<h1 id="Delayed-Evaluation"><a href="#Delayed-Evaluation" class="headerlink" title="Delayed Evaluation"></a>Delayed Evaluation</h1><p>语言设计上的一个关键语义：子表达式什么时候被求值</p>
-<h2 id="Thunk"><a href="#Thunk" class="headerlink" title="Thunk"></a>Thunk</h2><p>对于 Racket, ML 以及大部分语言来说，当调用函数时，传入的参数表达式在执行函数体前被求值。但如果这个参数是一个函数，那在被调用之前，函数体的代码是不会被执行的。<br><figure class="highlight scheme"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">(<span class="name"><span class="builtin-name">define</span></span> (<span class="name">my-if-bad</span> x y z) (<span class="name"><span class="builtin-name">if</span></span> x y z))</span><br><span class="line"><span class="comment">; 无论 x 真假，y 和 z 都会被求值</span></span><br><span class="line">(<span class="name"><span class="builtin-name">define</span></span> (<span class="name">my-if</span> x y z) (<span class="name"><span class="builtin-name">if</span></span> x (<span class="name">y</span>) (<span class="name">z</span>)))</span><br><span class="line"><span class="comment">; 当 y 和 z 是函数时，只会求值其中一个</span></span><br></pre></td></tr></table></figure></p>
+<h2 id="Delayed-Evaluation-And-Thunk"><a href="#Delayed-Evaluation-And-Thunk" class="headerlink" title="Delayed Evaluation And Thunk"></a>Delayed Evaluation And Thunk</h2><p>语言设计上的一个关键语义：子表达式什么时候被求值</p>
+<p>对于 Racket, ML 以及大部分语言来说，当调用函数时，传入的参数表达式在执行函数体前被求值。但如果这个参数是一个函数，那在被调用之前，函数体的代码是不会被执行的。<br><figure class="highlight scheme"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">(<span class="name"><span class="builtin-name">define</span></span> (<span class="name">my-if-bad</span> x y z) (<span class="name"><span class="builtin-name">if</span></span> x y z))</span><br><span class="line"><span class="comment">; 无论 x 真假，y 和 z 都会被求值</span></span><br><span class="line">(<span class="name"><span class="builtin-name">define</span></span> (<span class="name">my-if</span> x y z) (<span class="name"><span class="builtin-name">if</span></span> x (<span class="name">y</span>) (<span class="name">z</span>)))</span><br><span class="line"><span class="comment">; 当 y 和 z 是函数时，只会求值其中一个</span></span><br></pre></td></tr></table></figure></p>
 <p>这种用来延迟计算的函数称为 thunk<br><a id="more"></a></p>
-<h2 id="Lazy-Evaluation"><a href="#Lazy-Evaluation" class="headerlink" title="Lazy Evaluation"></a>Lazy Evaluation</h2><p>假设有一个很耗时的计算，但是并不知道最终会不会用到这个结果。假设用到了这个结果，也并不知道是不是会多次使用。即使用了 thunk 来延迟这个计算，每一次需要用到结果还是需要做一次相同的计算。（这里的前提是无副作用）为了解决这个问题，我们需要记录这个计算是否执行过，以及它执行得到的结果。（和 ML 一样， Racket 也是允许 mutation 的）</p>
-<p>在一些语言中，比如 Haskell，有内建的惰性求值，即参数要么不被求值，要么只被求值一次，称为 call by need 。（常见的语言都是 call by value）</p>
-<p>TO BE UPDATED…</p>
-</div></article></div></section><footer><div class="paginator"><a href="/blog/Margin-Collapsing/" class="prev">上一篇</a><a href="/blog/A-Note-of-Computer-Network/" class="next">下一篇</a></div><div data-thread-key="A-Note-of-Programming-Languages-Racket/" data-title="A Note of Programming Languages (2)" data-url="http://ziqi.moe/blog/blog/A-Note-of-Programming-Languages-Racket/" data-author-key="1" class="ds-thread"></div><script>var duoshuoQuery = {short_name:"ziqiblog"};
+<h2 id="Lazy-Evaluation-And-Memoization"><a href="#Lazy-Evaluation-And-Memoization" class="headerlink" title="Lazy Evaluation And Memoization"></a>Lazy Evaluation And Memoization</h2><p>假设有一个很耗时的计算，但是并不知道最终会不会用到这个结果。这时我们可以用 thunk （或者一些语言有内建的 call-by-name 机制，比如 Scala）来延迟这个计算。</p>
+<p>假设用到了这个结果，也并不知道是不是会多次使用。即使用了 thunk 来延迟这个计算，每一次需要用到结果还是需要做一次相同的计算。（这里的前提是无副作用）为了解决这个问题，我们需要记录这个计算是否执行过，以及它执行得到的结果。（和 ML 一样， Racket 也是允许 mutation 的）在一些语言中，比如 Haskell，有内建的这种机制，即参数要么不被求值，要么只被求值一次，称为 call by need 。（常见的语言都是 call by value）</p>
+<h2 id="Stream"><a href="#Stream" class="headerlink" title="Stream"></a>Stream</h2><p>如何产生一个无穷的序列，无论在空间上还是时间上都无法做到显式产生，但是我们可以用递推的方式描述它，以及编写方法来取得我们需要的部分。这样的方法称为流，典型的流就是 linux 的管道。<br><figure class="highlight scheme"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">(<span class="name"><span class="builtin-name">define</span></span> ones (<span class="name"><span class="builtin-name">lambda</span></span> () (<span class="name"><span class="builtin-name">cons</span></span> <span class="number">1</span> ones))) <span class="comment">; 产生无限个 1</span></span><br><span class="line"><span class="comment">; 每次得到一个值和产生它后继的 thunk</span></span><br></pre></td></tr></table></figure></p>
+<h2 id="Macros"><a href="#Macros" class="headerlink" title="Macros"></a>Macros</h2><p>宏允许语言的使用者自定义语法，即可以扩展语言。宏展开在程序最开始执行，即在类型检查、编译、运行之前。</p>
+<p>Racket VS C/C++：</p>
+<ul>
+<li>Tokenization： 不是简单的替换，而是会区分单词。比如定义 head 为 car 的宏，headt 不会被替换成 cart</li>
+<li>Parenthesization： C/C++ 里需要用很多括号来确保宏替换后的正确执行，Racket 没有这个问题，因为括号在 Racket 里意味着一个语法序列的边界。</li>
+<li>Scope： Racket 不会在变量定义处进行宏替换</li>
+<li><p>Hygiene：</p>
+<ol>
+<li><p>在宏里面定义局部变量不会影响外部的同名变量</p>
+ <figure class="highlight scheme"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">(<span class="name"><span class="builtin-name">define-syntax</span></span> double4</span><br><span class="line">  (<span class="name"><span class="builtin-name">syntax-rules</span></span> ()</span><br><span class="line">    [(<span class="name">double4</span> e)</span><br><span class="line">    (<span class="name"><span class="builtin-name">let*</span></span> ([<span class="name">zero</span> <span class="number">0</span>]</span><br><span class="line">            [<span class="name">x</span> e])</span><br><span class="line">      (<span class="name"><span class="builtin-name">+</span></span> x x zero))]))</span><br><span class="line"></span><br><span class="line">(<span class="name"><span class="builtin-name">let</span></span> ([<span class="name">zero</span> <span class="number">17</span>])</span><br><span class="line">  (<span class="name">double4</span> zero)) <span class="comment">; 结果为 34</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>在宏里面定义的局部变量永远指向宏定义处的环境，而非宏调用时的环境</p>
+ <figure class="highlight scheme"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">(<span class="name"><span class="builtin-name">define-syntax</span></span> double</span><br><span class="line">  (<span class="name"><span class="builtin-name">syntax-rules</span></span> ()</span><br><span class="line">    [(<span class="name">double</span> e)</span><br><span class="line">    (<span class="name"><span class="builtin-name">let</span></span> ([<span class="name">x</span> e])</span><br><span class="line">      (<span class="name"><span class="builtin-name">+</span></span> x x))]))</span><br><span class="line"></span><br><span class="line">(<span class="name"><span class="builtin-name">let</span></span> ([<span class="name"><span class="builtin-name">+</span></span> *])</span><br><span class="line">  (<span class="name">double</span> <span class="number">17</span>)) <span class="comment">; 结果为 34</span></span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+</li>
+</ul>
+<h2 id="Eval"><a href="#Eval" class="headerlink" title="Eval"></a>Eval</h2><p>很多语言都提供了执行自身代码的函数，比如 JavaScript, Python 都有。但 Racket 的区别在于，它以列表的形式表示要执行的代码而非字符串。<br><figure class="highlight scheme"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">(<span class="name"><span class="builtin-name">define</span></span> my-code</span><br><span class="line">  (<span class="name"><span class="builtin-name">list</span></span> <span class="symbol">'+</span> <span class="number">5</span> <span class="number">3</span>)) <span class="comment">; '+ 是一个 Symbol</span></span><br><span class="line"></span><br><span class="line">(<span class="name"><span class="builtin-name">eval</span></span> my-code) <span class="comment">; 8</span></span><br></pre></td></tr></table></figure></p>
+<h1 id="Static-VS-Dynamic"><a href="#Static-VS-Dynamic" class="headerlink" title="Static VS Dynamic"></a>Static VS Dynamic</h1><p>一门语言称之为静态或是动态，指的是它在什么时候进行类型检查。</p>
+<h2 id="ML-VS-Racket"><a href="#ML-VS-Racket" class="headerlink" title="ML VS Racket"></a>ML VS Racket</h2><p>可以有两种看法：</p>
+<ol>
+<li>ML 某种程度上是 Racket 的子集，Racket 支持的写法更多，因为一部分 Racket 中允许的表达式不会被 ML 的静态检查通过。比如 if 语句的两个分支返回不同的类型。</li>
+<li>Racket 里的变量其实不是“没有类型”，而是只有“一个类型”。 <figure class="highlight ml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">datatype</span> theType = <span class="comment">(* 所有的变量类型都一样，所以没有必要标注或是检查 *)</span></span><br><span class="line">  <span class="type">Int</span> <span class="keyword">of</span> <span class="built_in">int</span> | <span class="comment">(* 变量所持有的值是有不同类型的，即运行时值是带有所谓标签的 *)</span></span><br><span class="line">  <span class="type">String</span> <span class="keyword">of</span> <span class="built_in">string</span> |</span><br><span class="line">  <span class="type">Pair</span> <span class="keyword">of</span> theType * theType |</span><br><span class="line">  <span class="type">Fun</span> <span class="keyword">of</span> theType -&gt; theType |</span><br><span class="line">  ...</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h2 id="Static-Checking"><a href="#Static-Checking" class="headerlink" title="Static Checking"></a>Static Checking</h2><p>静态检查处在语法分析之后，程序运行之前，所以称之为“编译时检查”（但这跟语言用编译器还是解释器没有关系）。静态检查如何作用是语言定义的一部分，有的语言做得多有的语言做得少，给定检查规则，也可以自己实现工具来做期望的检查。</p>
+<p>实现静态检查的方式主要是类型系统，但类型系统只是实现静态检查的方式，而不是静态检查的目的。静态检查的目的是防止错误，但这个错误的范围很有限，比如大多数静态检查都不会检查数组是否越界，静态检查也没法告诉你某个地方你应该用乘法但是你用了加法。它能防止的是，字符串不能与整型相除，某个类型不能做某些事情。</p>
+<p>相比于动态检查（即给值加上标签，运行时进行检查），静态检查其实拒绝了一部分并不会出错的程序。这里值得讨论的东西在于，首先，你如何定义错误。</p>
+<p>考虑一个简单的“错误”： 3 / 0，你可以在下面这些时间点阻止这个“错误”</p>
+<ul>
+<li>Keystroke-time： 在编辑这段代码的时候阻止，意味着你写下 3 / 0 就已经是一个错误</li>
+<li>Compile-time： 当静态检查器“看到”这段代码的时候阻止，意味着这段代码不应该出现</li>
+<li>Link-time： 当发现这段代码会被调用的时候阻止，意味着调用这段代码是一个错误</li>
+<li>Run-time： 当执行这段代码的时候阻止，即被 0 除这个运算是一种错误</li>
+<li>Even-later<ul>
+<li>执行这段代码没有错，但如果用到了这个运算返回的结果（可以是一个表示未定义的标识，比如 undefined），才是一种错误（比如把 undefined 用作数组下标）</li>
+<li>甚至用返回的结果来做计算也没错，3 / 0 应该表示正无穷，同样的 tan(π/2) 也表示正无穷，你可以让它参与计算（事实上， Racket 里 (/ 3.0 0.0) 就返回 +inf.0）</li>
+</ul>
+</li>
+</ul>
+<p>第二个值得讨论的就是如何定义正确，怎么判断类型检查是符合语言定义的。</p>
+<h2 id="Soundness-And-Completeness"><a href="#Soundness-And-Completeness" class="headerlink" title="Soundness And Completeness"></a>Soundness And Completeness</h2><p>设 X 为我们希望类型检查阻止的一件事，定义一个类型系统是</p>
+<ul>
+<li>可靠的：不接受存在某个输入，使得 X 会发生的程序</li>
+<li>完备的：不拒绝对任意输入都不会使得 X 发生的程序</li>
+</ul>
+<p>现代语言的类型系统都是可靠的，但不是完备的。可靠意味着使用这门语言的人，可以依赖于 X 不会发生这个事实来编程。完备当然很好，但是实际上被类型系统误诊的情况很少，并且也很容易修改以通过类型检查。</p>
+<p>但是为什么现代语言都不是完备的？实际上，静态检查不能够同时满足下面三件事：</p>
+<ol>
+<li>程序会终止 (Always terminate)</li>
+<li>可靠 (Soundness)</li>
+<li>完备 (Completeness)</li>
+</ol>
+<p>如果一定要抛弃一个，抛弃完备性是一个较好的选择。</p>
+<p>（为什么不能同时满足？是因为不可判定性，我解释不了）</p>
+<h2 id="Weak-Typing"><a href="#Weak-Typing" class="headerlink" title="Weak Typing"></a>Weak Typing</h2><p>假设对于某个 X 而言，类型系统是不可靠的，那么至少要在运行时阻止这个行为。但另一种选择是，不阻止这样的行为，这是程序员的错误，语言不是必须去做检查的。这种情况下，程序可能发生各种不可预料的行为，存在这种情况的语言称为弱类型的。典型的弱类型语言就是 C 和 C++，一个典型的 X 行为就是数组越界。强类型语言比如 Java 会在运行时抛出异常，但弱类型语言不会阻止这个行为，从而发生无法预料的事。</p>
+<p>为什么 C/C++ 会如此设计？</p>
+<ul>
+<li>接近底层，效率优先。检查错误需要额外的时间和空间，程序员也不希望有隐藏的时间空间开销</li>
+<li>“strong types for weak minds”， 即认为人比计算机聪明，我这么写肯定是对的，不用你来告诉我错了，事实证明这种想法是错误的，计算机比人要可靠得多</li>
+</ul>
+<h2 id="Flexible"><a href="#Flexible" class="headerlink" title="Flexible"></a>Flexible</h2><p>除了检查错误的时间点不同，不同的语言对相同的行为也有不同的对待，也就是有严格和灵活之分。一些语言认为是错误的，可能另一些语言不这么认为，相反赋予了一些看上去是错误的行为正确的意义。（It’s not a bug, but a feature!）</p>
+<ul>
+<li>数组越界：一些语言没有下标越界一说，用了越界的下标会使那个数组变大。还有些语言有从尾部开始的负下标。</li>
+<li>函数传参：一些语言无所谓参数的个数，传的多了会忽略，传的少了会用默认值代入</li>
+<li>隐式转换：一些语言字符串可以和数相加</li>
+</ul>
+<p>（我真的没有在黑 JavaScript）</p>
+<p>这些特性一方面可能是不明智的，容易隐藏潜在的错误，让程序难以正确调试，但另一方面不可否认的，这种灵活有时候会很有用。这跟语言是动态还是静态也没什么关系，可能容易认为这种灵活让语言更加“动态”，但这只是改变了语义，不再阻止某些行为而已。</p>
+<h2 id="Static-or-Dynamic"><a href="#Static-or-Dynamic" class="headerlink" title="Static or Dynamic"></a>Static or Dynamic</h2><p>回到正题，究竟该选择静态语言还是动态语言，各有什么优点和缺点？（永远没有答案可以说，静态一定比动态好，或是反过来）</p>
+<ol>
+<li>方便？动态没有类型的约束表达自然更加自由，但是静态有了确定类型的前提也可以少写很多类似判断类型的代码</li>
+<li>静态语言是否阻止了一些有用的程序？事实上，这些因为类型系统被阻止的程序，因为动态语言因为给值加上标签所以可以在运行时检查，但静态语言依然可以用类似 ML 的 datatype 或是面向对象语言中的多态来显式模拟这种标签。</li>
+<li>“过早”地检查错误？软件工程中有一个真理，bug 发现越早越容易修复。静态检查能帮你发现一些低级错误，使得程序员能专注于业务逻辑。但是动态语言的支持者同样可以说，仍然有一些错误是静态检查无法检测，需要通过测试来发现的，既然最终都要测试，那有没有静态检查也不重要。</li>
+<li>性能好坏？动态语言有标签的开销，但可以做优化，而且静态语言也有需要标签的时候。</li>
+<li>代码复用？显然动态语言更容易复用代码，但也因此更容易出错。</li>
+<li>产品原型设计？动态语言不用设计类型，同时可以先设计一部分，而静态语言必须通过类型检查，但也一样可以通过通配符之类的 case 来表达剩余的未设计部分。</li>
+<li>维护代码？动态语言方便给函数添加新的参数来扩展，并且可以不让用户感知到这一变化。对于静态语言，只要改动了一个地方，类型检查工具会告诉你所有相关联的应该修改的地方，也很方便。</li>
+</ol>
+</div></article></div></section><footer><div class="paginator"><a href="/blog/Vue2-Versus-Vue1/" class="next">NEXT</a></div><div data-thread-key="A-Note-of-Programming-Languages-Racket/" data-title="A Note of Programming Languages (2)" data-url="http://ziqi.moe/blog/blog/A-Note-of-Programming-Languages-Racket/" data-author-key="1" class="ds-thread"></div><script>var duoshuoQuery = {short_name:"ziqiblog"};
 (function() {
     var ds = document.createElement('script');
     ds.type = 'text/javascript';ds.async = true;

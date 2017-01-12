@@ -1,44 +1,15 @@
-<!DOCTYPE html><html><head><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><title> Consolas</title><meta name="description" content="A Blog Powered By Hexo"><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="short icon" href="/blog/favicon.png"><link rel="stylesheet" href="/blog/css/apollo.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600" type="text/css"></head><body><header><a href="/blog/" class="logo-link"><img src="/blog/logo.jpg"></a><ul class="nav nav-list"><li class="nav-list-item"><a href="/blog/" target="_self" class="nav-list-link">BLOG</a></li><li class="nav-list-item"><a href="/blog/diary/" target="_self" class="nav-list-link">DIARY</a></li><li class="nav-list-item"><a href="/blog/archives/" target="_self" class="nav-list-link">ARCHIVE</a></li><li class="nav-list-item"><a href="/blog/tags/" target="_self" class="nav-list-link">TAGS</a></li></ul></header><section class="container"><ul class="home post-list"><li class="post-list-item"><article class="post-block"><h2 class="post-title"><a href="/blog/A-Note-of-Programming-Languages-Racket/" class="post-title-link">A Note of Programming Languages (2)</a></h2><div class="post-time">Jan 11, 2016</div><div class="post-content"><table>
-<thead>
-<tr>
-<th style="text-align:center"></th>
-<th style="text-align:center">函数式 (Functional)</th>
-<th style="text-align:center">面向对象 (Object-Oriented)</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">静态 (Static)</td>
-<td style="text-align:center">ML</td>
-<td style="text-align:center">Java</td>
-</tr>
-<tr>
-<td style="text-align:center">动态 (Dynamic)</td>
-<td style="text-align:center">Racket</td>
-<td style="text-align:center">Ruby</td>
-</tr>
-</tbody>
-</table>
-<h1 id="Racket-Part"><a href="#Racket-Part" class="headerlink" title="Racket Part"></a>Racket Part</h1><p>Racket 是一门由 Scheme 而来的动态类型、函数式的语言 （其实比起 Scheme，它有类和对象）</p>
-<h1 id="Syntax"><a href="#Syntax" class="headerlink" title="Syntax"></a>Syntax</h1><p>Racket 在语法方面比较特别，有两个特点：括号和前缀表达。</p>
-<p>Racket 里的所有东西都可以分为两种情况：</p>
-<ol>
-<li>原子类型 (atom)：<ul>
-<li>字面量： #t, 11, “hi”, null, etc.</li>
-<li>变量名：x</li>
-<li>关键字： define, lambda, if, etc.</li>
-</ul>
-</li>
-<li>一个在括号中的序列<ul>
-<li>每个序列中的第一个元素会对后面的元素产生作用</li>
-<li>如果第一个元素不是关键字且整个序列是表达式的一部分，那就把它作为函数来调用 （包括 +, -, *, / 也都是函数）</li>
-<li>整个序列表示了对应的抽象语法树且没有二义性</li>
-</ul>
-</li>
-</ol>
-<h1 id="Delayed-Evaluation"><a href="#Delayed-Evaluation" class="headerlink" title="Delayed Evaluation"></a>Delayed Evaluation</h1><p>语言设计上的一个关键语义：子表达式什么时候被求值</p>
-<h2 id="Thunk"><a href="#Thunk" class="headerlink" title="Thunk"></a>Thunk</h2><p>对于 Racket, ML 以及大部分语言来说，当调用函数时，传入的参数表达式在执行函数体前被求值。但如果这个参数是一个函数，那在被调用之前，函数体的代码是不会被执行的。<br><figure class="highlight scheme"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">(<span class="name"><span class="builtin-name">define</span></span> (<span class="name">my-if-bad</span> x y z) (<span class="name"><span class="builtin-name">if</span></span> x y z))</span><br><span class="line"><span class="comment">; 无论 x 真假，y 和 z 都会被求值</span></span><br><span class="line">(<span class="name"><span class="builtin-name">define</span></span> (<span class="name">my-if</span> x y z) (<span class="name"><span class="builtin-name">if</span></span> x (<span class="name">y</span>) (<span class="name">z</span>)))</span><br><span class="line"><span class="comment">; 当 y 和 z 是函数时，只会求值其中一个</span></span><br></pre></td></tr></table></figure></p>
-<p>这种用来延迟计算的函数称为 thunk<br></div><a href="/blog/A-Note-of-Programming-Languages-Racket/" class="read-more">...阅读全文</a></article></li><li class="post-list-item"><article class="post-block"><h2 class="post-title"><a href="/blog/A-Note-of-Computer-Network/" class="post-title-link">A Note of Computer Network</a></h2><div class="post-time">Aug 20, 2015</div><div class="post-content"><h2 id="I-Introduction"><a href="#I-Introduction" class="headerlink" title="I. Introduction"></a>I. Introduction</h2><h3 id="1-Computer-Network-and-Distributed-System"><a href="#1-Computer-Network-and-Distributed-System" class="headerlink" title="1. Computer Network and Distributed System"></a>1. Computer Network and Distributed System</h3><p> Example: World Wide Web, Hadoop</p>
+<!DOCTYPE html><html><head><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><title> Consolas</title><meta name="description" content="A Blog Powered By Hexo"><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="short icon" href="/blog/favicon.png"><link rel="stylesheet" href="/blog/css/apollo.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600" type="text/css"></head><body><header><a href="/blog/" class="logo-link"><img src="/blog/logo.jpg"></a><ul class="nav nav-list"><li class="nav-list-item"><a href="/blog/" target="_self" class="nav-list-link">BLOG</a></li><li class="nav-list-item"><a href="/blog/diary/" target="_self" class="nav-list-link">DIARY</a></li><li class="nav-list-item"><a href="/blog/archives/" target="_self" class="nav-list-link">ARCHIVE</a></li><li class="nav-list-item"><a href="/blog/tags/" target="_self" class="nav-list-link">TAGS</a></li></ul></header><section class="container"><ul class="home post-list"><li class="post-list-item"><article class="post-block"><h2 class="post-title"><a href="/blog/Margin-Collapsing/" class="post-title-link">CSS中外边距层叠的问题</a></h2><div class="post-time">Mar 31, 2016</div><div class="post-content"><h2 id="what"><a href="#what" class="headerlink" title="what:"></a>what:</h2><p>Q:<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<pre><code class="css"><span class="selector-tag">div</span> {
+  <span class="attribute">position</span>: fixed;
+  <span class="attribute">height</span>: <span class="number">35px</span>;
+}
+
+<span class="selector-tag">p</span> {
+  <span class="attribute">margin-top</span>: <span class="number">15px</span>;
+}
+</code></pre>
+<p>问div距离窗口上边的距离是多少？</p>
+<p>A: 15px</p></div><a href="/blog/Margin-Collapsing/" class="read-more">...more</a></article></li><li class="post-list-item"><article class="post-block"><h2 class="post-title"><a href="/blog/A-Note-of-Computer-Network/" class="post-title-link">A Note of Computer Network</a></h2><div class="post-time">Aug 20, 2015</div><div class="post-content"><h2 id="I-Introduction"><a href="#I-Introduction" class="headerlink" title="I. Introduction"></a>I. Introduction</h2><h3 id="1-Computer-Network-and-Distributed-System"><a href="#1-Computer-Network-and-Distributed-System" class="headerlink" title="1. Computer Network and Distributed System"></a>1. Computer Network and Distributed System</h3><p> Example: World Wide Web, Hadoop</p>
 <p><hr></p>
 <h3 id="2-Uses"><a href="#2-Uses" class="headerlink" title="2. Uses"></a>2. Uses</h3><ul>
 <li><strong>Business Application</strong><ul>
@@ -57,9 +28,9 @@
 </li>
 <li>Electric Commerce (B2C, B2B, G2C, C2C, P2P)</li>
 <li>Entertainment</li>
-<li>Ubiquitous Computing (普适计算) (RFID, IOT)</div><a href="/blog/A-Note-of-Computer-Network/" class="read-more">...阅读全文</a></article></li><li class="post-list-item"><article class="post-block"><h2 class="post-title"><a href="/blog/Migration/" class="post-title-link">换壳</a></h2><div class="post-time">Aug 14, 2015</div><div class="post-content"><p>以前的博客托管在<a href="http://www.openshift.com">openshift</a>上，免费能访问但是延时有点高，没有root权限，用的是<a href="http://wordpress.org">wordpress</a>，也不常去动它，有时也会感觉插件纷繁复杂，显得有些笨重。上个月买了<a href="https://www.digitalocean.com/?refcode=b0c59420cd4c">DigitalOcean</a>的VPS，服务器的自由度大增，因为还有一些笔记类的文章写在<a href="http://zybuluo.com">Cmd Markdown</a>里了，于是就准备换成比较轻型且支持markdown较好的博客，最终选了基于<a href="http://nodejs.org">node.js</a>的<a href="http://www.ghostchina.com/">ghost</a>。</p></div><a href="/blog/Migration/" class="read-more">...阅读全文</a></article></li><li class="post-list-item"><article class="post-block"><h2 class="post-title"><a href="/blog/Choose-Good-Pivot-In-Quciksort/" class="post-title-link">在快速排序中选择好的枢纽点</a></h2><div class="post-time">Feb 13, 2015</div><div class="post-content"><p>快速排序是一个典型的分治(DIVIDE-AND-CONQUER)算法.<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">QuickSort(array A,length n)</span><br><span class="line">    <span class="keyword">if</span> n == <span class="number">1</span>  <span class="keyword">return</span></span><br><span class="line">    pivot = ChoosePivot(A,n)</span><br><span class="line">    Partition A around pivot</span><br><span class="line">    Recursively sort <span class="number">1</span>st part</span><br><span class="line">    Recursively sort <span class="number">2</span>nd part</span><br></pre></td></tr></table></figure></p>
-<p>而决定这个算法效率的关键就在于枢纽点(pivot)的选取，因为这直接影响到分割(partition)的好坏。最坏情况下，即每次选取的枢纽点都为最大或最小的数，则时间复杂度为 $\theta(n^2)$ .而如果能够奇迹般地每次都选择了中位数，时间复杂度就为 $\theta(n \log n)$ .以上都为理想情况的分析，而对于排序来说，效率的衡量在于比较次数。以下对各种枢纽点的选取方法做一个比较次数的测量，数据为10000个0~9999之间的整数。<br></div><a href="/blog/Choose-Good-Pivot-In-Quciksort/" class="read-more">...阅读全文</a></article></li><li class="post-list-item"><article class="post-block"><h2 class="post-title"><a href="/blog/DIVIDE-AND-CONQUER/" class="post-title-link">分治法</a></h2><div class="post-time">Feb 13, 2015</div><div class="post-content"><h4 id="理论"><a href="#理论" class="headerlink" title="理论"></a>理论</h4><h4 id="流程"><a href="#流程" class="headerlink" title="流程"></a>流程</h4><ol>
+<li>Ubiquitous Computing (普适计算) (RFID, IOT)</div><a href="/blog/A-Note-of-Computer-Network/" class="read-more">...more</a></article></li><li class="post-list-item"><article class="post-block"><h2 class="post-title"><a href="/blog/Migration/" class="post-title-link">换壳</a></h2><div class="post-time">Aug 14, 2015</div><div class="post-content"><p>以前的博客托管在<a href="http://www.openshift.com">openshift</a>上，免费能访问但是延时有点高，没有root权限，用的是<a href="http://wordpress.org">wordpress</a>，也不常去动它，有时也会感觉插件纷繁复杂，显得有些笨重。上个月买了<a href="https://www.digitalocean.com/?refcode=b0c59420cd4c">DigitalOcean</a>的VPS，服务器的自由度大增，因为还有一些笔记类的文章写在<a href="http://zybuluo.com">Cmd Markdown</a>里了，于是就准备换成比较轻型且支持markdown较好的博客，最终选了基于<a href="http://nodejs.org">node.js</a>的<a href="http://www.ghostchina.com/">ghost</a>。</p></div><a href="/blog/Migration/" class="read-more">...more</a></article></li><li class="post-list-item"><article class="post-block"><h2 class="post-title"><a href="/blog/DIVIDE-AND-CONQUER/" class="post-title-link">分治法</a></h2><div class="post-time">Feb 13, 2015</div><div class="post-content"><h4 id="理论"><a href="#理论" class="headerlink" title="理论"></a>理论</h4><h4 id="流程"><a href="#流程" class="headerlink" title="流程"></a>流程</h4><ol>
 <li>分割成很多个同类型的子问题(<strong>Divide</strong>)</li>
 <li>递归地解决这些子问题(<strong>Conquer</strong>)</li>
 <li>合并子问题的答案(<strong>Combine</strong>)</li>
-</ol></div><a href="/blog/DIVIDE-AND-CONQUER/" class="read-more">...阅读全文</a></article></li></ul></section><footer><div class="paginator"><a href="/blog/" class="prev">上一页</a><a href="/blog/page/3/" class="next">下一页</a></div><div class="copyright"><p>© 2014 - 2017 <a href="http://ziqi.moe/blog">Ziqi</a>, unless otherwise noted.</p></div></footer></body></html>
+</ol></div><a href="/blog/DIVIDE-AND-CONQUER/" class="read-more">...more</a></article></li><li class="post-list-item"><article class="post-block"><h2 class="post-title"><a href="/blog/Choose-Good-Pivot-In-Quciksort/" class="post-title-link">在快速排序中选择好的枢纽点</a></h2><div class="post-time">Feb 13, 2015</div><div class="post-content"><p>快速排序是一个典型的分治(DIVIDE-AND-CONQUER)算法.<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">QuickSort(array A,length n)</span><br><span class="line">    <span class="keyword">if</span> n == <span class="number">1</span>  <span class="keyword">return</span></span><br><span class="line">    pivot = ChoosePivot(A,n)</span><br><span class="line">    Partition A around pivot</span><br><span class="line">    Recursively sort <span class="number">1</span>st part</span><br><span class="line">    Recursively sort <span class="number">2</span>nd part</span><br></pre></td></tr></table></figure></p>
+<p>而决定这个算法效率的关键就在于枢纽点(pivot)的选取，因为这直接影响到分割(partition)的好坏。最坏情况下，即每次选取的枢纽点都为最大或最小的数，则时间复杂度为 $\theta(n^2)$ .而如果能够奇迹般地每次都选择了中位数，时间复杂度就为 $\theta(n \log n)$ .以上都为理想情况的分析，而对于排序来说，效率的衡量在于比较次数。以下对各种枢纽点的选取方法做一个比较次数的测量，数据为10000个0~9999之间的整数。<br></div><a href="/blog/Choose-Good-Pivot-In-Quciksort/" class="read-more">...more</a></article></li></ul></section><footer><div class="paginator"><a href="/blog/" class="prev">PRVE</a><a href="/blog/page/3/" class="next">NEXT</a></div><div class="copyright"><p>© 2014 - 2017 <a href="http://ziqi.moe/blog">Ziqi</a>, unless otherwise noted.</p></div></footer></body></html>
