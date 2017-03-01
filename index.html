@@ -1,4 +1,44 @@
-<!DOCTYPE html><html><head><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><title> Consolas</title><meta name="description" content="A Blog Powered By Hexo"><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="short icon" href="/blog/favicon.png"><link rel="stylesheet" href="/blog/css/apollo.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600" type="text/css"></head><body><header><a href="/blog/" class="logo-link"><img src="/blog/logo.jpg"></a><ul class="nav nav-list"><li class="nav-list-item"><a href="/blog/" target="_self" class="nav-list-link">BLOG</a></li><li class="nav-list-item"><a href="/blog/diary/" target="_self" class="nav-list-link">DIARY</a></li><li class="nav-list-item"><a href="/blog/archives/" target="_self" class="nav-list-link">ARCHIVE</a></li><li class="nav-list-item"><a href="/blog/tags/" target="_self" class="nav-list-link">TAGS</a></li></ul></header><section class="container"><ul class="home post-list"><li class="post-list-item"><article class="post-block"><h2 class="post-title"><a href="/blog/A-Note-of-Programming-Languages-Ruby/" class="post-title-link">A Note of Programming Languages (3)</a></h2><div class="post-time">Mar 1, 2017</div><div class="post-content"></div><a href="/blog/A-Note-of-Programming-Languages-Ruby/" class="read-more">...more</a></article></li><li class="post-list-item"><article class="post-block"><h2 class="post-title"><a href="/blog/A-Note-of-Programming-Languages-Racket/" class="post-title-link">A Note of Programming Languages (2)</a></h2><div class="post-time">Jan 12, 2017</div><div class="post-content"><table>
+<!DOCTYPE html><html><head><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><title> Consolas</title><meta name="description" content="A Blog Powered By Hexo"><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="short icon" href="/blog/favicon.png"><link rel="stylesheet" href="/blog/css/apollo.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600" type="text/css"></head><body><header><a href="/blog/" class="logo-link"><img src="/blog/logo.jpg"></a><ul class="nav nav-list"><li class="nav-list-item"><a href="/blog/" target="_self" class="nav-list-link">BLOG</a></li><li class="nav-list-item"><a href="/blog/diary/" target="_self" class="nav-list-link">DIARY</a></li><li class="nav-list-item"><a href="/blog/archives/" target="_self" class="nav-list-link">ARCHIVE</a></li><li class="nav-list-item"><a href="/blog/tags/" target="_self" class="nav-list-link">TAGS</a></li></ul></header><section class="container"><ul class="home post-list"><li class="post-list-item"><article class="post-block"><h2 class="post-title"><a href="/blog/A-Note-of-Programming-Languages-Ruby/" class="post-title-link">A Note of Programming Languages (3)</a></h2><div class="post-time">Mar 1, 2017</div><div class="post-content"><table>
+<thead>
+<tr>
+<th style="text-align:center"></th>
+<th style="text-align:center">函数式 (Functional)</th>
+<th style="text-align:center">面向对象 (Object-Oriented)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">静态 (Static)</td>
+<td style="text-align:center">ML</td>
+<td style="text-align:center">Java</td>
+</tr>
+<tr>
+<td style="text-align:center">动态 (Dynamic)</td>
+<td style="text-align:center">Racket</td>
+<td style="text-align:center">Ruby</td>
+</tr>
+</tbody>
+</table>
+<h1 id="Ruby-Part"><a href="#Ruby-Part" class="headerlink" title="Ruby Part"></a>Ruby Part</h1><p>Ruby 有如下重要特性</p>
+<ul>
+<li>纯面向对象(pure OOP)：Ruby 中的所有值都是对象，每个表达式执行后都得到一个对象（有些面向对象语言不是这样，比如 Java 中的整型、布尔型、浮点数字面量都不是对象）</li>
+<li>基于类的面向对象(class-based)：每个对象都是类的实例。类决定了对象所拥有的方法。（有些语言也不是基于类的，典型的如 JavaScript 是基于原型的）</li>
+<li>混入(mixin)：多重继承（C++）与接口（Java）之间的一个折中。Ruby 中每个类都只有一个父类，但是可以有任意数量的混入，不像接口，它们可以定义方法（而不只是要求某个方法要存在）。</li>
+<li>动态：Ruby 允许在任意对象上以任意参数调用任意方法，还可以在运行时改变类和对象的属性</li>
+<li>反射(reflection)：可以在运行时知道对象的类是什么，有哪些方法</li>
+<li>闭包（block and closure）：block 几乎就是闭包并且可以方便地用来使用库中的高阶函数，由于众多迭代函数的存在，Ruby 中也几乎不会显示使用循环。Ruby 中也有完整的闭包（proc）</li>
+<li>脚本语言（script language）：脚本语言没有一个精确的定义，它意味着能够快速地写出简短的程序，方便地操作文件和字符串，较少考虑性能</li>
+<li>流行于 Web 应用开发：Ruby on Rails 是一个非常流行的服务端框架</li>
+</ul>
+<h2 id="Class-Based-OOP"><a href="#Class-Based-OOP" class="headerlink" title="Class-Based OOP"></a>Class-Based OOP</h2><p>面向对象有如下几条规则：</p>
+<ol>
+<li>所有值都是对象的引用</li>
+<li>给定一个对象，可以通过调用它的方法与之交流，也可以被称为发送消息</li>
+<li>每个对象都有其私有的状态，只有对象自身的方法才能访问和修改状态</li>
+<li>每个对象都是类的实例</li>
+<li>类决定了对象的行为，类包含了方法的定义，它决定了对象如何处理它收到的调用（消息）</li>
+</ol>
+<p>在另一些面向对象语言比如 Java/C# 中，大部分的规则都被实现了，然而 Ruby 给出了一个更完整的实现。例如， 一些字面量在 Java/C# 中不是对象，违反了规则1；Java/C# 中有 public 的属性，违反了规则3<br></div><a href="/blog/A-Note-of-Programming-Languages-Ruby/" class="read-more">...more</a></article></li><li class="post-list-item"><article class="post-block"><h2 class="post-title"><a href="/blog/A-Note-of-Programming-Languages-Racket/" class="post-title-link">A Note of Programming Languages (2)</a></h2><div class="post-time">Jan 12, 2017</div><div class="post-content"><table>
 <thead>
 <tr>
 <th style="text-align:center"></th>
