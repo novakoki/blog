@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://ziqi.moe/blog/blog/A-Note-of-Programming-Languages-Ruby/</loc>
+    
+    <lastmod>2017-03-01T09:44:31.067Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://ziqi.moe/blog/blog/A-Note-of-Programming-Languages-Racket/</loc>
     
     <lastmod>2017-01-12T14:14:02.291Z</lastmod>
